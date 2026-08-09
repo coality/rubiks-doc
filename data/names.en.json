@@ -1,0 +1,31 @@
+{
+  "oll": {
+    "1": "Dot — double cross", "2": "Dot — diamond", "3": "Dot — anti-knot", "4": "Dot — knot",
+    "5": "Flat corner left", "6": "Flat corner right",
+    "7": "Moustache right", "8": "Moustache left",
+    "9": "Reversed fish left", "10": "Reversed fish right",
+    "11": "Small lightning right", "12": "Small lightning left",
+    "13": "Peg right", "14": "Peg left", "15": "Flat peg left", "16": "Flat peg right",
+    "17": "Dot + corner", "18": "Dot — bar", "19": "Dot — pincers", "20": "Dot — full cross",
+    "21": "Cross — double Sune", "22": "Cross — Pi", "23": "Cross — headlights",
+    "24": "Cross — sock", "25": "Cross — bowtie", "26": "Cross — anti-Sune", "27": "Cross — Sune",
+    "28": "Helmet", "29": "Bat", "30": "Crane", "31": "P right", "32": "P left", "33": "T",
+    "34": "C", "35": "Fish — hook", "36": "W left", "37": "L shape", "38": "W right",
+    "39": "Big lightning left", "40": "Big lightning right",
+    "41": "Alarm clock right", "42": "Alarm clock left",
+    "43": "Inverted P left", "44": "Inverted P right", "45": "Inverted T",
+    "46": "Column", "47": "Double L left", "48": "Small L right",
+    "49": "Awkward left", "50": "Awkward right", "51": "Bar right", "52": "Bar left",
+    "53": "Shoe left", "54": "Shoe right", "55": "Long bar", "56": "Chimney", "57": "Double H"
+  },
+  "pll": {
+    "Aa": "A-perm a — 3 corners counter-clockwise",
+    "Ab": "A-perm b — 3 corners clockwise",
+    "E": "E-perm — 2 pairs of corners",
+    "F": "F-perm", "Ga": "G-perm a", "Gb": "G-perm b", "Gc": "G-perm c", "Gd": "G-perm d",
+    "H": "H-perm — 4 edges", "Ja": "J-perm a", "Jb": "J-perm b",
+    "Na": "N-perm a", "Nb": "N-perm b", "Ra": "R-perm a", "Rb": "R-perm b", "T": "T-perm",
+    "Ua": "U-perm a — 3 edges", "Ub": "U-perm b — 3 edges",
+    "V": "V-perm", "Y": "Y-perm", "Z": "Z-perm — 2 pairs of edges"
+  }
+}

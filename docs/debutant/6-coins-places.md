@@ -1,0 +1,57 @@
+# 6 · Placer les coins jaunes
+
+On met chaque coin **au bon endroit**, sans se soucier de son orientation. Un
+coin peut donc être à sa place tout en montrant du jaune sur le côté : c'est
+correct à cette étape.
+
+## Reconnaître un coin bien placé
+
+Un coin est **au bon endroit** si ses trois couleurs correspondent aux trois
+faces qu'il touche, **quel que soit l'ordre**.
+
+Exemple : le coin jaune-vert-orange est bien placé s'il se trouve à
+l'intersection des faces jaune, verte et orange. Peu importe que le jaune soit
+sur le dessus ou sur le côté.
+
+!!! tip "La méthode sûre pour vérifier"
+    Prends un coin, note ses trois couleurs, et regarde les trois centres autour
+    de lui. Si les deux trios sont les mêmes, il est bien placé.
+
+Cherche maintenant combien de coins sont bien placés. Il y en a forcément **zéro,
+un, ou quatre**.
+
+## L'algorithme
+
+<div class="fiche" markdown>
+![Permutation de trois coins](../assets/cubes/coins-placer.svg)
+<div class="corps" markdown>
+<span class="move">U R U' L' U R' U' L</span>
+<p>Il fait tourner <b>trois coins</b> entre eux et laisse le quatrième
+tranquille. Il retourne les coins au passage : c'est normal, l'étape 7 s'en
+occupe.</p>
+</div>
+</div>
+
+## Comment le placer
+
+=== "Un coin est bien placé"
+
+    Tiens le cube pour que ce coin soit **en haut à droite devant toi**. C'est
+    lui que l'algorithme va épargner.
+
+    Applique l'algorithme. Si les quatre coins ne sont pas encore bien placés,
+    applique-le une seconde fois depuis la même position.
+
+=== "Aucun coin n'est bien placé"
+
+    Applique l'algorithme depuis n'importe quelle position. Tu obtiens alors un
+    coin bien placé. Reprends le cas ci-contre.
+
+=== "Les quatre sont bien placés"
+
+    L'étape est finie. Passe à la [dernière](7-coins-orientes.md).
+
+!!! success "Vérification"
+    Les quatre coins sont au bon endroit. Le cube a l'air **plus mélangé
+    qu'avant** sur le dessus, parce que les coins sont tournés n'importe comment.
+    C'est le signe que tout va bien : il ne reste qu'une seule étape.

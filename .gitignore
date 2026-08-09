@@ -1,0 +1,16 @@
+# Site construit (sortie de ./build.sh, servi par Apache)
+site/
+
+# Python
+__pycache__/
+*.pyc
+
+# Regenere a chaque build par tools/build.py — ne pas versionner
+docs/avance/
+docs-en/advanced/
+docs-bis/advanced/
+docs/assets/cubes/
+docs-en/assets/
+docs-bis/assets/
+data/generated.json
+data/figures.json

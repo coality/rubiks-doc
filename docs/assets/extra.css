@@ -1,0 +1,79 @@
+:root {
+  --alg-min: 148px;
+}
+
+/* Galerie de cas : une seule mise en page, repetee a l'identique partout. */
+.algs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--alg-min), 1fr));
+  gap: 1.1rem .9rem;
+  margin: 1.2rem 0 2rem;
+}
+.algs .alg {
+  margin: 0;
+  text-align: center;
+}
+.algs .alg img {
+  width: 100%;
+  max-width: 132px;
+  height: auto;
+  display: block;
+  margin: 0 auto .45rem;
+}
+.algs figcaption {
+  font-size: .74rem;
+  line-height: 1.35;
+}
+.algs figcaption b {
+  font-weight: 600;
+  opacity: .72;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.algs figcaption code {
+  display: inline-block;
+  margin-top: .2rem;
+  font-size: .78rem;
+  padding: .18rem .34rem;
+  white-space: normal;
+  word-spacing: .12em;
+}
+
+/* Fiche d'algorithme mise en avant dans le fil du texte */
+.fiche {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .35rem;
+  padding: .9rem 1rem;
+  margin: 1.2rem 0;
+}
+.fiche img { width: 116px; height: auto; flex: 0 0 auto; }
+.fiche .corps { flex: 1 1 240px; min-width: 200px; }
+.fiche .corps .move {
+  font-family: var(--md-code-font-family);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  display: block;
+  margin-bottom: .3rem;
+  word-spacing: .18em;
+}
+.fiche .corps p { margin: .2rem 0 0; font-size: .82rem; }
+
+/* Grand schema centre (objectif d'une etape) */
+.objectif { text-align: center; margin: 1.4rem 0; }
+.objectif img { max-width: 340px; width: 100%; height: auto; }
+.objectif figcaption { font-size: .8rem; opacity: .75; margin-top: .4rem; }
+
+/* Table de notation */
+.md-typeset table:not([class]) code { white-space: nowrap; }
+
+@media screen and (max-width: 44em) {
+  :root { --alg-min: 118px; }
+  .fiche { gap: .8rem; }
+  .fiche img { width: 92px; }
+}

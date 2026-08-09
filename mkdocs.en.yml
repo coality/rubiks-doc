@@ -1,0 +1,104 @@
+site_name: Solving the Rubik's Cube
+site_description: A complete, progressive tutorial — from your first solve to CFOP
+site_url: https://rubik.coality.net/en/
+docs_dir: docs-en
+site_dir: site/en
+use_directory_urls: true
+
+theme:
+  name: material
+  language: en
+  font: false          # aucune ressource externe : tout est servi par Apache
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/cube-outline
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  social: []
+  generator: false
+  alternate:
+    - name: Français
+      link: /
+      lang: fr
+    - name: English
+      link: /en/
+      lang: en
+    - name: Bisaya
+      link: /bis/
+      lang: ceb
+
+copyright: Diagrams and algorithms generated and verified by computer.
+
+nav:
+  - Start here: index.md
+  - The cube and the notation: notation.md
+  - Beginner method:
+      - Overview: beginner/index.md
+      - "1 · The white cross": beginner/1-white-cross.md
+      - "2 · The white corners": beginner/2-white-corners.md
+      - "3 · The second layer": beginner/3-second-layer.md
+      - "4 · The yellow cross": beginner/4-yellow-cross.md
+      - "5 · Placing the yellow edges": beginner/5-yellow-edges.md
+      - "6 · Placing the yellow corners": beginner/6-corners-placed.md
+      - "7 · Orienting the yellow corners": beginner/7-corners-oriented.md
+  - Moving on to CFOP:
+      - Why and in which order: cfop/index.md
+      - The efficient cross: cfop/cross.md
+      - F2L — the first two layers: cfop/f2l.md
+      - "The last layer in 4 looks": cfop/4lll.md
+  - Full reference:
+      - "OLL — all 57 cases": advanced/oll.md
+      - "PLL — all 21 cases": advanced/pll.md
+      - "F2L — all 41 cases": advanced/f2l.md
+  - Getting faster: speed.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md

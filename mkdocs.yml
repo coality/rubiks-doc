@@ -1,0 +1,104 @@
+site_name: Résoudre le Rubik's Cube
+site_description: Tutoriel complet et progressif — du premier cube résolu au CFOP
+site_url: https://rubik.coality.net/
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: fr
+  font: false          # aucune ressource externe : tout est servi par Apache
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/cube-outline
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Passer en thème sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en thème clair
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+
+plugins:
+  - search:
+      lang: fr
+
+extra:
+  social: []
+  generator: false
+  alternate:
+    - name: Français
+      link: /
+      lang: fr
+    - name: English
+      link: /en/
+      lang: en
+    - name: Bisaya
+      link: /bis/
+      lang: ceb
+
+copyright: Schémas et algorithmes générés et vérifiés par ordinateur.
+
+nav:
+  - Commencer ici: index.md
+  - Le cube et la notation: notation.md
+  - Méthode débutant:
+      - Vue d'ensemble: debutant/index.md
+      - "1 · La croix blanche": debutant/1-croix-blanche.md
+      - "2 · Les coins blancs": debutant/2-coins-blancs.md
+      - "3 · La deuxième couronne": debutant/3-deuxieme-couronne.md
+      - "4 · La croix jaune": debutant/4-croix-jaune.md
+      - "5 · Placer les arêtes jaunes": debutant/5-aretes-jaunes.md
+      - "6 · Placer les coins jaunes": debutant/6-coins-places.md
+      - "7 · Orienter les coins jaunes": debutant/7-coins-orientes.md
+  - Passer au CFOP:
+      - Pourquoi et dans quel ordre: cfop/index.md
+      - La croix efficace: cfop/croix.md
+      - F2L — les deux couronnes: cfop/f2l.md
+      - "Dernière couche en 4 temps": cfop/4lll.md
+  - Référence complète:
+      - "OLL — les 57 cas": avance/oll.md
+      - "PLL — les 21 cas": avance/pll.md
+      - "F2L — les 41 cas": avance/f2l.md
+  - Aller plus vite: vitesse.md
+  - Dépannage: depannage.md
+  - Glossaire: glossaire.md

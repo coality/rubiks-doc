@@ -1,0 +1,23 @@
+[
+["Aa","A-perm a — 3 coins antihoraire","x R' U R' D2 R U' R' D2 R2","coins"],
+["Ab","A-perm b — 3 coins horaire","x R2 D2 R U R' D2 R U' R","coins"],
+["E","E-perm — 2 paires de coins","x' R U' R' D R U R' D' R U R' D R U' R' D'","coins"],
+["F","F-perm","R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R","mixtes"],
+["Ga","G-perm a","R2 U R' U R' U' R U' R2 U' D R' U R D'","mixtes"],
+["Gb","G-perm b","R' U' R U D' R2 U R' U R U' R U' R2 D","mixtes"],
+["Gc","G-perm c","R2 U' R U' R U R' U R2 U D' R U' R' D","mixtes"],
+["Gd","G-perm d","R U R' U' D R2 U' R U' R' U R' U R2 D'","mixtes"],
+["H","H-perm — 4 arêtes","M2 U M2 U2 M2 U M2","aretes"],
+["Ja","J-perm a","x R2 F R F' R U2 r' U r U2","mixtes"],
+["Jb","J-perm b","R U R' F' R U R' U' R' F R2 U' R'","mixtes"],
+["Na","N-perm a","R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'","mixtes"],
+["Nb","N-perm b","R' U R U' R' F' U' F R U R' F R' F' R U' R","mixtes"],
+["Ra","R-perm a","R U' R' U' R U R D R' U' R D' R' U2 R'","mixtes"],
+["Rb","R-perm b","R' U2 R U2 R' F R U R' U' R' F' R2","mixtes"],
+["T","T-perm","R U R' U' R' F R2 U' R' U' R U R' F'","mixtes"],
+["Ua","U-perm a — 3 arêtes","R U' R U R U R U' R' U' R2","aretes"],
+["Ub","U-perm b — 3 arêtes","R2 U R U R' U' R' U' R' U R'","aretes"],
+["V","V-perm","R' U R' U' y R' F' R2 U' R' U R' F R F","mixtes"],
+["Y","Y-perm","F R U' R' U' R U R' F' R U R' U' R' F R F'","mixtes"],
+["Z","Z-perm — 2 paires d'arêtes","M2 U M2 U M' U2 M2 U2 M' U2","aretes"]
+]

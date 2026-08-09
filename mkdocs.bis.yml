@@ -1,0 +1,104 @@
+site_name: Pagsulbad sa Rubik's Cube
+site_description: Kompleto ug hinay-hinay nga tutorial — gikan sa unang solve hangtod sa CFOP
+site_url: https://rubik.coality.net/bis/
+docs_dir: docs-bis
+site_dir: site/bis
+use_directory_urls: true
+
+theme:
+  name: material
+  language: en
+  font: false          # aucune ressource externe : tout est servi par Apache
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/cube-outline
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Usba sa dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Usba sa light mode
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  social: []
+  generator: false
+  alternate:
+    - name: Français
+      link: /
+      lang: fr
+    - name: English
+      link: /en/
+      lang: en
+    - name: Bisaya
+      link: /bis/
+      lang: ceb
+
+copyright: Ang mga hulagway ug algorithm gimugna ug gi-verify sa kompyuter.
+
+nav:
+  - Sugdi dinhi: index.md
+  - Ang cube ug ang notation: notation.md
+  - Beginner nga pamaagi:
+      - Kinatibuk-ang panan-aw: beginner/index.md
+      - "1 · Ang puti nga cross": beginner/1-white-cross.md
+      - "2 · Ang puti nga corner": beginner/2-white-corners.md
+      - "3 · Ang ikaduhang layer": beginner/3-second-layer.md
+      - "4 · Ang dalag nga cross": beginner/4-yellow-cross.md
+      - "5 · Pagbutang sa dalag nga edge": beginner/5-yellow-edges.md
+      - "6 · Pagbutang sa dalag nga corner": beginner/6-corners-placed.md
+      - "7 · Pag-orient sa dalag nga corner": beginner/7-corners-oriented.md
+  - Pagbalhin sa CFOP:
+      - Nganong ug unsang han-ay: cfop/index.md
+      - Ang episyente nga cross: cfop/cross.md
+      - F2L — ang unang duha ka layer: cfop/f2l.md
+      - "Ang last layer sa 4 ka lakang": cfop/4lll.md
+  - Kompleto nga reference:
+      - "OLL — ang 57 ka case": advanced/oll.md
+      - "PLL — ang 21 ka case": advanced/pll.md
+      - "F2L — ang 41 ka case": advanced/f2l.md
+  - Aron mas paspas: speed.md
+  - Pag-ayo sa problema: troubleshooting.md
+  - Glossary: glossary.md
