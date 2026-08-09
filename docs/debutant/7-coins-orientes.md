@@ -26,6 +26,11 @@ arrive sur le dessus.</p>
     avec `U`. Le cube, lui, reste immobile dans tes mains : le coin sur lequel tu
     travailles est **toujours en haut à droite devant toi**.
 
+<div class="objectif" markdown>
+![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
+<figcaption>Le coin est déjà au bon endroit : la séquence ne fait que le faire tourner sur lui-même.</figcaption>
+</div>
+
 ## La marche à suivre
 
 1. Amène un coin **non résolu** en haut à droite devant toi, avec `U`.
@@ -37,10 +42,6 @@ arrive sur le dessus.</p>
 Quand le dernier coin est orienté, la couche du haut se remet toute seule en
 place au dernier `U`. Le cube est résolu.
 
-<div class="objectif" markdown>
-![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
-<figcaption>Le coin est déjà au bon endroit : la séquence ne fait que le faire tourner sur lui-même.</figcaption>
-</div>
 
 !!! warning "Le moment qui fait peur"
     Entre le deuxième et le troisième coin, le cube a l'air **complètement

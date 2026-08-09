@@ -22,18 +22,33 @@ nga face — wala nay laing lugar nga posible.
 
 ## Ang paagi
 
-1. **Pangitaa ang puti nga corner** sa ibabaw nga layer.
+Ang tanan nga hulagway niini nga seksyon nagpakita sa kahimtang **sa dili pa**
+ka motuyok: tan-awa sila, ilha ang imong case, ug ugma-damlag pa buhata.
 
 <div class="objectif" markdown>
-![coin en haut](../assets/cubes/coin-en-haut.svg)
-<figcaption>Puti nga corner nga naghulat sa ibabaw nga layer. Tuyoka ang <code>U</code> aron dad-on kini mismo sa ibabaw sa iyang lungag, dayon <code>R' D' R D</code>.</figcaption>
+![corner sa ibabaw](../assets/cubes/coin-en-haut.svg)
+<figcaption>Ang sinugdanan: naay puti nga corner nga naghulat sa ibabaw nga
+layer. Kinahanglan siya manaog sa slot nga naa mismo sa iyang ilawom.</figcaption>
 </div>
+
+1. **Pangitaa ang puti nga corner** sa ibabaw nga layer.
 2. **Tuyoka ang `U`** aron dad-on kini **mismo sa ibabaw sa lungag nga iyang
    adtoan**. Kinahanglan naa gyud ang corner sa ibabaw sa iyang lugar, usa ka
    andana ang gilay-on.
 3. Kupti ang cube aron kana nga corner maanaa **sa ibabaw-tuo, atubangan nimo**.
-4. Balika kini nga sunod-sunod hangtod nga mahulog ang corner sa iyang lugar, ug
-   husto ang atubangan:
+4. **Tan-awa asa nag-atubang ang iyang puti nga sticker.** Kana ra ang
+   magtakda sa gidaghanon sa balik — kanunay **kulang** (odd):
+
+<div class="algs">
+<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-avant.svg" alt="Puti sa atubangan"><figcaption><b>Puti sa atubangan</b><br><code>1 ka beses</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-haut.svg" alt="Puti sa ibabaw"><figcaption><b>Puti sa ibabaw</b><br><code>3 ka beses</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-droite.svg" alt="Puti sa tuo"><figcaption><b>Puti sa tuo</b><br><code>5 ka beses</code></figcaption></figure>
+</div>
+
+Ang arrow nagpakita sa tinuod nga agianan sa puti: mobiya siya sa ibabaw nga
+layer ug moabot sa ilawom sa cube, sa iyang lugar.
+
+**Buhata dayon ang sunod-sunod nga lihok sumala niana nga gidaghanon:**
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
@@ -43,19 +58,10 @@ sa husto nga direksyon. <b>Ayaw gyud hunong sa tunga.</b></p>
 </div>
 </div>
 
-Ang gidaghanon sa balik nagdepende lang sa **asa nag-atubang ang puti nga
-sticker** niana nga corner. Kanunay kini **kulang** (odd):
-
-<div class="algs">
-<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-avant.svg" alt="Puti sa atubangan"><figcaption><b>Puti sa atubangan</b><br><code>1 ka beses</code></figcaption></figure>
-<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-haut.svg" alt="Puti sa ibabaw"><figcaption><b>Puti sa ibabaw</b><br><code>3 ka beses</code></figcaption></figure>
-<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-droite.svg" alt="Puti sa tuo"><figcaption><b>Puti sa tuo</b><br><code>5 ka beses</code></figcaption></figure>
-</div>
-
 !!! tip "Dili nimo kinahanglan mag-ihap"
-    Balika lang hangtod nga mahiluna ang corner, ang puti naa sa ubos. Ang lamesa
-    sa ibabaw naa ra aron dili ka mabalaka kung morag dugay na: normal ra ang
-    lima ka balik, dili kana sayop.
+    Balika lang hangtod nga mahiluna ang corner, ang puti naa sa ubos. Ang mga
+    hulagway sa ibabaw naa ra aron dili ka mabalaka kung morag dugay na: normal
+    ra ang lima ka balik, dili kana sayop.
 
     Ang **2 ug 4 dili gyud molihok** dinhi: ang parehas nga numero magbalik sa
     corner sa iyang gigikanan gyud.

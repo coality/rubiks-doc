@@ -50,6 +50,11 @@ Walay algorithm dinhi: mangita ka og puti nga edge, ug ipasaka nimo.
 
 ### Bahin B — ipaubos ang matag petalo
 
+<div class="objectif" markdown>
+![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
+<figcaption>Ang pula nga petalo naglinya na sa ibabaw sa pula nga center: usa ka half turn niana nga face magbutang niini sa iyang lugar.</figcaption>
+</div>
+
 Kuhaa ang usa ka petalo. Tan-awa ang iyang **ikaduhang kolor**, kadtong naa sa
 kilid.
 
@@ -59,10 +64,6 @@ kilid.
 2. Tuyoka kana nga face og **half turn**. Manaog ang edge ug mosulod sa iyang
    lugar.
 
-<div class="objectif" markdown>
-![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
-<figcaption>Ang pula nga petalo naglinya na sa ibabaw sa pula nga center: usa ka half turn niana nga face magbutang niini sa iyang lugar.</figcaption>
-</div>
 
 Balika para sa upat ka petalo. Pag-amping: ayaw gyud ipaubos ang petalo kung wala
 pa nimo ipahiluna ang iyang kolor — mao ra kini ang posible nga sayop dinhi.

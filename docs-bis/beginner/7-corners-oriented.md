@@ -29,6 +29,11 @@ nga sticker moabot sa ibabaw.</p>
     imong kamot: ang corner nga imong gitrabaho **kanunay naa sa ibabaw-tuo,
     atubangan nimo**.
 
+<div class="objectif" markdown>
+![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
+<figcaption>Husto na ang lugar sa corner: ang sunod-sunod nga lihok maglibot lang niini sa iyang kaugalingon.</figcaption>
+</div>
+
 ## Ang sunod-sunod nga buhaton
 
 1. Dad-a ang corner nga **wala pa mahusto** sa ibabaw-tuo atubangan nimo, gamit
@@ -42,10 +47,6 @@ nga sticker moabot sa ibabaw.</p>
 Kung na-orient na ang katapusang corner, ang ibabaw nga layer mobalik ra sa
 iyang kaugalingon sa katapusang `U`. Nasulbad na ang cube.
 
-<div class="objectif" markdown>
-![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
-<figcaption>Husto na ang lugar sa corner: ang sunod-sunod nga lihok maglibot lang niini sa iyang kaugalingon.</figcaption>
-</div>
 
 !!! warning "Ang makahadlok nga bahin"
     Sa taliwala sa ikaduha ug ikatulo nga corner, morag **hingpit nga naguba**

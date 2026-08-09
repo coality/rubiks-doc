@@ -47,16 +47,17 @@ There is no algorithm here: you find a white edge and you bring it up.
 
 ### Stage B — bring each petal down
 
+<div class="objectif" markdown>
+![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
+<figcaption>The red petal is lined up above the red centre: a half turn of that face drops it exactly into place.</figcaption>
+</div>
+
 Take a petal. Look at its **second colour**, the one on the side.
 
 1. Turn `U` until that colour is **directly above the centre of the same
    colour**. The red petal must end up on the face whose centre is red.
 2. Turn that face a **half turn**. The edge comes down into place.
 
-<div class="objectif" markdown>
-![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
-<figcaption>The red petal is lined up above the red centre: a half turn of that face drops it exactly into place.</figcaption>
-</div>
 
 Repeat for all four petals. Careful: never bring a petal down without first
 lining up its colour — that is the only mistake possible at this step.

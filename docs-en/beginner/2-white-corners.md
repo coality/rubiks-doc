@@ -22,16 +22,32 @@ other possible spot.
 
 ## The manoeuvre
 
-1. **Find a white corner** in the top layer.
+Every diagram in this section shows the state **before** you turn anything:
+look at them, identify your case, and only then execute.
 
 <div class="objectif" markdown>
-![coin en haut](../assets/cubes/coin-en-haut.svg)
-<figcaption>A white corner waiting in the top layer. Turn <code>U</code> to bring it right above its hole, then <code>R' D' R D</code>.</figcaption>
+![corner on top](../assets/cubes/coin-en-haut.svg)
+<figcaption>The starting point: a white corner is waiting in the top layer. It
+has to come down into the slot directly below it.</figcaption>
 </div>
+
+1. **Find a white corner** in the top layer.
 2. **Turn `U`** to bring it **directly above the hole it belongs in**. The corner
    must be exactly above its place, one storey up.
 3. Hold the cube so that this corner is **top right, in front of you**.
-4. Repeat this sequence until the corner drops into place, correctly oriented:
+4. **Look at where its white sticker points.** That, and only that, decides how
+   many repetitions you need — always an **odd** number:
+
+<div class="algs">
+<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-avant.svg" alt="White in front"><figcaption><b>White in front</b><br><code>once</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-haut.svg" alt="White on top"><figcaption><b>White on top</b><br><code>3 times</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-droite.svg" alt="White on the right"><figcaption><b>White on the right</b><br><code>5 times</code></figcaption></figure>
+</div>
+
+The arrow shows the real path of the white sticker: it leaves the top layer
+and ends up underneath the cube, in its place.
+
+**Then run the sequence that many times:**
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
@@ -41,19 +57,10 @@ the right way round. <b>Never stop part way through.</b></p>
 </div>
 </div>
 
-How many repetitions you need depends only on **where the white sticker of that
-corner is**. It is always an **odd** number:
-
-<div class="algs">
-<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-avant.svg" alt="White in front"><figcaption><b>White in front</b><br><code>once</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-haut.svg" alt="White on top"><figcaption><b>White on top</b><br><code>3 times</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-droite.svg" alt="White on the right"><figcaption><b>White on the right</b><br><code>5 times</code></figcaption></figure>
-</div>
-
 !!! tip "You don't have to count"
-    Just repeat until the corner is seated, white underneath. The table above is
-    only there to reassure you when it feels long: five repetitions is normal,
-    it is not a mistake.
+    Just repeat until the corner is seated, white underneath. The diagrams above
+    are only there to reassure you when it feels long: five repetitions is
+    normal, it is not a mistake.
 
     What never works here is **2 or 4**: an even number brings the corner back
     to exactly where it started.

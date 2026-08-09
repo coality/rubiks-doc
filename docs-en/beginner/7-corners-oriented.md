@@ -27,6 +27,11 @@ top.</p>
     `U`. The cube itself stays still in your hands: the corner you are working
     on is **always top right, in front of you**.
 
+<div class="objectif" markdown>
+![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
+<figcaption>The corner is already in the right spot: the sequence only twists it on itself.</figcaption>
+</div>
+
 ## The procedure
 
 1. Bring an **unsolved** corner to the top right, in front of you, with `U`.
@@ -38,10 +43,6 @@ top.</p>
 When the last corner is oriented, the top layer falls back into place by itself
 on the final `U`. The cube is solved.
 
-<div class="objectif" markdown>
-![3d-coin-tourne](../assets/cubes/3d-coin-tourne.svg)
-<figcaption>The corner is already in the right spot: the sequence only twists it on itself.</figcaption>
-</div>
 
 !!! warning "The scary moment"
     Between the second and third corner, the cube looks **completely

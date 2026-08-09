@@ -22,17 +22,32 @@ possible.
 
 ## La manœuvre
 
-1. **Trouve un coin blanc** dans la couche du haut.
+Toutes les illustrations de cette section montrent l'état **avant** de tourner :
+regarde-les, identifie ton cas, et seulement ensuite exécute.
 
 <div class="objectif" markdown>
 ![coin en haut](../assets/cubes/coin-en-haut.svg)
-<figcaption>Un coin blanc en attente dans la couche du haut. Tourne <code>U</code> pour l'amener juste au-dessus de son trou, puis <code>R' D' R D</code>.</figcaption>
+<figcaption>Le point de départ : un coin blanc attend dans la couche du haut. Il
+doit descendre dans la fente qui est juste en dessous de lui.</figcaption>
 </div>
+
+1. **Trouve un coin blanc** dans la couche du haut.
 2. **Tourne `U`** pour l'amener **juste au-dessus du trou où il doit aller**.
    Le coin doit être exactement au-dessus de sa place, un étage plus haut.
 3. Tiens le cube pour que ce coin soit **en haut à droite devant toi**.
-4. Répète cette séquence jusqu'à ce que le coin tombe en place, correctement
-   orienté :
+4. **Regarde où pointe son autocollant blanc.** C'est lui, et lui seul, qui
+   décide du nombre de répétitions — toujours **impair** :
+
+<div class="algs">
+<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-avant.svg" alt="Blanc devant"><figcaption><b>Blanc devant</b><br><code>1 fois</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-haut.svg" alt="Blanc dessus"><figcaption><b>Blanc dessus</b><br><code>3 fois</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-droite.svg" alt="Blanc à droite"><figcaption><b>Blanc à droite</b><br><code>5 fois</code></figcaption></figure>
+</div>
+
+La flèche montre le trajet réel du blanc : il part de la couche du haut et
+finit sous le cube, à sa place.
+
+**Exécute alors la séquence ce nombre de fois :**
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
@@ -42,19 +57,10 @@ dans le bon sens. <b>Ne t'arrête jamais en cours de route.</b></p>
 </div>
 </div>
 
-Le nombre de répétitions dépend uniquement de **l'endroit où se trouve
-l'autocollant blanc** de ce coin. Il est toujours **impair** :
-
-<div class="algs">
-<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-avant.svg" alt="Blanc devant"><figcaption><b>Blanc devant</b><br><code>1 fois</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-haut.svg" alt="Blanc dessus"><figcaption><b>Blanc dessus</b><br><code>3 fois</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-droite.svg" alt="Blanc à droite"><figcaption><b>Blanc à droite</b><br><code>5 fois</code></figcaption></figure>
-</div>
-
 !!! tip "Tu n'as pas besoin de compter"
-    Répète simplement jusqu'à ce que le coin soit posé, blanc en bas. Le tableau
-    ci-dessus n'est là que pour te rassurer quand ça semble long : cinq
-    répétitions, c'est normal, ce n'est pas une erreur.
+    Répète simplement jusqu'à ce que le coin soit posé, blanc en bas. Les
+    schémas ci-dessus ne sont là que pour te rassurer quand ça semble long :
+    cinq répétitions, c'est normal, ce n'est pas une erreur.
 
     En revanche, **2 et 4 ne marchent jamais** ici : un nombre pair ramène le
     coin exactement d'où il vient.

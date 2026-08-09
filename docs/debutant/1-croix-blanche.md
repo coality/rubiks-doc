@@ -48,6 +48,11 @@ Il n'y a pas d'algorithme : tu cherches une arête blanche, tu la fais monter.
 
 ### Étape B — descendre chaque pétale
 
+<div class="objectif" markdown>
+![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
+<figcaption>Le pétale rouge est aligné au-dessus du centre rouge : un demi-tour de cette face le pose exactement à sa place.</figcaption>
+</div>
+
 Prends un pétale. Regarde sa **deuxième couleur**, celle qui est sur le côté.
 
 1. Tourne `U` jusqu'à ce que cette couleur soit **juste au-dessus du centre de la
@@ -55,10 +60,6 @@ Prends un pétale. Regarde sa **deuxième couleur**, celle qui est sur le côté
    rouge.
 2. Tourne cette face d'un **demi-tour**. L'arête descend et se met en place.
 
-<div class="objectif" markdown>
-![3d-petale-descend](../assets/cubes/3d-petale-descend.svg)
-<figcaption>Le pétale rouge est aligné au-dessus du centre rouge : un demi-tour de cette face le pose exactement à sa place.</figcaption>
-</div>
 
 Répète pour les quatre pétales. Attention : ne descends jamais un pétale sans
 avoir aligné sa couleur — c'est la seule erreur possible à cette étape.
