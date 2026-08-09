@@ -62,6 +62,63 @@ post-traite le HTML :
 Le script est idempotent (marqueur `<!--seo-->`) et échoue si une page attendue
 manque du site.
 
+### Bascule de domaine vers `rubiks.coality.net` (en cours)
+
+Le site doit passer de `rubik.` à `rubiks.`. Le DNS pointe déjà sur le serveur
+(65.108.123.20, mis à jour chez online.net le 2026-08-10) ; il manque le vhost
+et le certificat.
+
+⚠️ **Ordre obligatoire.** Changer le domaine dans les sources avant que le
+nouvel hôte réponde ferait pointer `canonical`, `hreflang` et les sitemaps vers
+un hôte injoignable — c'est précisément ce qui détruit un référencement.
+`tools/switch_domain.py` refuse donc de s'exécuter tant que le HTTPS du nouveau
+domaine n'est pas valide.
+
+1. `sudo ./migrate-domain.sh rubiks.coality.net` — vhost, `configtest`,
+   `reload`, certbot, puis remplacement de l'ancien vhost par une **redirection
+   301** (`deploy/rubik.coality.net-redirect.conf`) qui transfère le
+   référencement acquis, chemin par chemin.
+2. `python3 tools/switch_domain.py rubiks.coality.net && ./build.sh` — réécrit
+   les `site_url`, `tools/seo.py`, README et ce fichier, puis reconstruit.
+
+Ne **jamais** faire `systemctl restart apache2` : ~18 autres vhosts tournent
+dessus. `apache2ctl configtest` puis `systemctl reload apache2`.
+
+### La vérification du contenu (`tools/check_content.py`)
+
+`check_algs.py` vérifie les **données**. `check_content.py` vérifie ce que les
+**pages racontent**, dans les trois langues — 2293 contrôles, bloquants au
+build :
+
+- tout algorithme cité est analysable, et ceux recopiés dans la page 4LLL
+  résolvent bien un cas de la liste (comparaison des **cas** à l'AUF près, pas
+  des écritures : les U-perms en tranche M y sont un choix assumé) ;
+- les trois langues citent exactement les mêmes séquences (une coquille dans un
+  algorithme traduit est détectée) ;
+- toute image référencée existe dans la langue concernée ;
+- sémantique de la notation : `R2` = deux `R`, `r` = `R` + `M'`, `x` = `R M' L'`,
+  `M` suit `L`, les centres ne bougent jamais (200 mélanges) ;
+- comptages : 6 centres / 12 arêtes / 8 coins, 9 autocollants par couleur,
+  57 + 21 = 78, groupes du 4LLL = 3 + 7 + 3 + 4 ;
+- affirmations de la méthode débutant : 6 algorithmes en tout, 1/3/5
+  répétitions à l'étape 2, 3-cycles purs aux étapes 5 et 6, insertions miroir à
+  l'étape 3, chaîne point → équerre → barre → croix à l'étape 4.
+
+Deux résultats qui méritent d'être connus :
+
+- **la croix en 8 mouvements** : parcours **exhaustif** des 190 080 états
+  (position + orientation des 4 arêtes blanches) → distance maximale **8**,
+  moyenne **5,812**. Les deux chiffres annoncés par `cfop/croix.md` sont exacts.
+- **« zéro, un ou quatre coins bien placés »** à l'étape 6 : vrai *parce que*
+  les arêtes ont été placées avant, ce qui impose une permutation paire des
+  coins et exclut les transpositions (qui donneraient 2). L'ordre des étapes 5
+  et 6 n'est donc pas arbitraire.
+
+Ce qui **n'est pas** vérifiable mécaniquement (durées d'apprentissage, conseils
+de matériel, plan d'entraînement, doigtés) reste éditorial et doit être relu à
+la main. Ne pas présenter le site comme « intégralement certifié » : c'est le
+contenu *cubique* qui l'est.
+
 ## Décisions structurantes (avec Jérôme)
 
 - **WordPress écarté** : une doc, c'est de la mise en page répétée, pas de la
