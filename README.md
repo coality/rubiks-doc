@@ -105,3 +105,9 @@ deux ne peuvent pas diverger.
 
 `deploy/rubik.coality.net.conf` est le vhost Apache ; `install.sh` fait
 l'installation complète (déplacement sous `/opt`, vhost, certbot).
+
+## Licence
+
+[MIT](LICENSE). Les algorithmes de Rubik's Cube sont des faits, pas des œuvres :
+ils circulent librement. Les textes de ce site sont en revanche **rédigés en
+propre** — la progression s'inspire de celle de JPerm, mais rien n'en est copié.
