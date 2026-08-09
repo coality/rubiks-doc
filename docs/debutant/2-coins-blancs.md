@@ -16,8 +16,10 @@ l'intersection des faces blanche, verte et orange — il n'y a pas d'autre endro
 possible.
 
 <div class="objectif" markdown>
-![coin/centres](../assets/cubes/coin-trois-centres.svg)
-<figcaption>Le coin blanc-vert-orange n'a qu'une seule destination : l'intersection des centres blanc, vert et orange.</figcaption>
+![coin entre trois centres](../assets/cubes/3d-coin-trois-centres.svg)
+<figcaption>Vu <b>par en dessous</b>, cube résolu : le coin blanc-vert-orange
+touche exactement les trois centres blanc, vert et orange. C'est sa seule
+destination possible — tout le reste est grisé.</figcaption>
 </div>
 
 ## La manœuvre
@@ -26,9 +28,10 @@ Toutes les illustrations de cette section montrent l'état **avant** de tourner 
 regarde-les, identifie ton cas, et seulement ensuite exécute.
 
 <div class="objectif" markdown>
-![coin en haut](../assets/cubes/coin-en-haut.svg)
-<figcaption>Le point de départ : un coin blanc attend dans la couche du haut. Il
-doit descendre dans la fente qui est juste en dessous de lui.</figcaption>
+![la fente d'arrivée](../assets/cubes/3d-coin-fente.svg)
+<figcaption>Le point de départ, toujours vu <b>par en dessous</b> : le coin blanc
+attend en haut, et la flèche montre le trou où il doit descendre. Ce qui occupe
+ce trou pour l'instant n'a aucune importance — il en sera éjecté.</figcaption>
 </div>
 
 1. **Trouve un coin blanc** dans la couche du haut.

@@ -16,8 +16,10 @@ puti-berde-orange nga corner moadto sa nagsangang dapit sa puti, berde ug orange
 nga face — wala nay laing lugar nga posible.
 
 <div class="objectif" markdown>
-![coin/centres](../assets/cubes/coin-trois-centres.svg)
-<figcaption>Ang puti-berde-orange nga corner usa ra ang adtoan: ang nagsangang dapit sa puti, berde ug orange nga center.</figcaption>
+![corner taliwala sa tulo ka center](../assets/cubes/3d-coin-trois-centres.svg)
+<figcaption>Tan-aw <b>gikan sa ilawom</b>, sa nahuman nga cube: ang
+puti-berde-orange nga corner naghikap gyud sa puti, berde ug orange nga center.
+Mao ra kana ang iyang posible nga adtoan — gray ang tanan nga uban.</figcaption>
 </div>
 
 ## Ang paagi
@@ -26,9 +28,11 @@ Ang tanan nga hulagway niini nga seksyon nagpakita sa kahimtang **sa dili pa**
 ka motuyok: tan-awa sila, ilha ang imong case, ug ugma-damlag pa buhata.
 
 <div class="objectif" markdown>
-![corner sa ibabaw](../assets/cubes/coin-en-haut.svg)
-<figcaption>Ang sinugdanan: naay puti nga corner nga naghulat sa ibabaw nga
-layer. Kinahanglan siya manaog sa slot nga naa mismo sa iyang ilawom.</figcaption>
+![ang slot nga adtoan](../assets/cubes/3d-coin-fente.svg)
+<figcaption>Ang sinugdanan, tan-aw gihapon <b>gikan sa ilawom</b>: ang puti nga
+corner naghulat sa ibabaw, ug ang arrow nagpakita sa lungag nga iyang adtoan.
+Ang bisan unsa nga naa karon niana nga lungag walay bili — ipagawas ra
+siya.</figcaption>
 </div>
 
 1. **Pangitaa ang puti nga corner** sa ibabaw nga layer.

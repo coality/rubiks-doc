@@ -16,8 +16,10 @@ goes at the intersection of the white, green and orange faces — there is no
 other possible spot.
 
 <div class="objectif" markdown>
-![coin/centres](../assets/cubes/coin-trois-centres.svg)
-<figcaption>The white-green-orange corner has only one destination: the intersection of the white, green and orange centres.</figcaption>
+![corner between three centres](../assets/cubes/3d-coin-trois-centres.svg)
+<figcaption>Seen <b>from below</b>, on a solved cube: the white-green-orange
+corner touches exactly the white, green and orange centres. That is its only
+possible destination — everything else is greyed out.</figcaption>
 </div>
 
 ## The manoeuvre
@@ -26,9 +28,10 @@ Every diagram in this section shows the state **before** you turn anything:
 look at them, identify your case, and only then execute.
 
 <div class="objectif" markdown>
-![corner on top](../assets/cubes/coin-en-haut.svg)
-<figcaption>The starting point: a white corner is waiting in the top layer. It
-has to come down into the slot directly below it.</figcaption>
+![the target slot](../assets/cubes/3d-coin-fente.svg)
+<figcaption>The starting point, again <b>from below</b>: the white corner is
+waiting on top, and the arrow shows the hole it has to drop into. Whatever is
+sitting in that hole right now does not matter — it will be pushed out.</figcaption>
 </div>
 
 1. **Find a white corner** in the top layer.

@@ -12,7 +12,7 @@ sys.path.insert(0, _HERE)
 from cube import (Cube, solved, invert, derotate, case_state, is_ll_alg,
                   face_index, FACES)
 from render import render_net, render_ll, pll_arrows, PAINT, _svg, _body, _sticker, S, G, T, P
-from render3d import render3d, travel
+from render3d import render3d, travel, CAM_BAS
 
 ROOT = os.path.normpath(os.path.join(_HERE, '..'))
 
@@ -294,6 +294,30 @@ def gen_3d():
     arr = travel('F2', [((0, 1, 1), (0, 0, 1))])
     assert arr[0][1] == ((0, -1, 1), (0, 0, 1)), 'F2 : trajet du petale inattendu'
     emit('3d-petale-descend', daisy, arrows=arr)
+
+    # --- etape 2 : ce qu'il faut avoir vu AVANT de tourner quoi que ce soit.
+    # Toute l'action se passe en bas : on regarde donc le cube par en dessous,
+    # sinon la fente d'arrivee est cachee.
+    URF, DRF = (1, 1, 1), (1, -1, 1)
+    N_U, N_D, N_F, N_R = (0, 1, 0), (0, -1, 0), (0, 0, 1), (1, 0, 0)
+
+    def fx(*specs):
+        return set(face_index(pos, nrm) for pos, nrm in specs)
+
+    centres = fx(((0, -1, 0), N_D), ((0, 0, 1), N_F), ((1, 0, 0), N_R))
+    # un coin vit entre trois centres : ici blanc + vert + orange
+    emit('3d-coin-trois-centres', solved(), cam=CAM_BAS,
+         keep=fx((DRF, N_D), (DRF, N_F), (DRF, N_R)) | centres)
+
+    # ou le coin doit arriver : la fente, vue par en dessous
+    alg1 = SEQ_COIN
+    st1 = solved().apply(invert(alg1))
+    arr1 = travel(alg1, [(URF, N_F)])
+    assert arr1[0][1] == (DRF, N_D), 'fente : le blanc devrait arriver sous le cube'
+    # la piece qui squatte la fente est grisee : le lecteur n'a pas a s'en
+    # soucier, la fleche pointe alors vers "le trou" et non vers une couleur.
+    emit('3d-coin-fente', st1, cam=CAM_BAS, arrows=arr1,
+         keep=fx((URF, N_F), (URF, N_R)) | centres)
 
     # --- etape 2 : les trois positions du blanc, et le nombre de repetitions
     for name, k, white_normal in COIN_CASES:

@@ -17,7 +17,8 @@ from cube import Cube, NORMALS, face_index
 from render import PAINT, BODY, EDGE
 
 # --- camera ----------------------------------------------------------------
-CAM = (1.0, 0.85, 1.35)      # on regarde le coin haut-avant-droit
+CAM = (1.0, 0.85, 1.35)       # defaut : on regarde le coin haut-avant-droit
+CAM_BAS = (1.0, -0.85, 1.35)  # vue de dessous : on voit D, F et R
 SCALE = 44                   # pixels par unite de cubie
 PAD = 16
 
@@ -51,9 +52,24 @@ def _mul(a, k):
     return tuple(x * k for x in a)
 
 
-_D = _norm(CAM)                                   # cube -> camera
-_RIGHT = _norm(_cross((0, 1, 0), _D))
-_UP = _cross(_D, _RIGHT)
+_D = _RIGHT = _UP = None
+
+
+def set_camera(cam=CAM):
+    """Fixe le point de vue. Les faces visibles en decoulent.
+
+    Etat global assume : toutes les primitives (projection, visibilite, arcs)
+    partagent la meme camera pendant le rendu d'une figure. render3d() la pose
+    puis la restaure, donc l'appelant n'a rien a gerer.
+    """
+    global _D, _RIGHT, _UP
+    _D = _norm(cam)                                   # cube -> camera
+    up_world = (0, 1, 0) if abs(_D[1]) < 0.99 else (0, 0, 1)
+    _RIGHT = _norm(_cross(up_world, _D))
+    _UP = _cross(_D, _RIGHT)
+
+
+set_camera()
 
 
 def project(p):
@@ -194,14 +210,23 @@ def turn_points(face, clockwise=True, span=150.0, radius=0.95, lift=0.42):
 
 
 # --- rendu -----------------------------------------------------------------
-def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=()):
+def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(), cam=CAM):
     """Vue isometrique du cube.
 
     keep    : ensemble de (face, index) a garder en couleur (le reste grise)
     arrows  : liste de ((pos,nrm), (pos,nrm)) — trajets de pieces
     turns   : liste de (face, clockwise) — sens d'un mouvement
     labels  : liste de (face, texte) — lettre posee au centre de la face
+    cam     : point de vue (CAM par defaut, CAM_BAS pour voir la couche du bas)
     """
+    set_camera(cam)
+    try:
+        return _render(cube, title, keep, arrows, turns, labels)
+    finally:
+        set_camera()
+
+
+def _render(cube, title, keep, arrows, turns, labels):
     quads = []
     for (pos, nrm), col in cube.st.items():
         if not visible(nrm):
