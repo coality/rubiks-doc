@@ -19,14 +19,20 @@
 set -euo pipefail
 
 NEW="${1:-}"
-OLD="rubik.coality.net"
 cd "$(dirname "$(readlink -f "$0")")"
 HERE="$PWD"
+
+# Le domaine actuellement publie se lit dans mkdocs.yml. Surtout pas une
+# constante : apres une premiere bascule, un ancien domaine code en dur ne
+# correspond plus a rien et tout ce qui s'appuie dessus devient silencieux.
+OLD="$(sed -n 's#^site_url: *https\?://\([^/]*\)/.*#\1#p' mkdocs.yml | head -1)"
 
 die() { echo "ARRET : $*" >&2; exit 1; }
 step() { echo; echo "== $* =="; }
 
 [ -n "$NEW" ] || die "usage : sudo $0 <nouveau-domaine>"
+[ -n "$OLD" ] || die "site_url introuvable dans mkdocs.yml"
+[ "$NEW" != "$OLD" ] || die "le site est deja publie sur $NEW"
 [ "$(id -u)" = 0 ] || die "a lancer en root : sudo $0 $NEW"
 
 # L'utilisateur non privilegie qui possede les sources et lance le build. SUDO_USER vaut « root » quand le script est lance
@@ -80,10 +86,20 @@ echo "  https://$NEW/ repond"
 
 # ------------------------------------------------------ 4. redirection 301
 step "4/6  redirection 301 depuis $OLD"
-REDIR="deploy/$OLD-redirect.conf"
-if [ -f "$REDIR" ]; then
-    sed "s#https://[a-z0-9.-]*/#https://$NEW/#" "$REDIR" \
-        > "/etc/apache2/sites-available/$OLD.conf"
+if true; then
+    # Vhost de redirection ecrit ici plutot que lu dans deploy/ : un fichier par
+    # ancien domaine ne survit pas a la premiere bascule.
+    cat > "/etc/apache2/sites-available/$OLD.conf" <<REDIREOF
+# Ancien domaine : redirection permanente vers $NEW.
+# Le 301 conserve le referencement acquis — Google transfere le classement de
+# l'ancienne URL vers la nouvelle, page par page (le chemin est preserve).
+<VirtualHost *:80>
+    ServerName $OLD
+    RedirectPermanent / https://$NEW/
+    ErrorLog  \${APACHE_LOG_DIR}/${OLD%%.*}_error.log
+    CustomLog \${APACHE_LOG_DIR}/${OLD%%.*}_access.log combined
+</VirtualHost>
+REDIREOF
     chmod 644 "/etc/apache2/sites-available/$OLD.conf"
     # Le vhost TLS de l'ancien domaine doit rediriger lui aussi : sans ca,
     # https://ancien/ continue de servir le site et Google voit deux copies.
@@ -101,8 +117,8 @@ if [ -f "$REDIR" ]; then
     ServerName $OLD
     RedirectPermanent / https://$NEW/
 
-    ErrorLog  \${APACHE_LOG_DIR}/rubik_error.log
-    CustomLog \${APACHE_LOG_DIR}/rubik_access.log combined
+    ErrorLog  \${APACHE_LOG_DIR}/${OLD%%.*}_error.log
+    CustomLog \${APACHE_LOG_DIR}/${OLD%%.*}_access.log combined
 
     SSLCertificateFile $CERT
     SSLCertificateKeyFile $KEY
@@ -115,8 +131,6 @@ SSLCONFEOF
     apache2ctl configtest
     systemctl reload apache2
     echo "  $OLD redirige en 301 vers $NEW"
-else
-    echo "  $REDIR absent : redirection non configuree (a faire a la main)"
 fi
 
 # --------------------------------------------------- 5. sources et rebuild

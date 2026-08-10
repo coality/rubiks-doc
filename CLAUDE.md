@@ -68,19 +68,43 @@ Le site est passé de `rubik.` à `rubiks.` : vhost, certificat, sources et buil
 sont à jour, les trois langues répondent en HTTPS et `canonical` / `hreflang` /
 sitemaps pointent tous sur `rubiks.`.
 
-⚠️ **Reste à faire, et ce n'est pas cosmétique : l'enregistrement DNS `rubik.`
-a disparu.** Les deux vhosts de redirection **301** (port 80 et 443) sont en
-place et corrects, mais plus personne ne peut les atteindre — `rubik.coality.net`
-ne résout plus. Google, qui a l'ancienne URL en index, voit donc un domaine mort
-au lieu d'une redirection, et l'autorité acquise n'est pas transférée. Il faut
-recréer chez online.net l'enregistrement A `rubik` → 65.108.123.20 et le laisser
-vivre plusieurs mois.
+**L'ancien domaine est abandonné, c'est décidé** (Jérôme, 2026-08-10) : chez
+online.net il n'y a plus que `rubiks`, l'enregistrement `rubik` a été supprimé
+et ne sera pas recréé. Ne pas reproposer de le rétablir.
+
+Conséquence assumée : les deux vhosts de redirection **301** sont bien en place
+mais injoignables, donc l'autorité acquise sur les anciennes URL n'est pas
+transférée — Google les verra mourir au lieu de les suivre. Le site était
+récent, l'enjeu est faible.
+
+Conséquence à traiter, elle : le certificat `rubik.coality.net` expire le
+**2026-11-07**, et certbot commencera à tenter de le renouveler vers le
+**8 octobre**. La validation suppose que le domaine résolve : elle échouera à
+chaque passage du timer (deux fois par jour) et fera sortir `certbot renew` en
+erreur, ce qui masque les vrais problèmes. D'où :
+
+    sudo ./retire-old-domain.sh rubik.coality.net
+
+qui refuse d'agir tant que le domaine résout ou répond, désactive ses deux
+vhosts, `configtest` + `reload`, puis supprime la lignée certbot. ⚠️ Les vhosts
+**d'abord** : supprimer le certificat en premier laisserait Apache pointer vers
+des fichiers absents, `configtest` échouerait et bloquerait le prochain reload,
+même sans rapport.
 
 ⚠️ **Ordre obligatoire.** Changer le domaine dans les sources avant que le
 nouvel hôte réponde ferait pointer `canonical`, `hreflang` et les sitemaps vers
 un hôte injoignable — c'est précisément ce qui détruit un référencement.
 `tools/switch_domain.py` refuse donc de s'exécuter tant que le HTTPS du nouveau
 domaine n'est pas valide.
+
+⚠️ Le domaine de départ est **lu dans `site_url` de `mkdocs.yml`**, jamais codé
+en dur — ni dans `switch_domain.py` ni dans `deploy-domain.sh`. Les deux le
+codaient en dur (`rubik.coality.net`) : après la première bascule ce nom
+n'apparaissait plus nulle part, et `switch_domain.py` remplaçait zéro
+occurrence **en annonçant sa réussite**. Il échoue maintenant si la réécriture
+ne touche rien. Le vhost de redirection est écrit par le script lui-même, pour
+la même raison : un fichier `deploy/<ancien>-redirect.conf` ne survit pas à la
+première bascule.
 
 Une seule commande fait tout, en s'arrêtant à la première erreur :
 

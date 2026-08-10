@@ -18,10 +18,24 @@ import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(_HERE, '..'))
-OLD = 'rubik.coality.net'
 
 FILES = ['mkdocs.yml', 'mkdocs.en.yml', 'mkdocs.bis.yml',
          'tools/seo.py', 'README.md', 'CLAUDE.md']
+
+
+def current_domain():
+    """Domaine actuellement publie, lu dans mkdocs.yml.
+
+    Surtout pas une constante : apres une premiere bascule, un ancien domaine
+    code en dur n'apparait plus nulle part dans les sources, et la reecriture
+    remplace silencieusement zero occurrence en annoncant sa reussite.
+    """
+    p = os.path.join(ROOT, 'mkdocs.yml')
+    m = re.search(r'^site_url:\s*https?://([^/\s]+)',
+                  open(p, encoding='utf-8').read(), re.M)
+    if not m:
+        sys.exit('ARRET : site_url introuvable dans mkdocs.yml')
+    return m.group(1)
 
 
 def resolves(host):
@@ -46,6 +60,11 @@ def main():
         sys.exit(__doc__)
     new = sys.argv[1]
     force = '--force' in sys.argv
+    OLD = current_domain()
+    print('actuel: %s' % OLD)
+    if new == OLD:
+        print('Le site est deja publie sur %s : rien a faire.' % new)
+        return
 
     ip = resolves(new)
     if not ip:
@@ -64,7 +83,7 @@ def main():
     tls = https_ok(new)
     if tls is not True:
         print('ARRET : pas de HTTPS valide sur %s (%s)' % (new, tls))
-        print('  Lancer d\'abord :  sudo ./migrate-domain.sh %s' % new)
+        print('  Lancer d\'abord :  sudo ./deploy-domain.sh %s' % new)
         if not force:
             sys.exit(1)
     else:
@@ -79,6 +98,9 @@ def main():
         open(p, 'w', encoding='utf-8').write(s.replace(OLD, new))
         n += s.count(OLD)
         print('  reecrit : %s' % rel)
+    if not n:
+        sys.exit('ARRET : aucune occurrence de %s trouvee dans %s — rien reecrit.'
+                 % (OLD, ', '.join(FILES)))
     print('%d occurrences remplacees. Relancer ./build.sh.' % n)
 
 
