@@ -20,7 +20,7 @@ top.</p>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
-<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+<figcaption><code>R' D' R D</code> — the sequence step by step</figcaption>
 </figure>
 
 ## The absolute rule

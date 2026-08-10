@@ -32,7 +32,7 @@ tranquille. Les coins ne bougent pas.</p>
 
 <figure class="film">
 <img src="/assets/cubes/film-aretes-jaunes.svg" alt="R U' R U R U R U' R' U' R2 — la séquence pas à pas">
-<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+<figcaption><code>R U' R U R U R U' R' U' R2</code> — la séquence pas à pas</figcaption>
 </figure>
 
 ## Comment le placer

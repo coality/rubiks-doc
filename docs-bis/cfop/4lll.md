@@ -33,7 +33,7 @@ matag case.</p>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — ang sequence, matag lihok">
-<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+<figcaption><code>F R U R' U' F'</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 <div class="algs">

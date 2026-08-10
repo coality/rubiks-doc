@@ -47,7 +47,7 @@ occupe.</p>
 
 <figure class="film">
 <img src="/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — la séquence pas à pas">
-<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+<figcaption><code>U R U' L' U R' U' L</code> — la séquence pas à pas</figcaption>
 </figure>
 
 ## Comment le placer

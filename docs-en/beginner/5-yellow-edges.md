@@ -31,7 +31,7 @@ The corners do not move.</p>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-aretes-jaunes.svg" alt="R U' R U R U R U' R' U' R2 — the sequence step by step">
-<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+<figcaption><code>R U' R U R U R U' R' U' R2</code> — the sequence step by step</figcaption>
 </figure>
 
 ## How to position it

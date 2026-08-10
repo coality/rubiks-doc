@@ -62,9 +62,12 @@ sa husto nga direksyon. <b>Ayaw gyud hunong sa tunga.</b></p>
 </div>
 </div>
 
+Gipakita sa ubos ang sequence **matag lihok**: ang matag hulagway mao ang cube
+sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
+
 <figure class="film">
 <img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
-<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+<figcaption><code>R' D' R D</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 !!! tip "Dili nimo kinahanglan mag-ihap"

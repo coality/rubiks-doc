@@ -48,7 +48,7 @@ ra ang importante dinhi — ang orientation mao ang step 7.</figcaption>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — ang sequence, matag lihok">
-<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+<figcaption><code>U R U' L' U R' U' L</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 ## Unsaon pagposisyon

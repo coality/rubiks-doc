@@ -33,6 +33,8 @@ Il n'y en a que deux, et le second est le miroir exact du premier.
 Sous chaque fiche, la séquence est reprise **pas à pas** : chaque vignette
 montre l'état avant de tourner, et la flèche le mouvement à faire.
 
+### Cas 1 — l'arête part à droite
+
 <div class="fiche" markdown>
 ![Insertion à droite](../assets/cubes/couronne2-droite.svg)
 <div class="corps" markdown>
@@ -49,7 +51,10 @@ dessus correspond au centre de la face de droite.</p>
 
 <figure class="film">
 <img src="/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — la séquence pas à pas">
+<figcaption><code>U R U' R' U' F' U F</code> — la séquence pas à pas</figcaption>
 </figure>
+
+### Cas 2 — l'arête part à gauche
 
 <div class="fiche" markdown>
 ![Insertion à gauche](../assets/cubes/couronne2-gauche.svg)
@@ -67,6 +72,7 @@ chaque <code>R</code> devient <code>L</code>, et chaque sens s'inverse.</p>
 
 <figure class="film">
 <img src="/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — la séquence pas à pas">
+<figcaption><code>U' L' U L U F U' F'</code> — la séquence pas à pas</figcaption>
 </figure>
 
 !!! tip "Comment retenir deux algorithmes d'un coup"

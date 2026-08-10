@@ -34,6 +34,8 @@ Duha ra gyud, ug ang ikaduha mao ang eksakto nga mirror sa una.
 Sa ilawom sa matag card, gipakita ang sequence **matag lihok**: ang matag
 hulagway mao ang cube sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 
+### Kaso 1 — ang edge moadto sa tuo
+
 <div class="fiche" markdown>
 ![Pagsulod sa tuo](../assets/cubes/couronne2-droite.svg)
 <div class="corps" markdown>
@@ -50,7 +52,10 @@ ang kolor sa ibabaw motakdo sa center sa tuo nga face.</p>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — ang sequence, matag lihok">
+<figcaption><code>U R U' R' U' F' U F</code> — ang sequence, matag lihok</figcaption>
 </figure>
+
+### Kaso 2 — ang edge moadto sa wala
 
 <div class="fiche" markdown>
 ![Pagsulod sa wala](../assets/cubes/couronne2-gauche.svg)
@@ -69,6 +74,7 @@ direksyon mabaliktad.</p>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — ang sequence, matag lihok">
+<figcaption><code>U' L' U L U F U' F'</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 !!! tip "Unsaon pagsag-ulo sa duha ka algorithm dungan"

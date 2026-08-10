@@ -27,11 +27,12 @@ fente**, et `R U' R'` **l'y range**.
 
 <figure class="film">
 <img src="/assets/cubes/film-trigger-droit.svg" alt="R U R' — la séquence pas à pas">
-<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+<figcaption><code>R U R'</code> — la séquence pas à pas</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — la séquence pas à pas">
+<figcaption><code>R U' R'</code> — la séquence pas à pas</figcaption>
 </figure>
 
 Prends un cube résolu et fais `R U R'`. Regarde la fente avant-droite : le coin
@@ -90,10 +91,12 @@ eux en un ou deux mouvements.
 
 <figure class="film">
 <img src="/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — la séquence pas à pas">
+<figcaption><code>F' U' F</code> — la séquence pas à pas</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — la séquence pas à pas">
+<figcaption><code>F' U F</code> — la séquence pas à pas</figcaption>
 </figure>
 
 !!! tip "Choisis ta paire, ne subis pas"

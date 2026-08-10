@@ -27,11 +27,12 @@ Ang tibuok F2L nagsukad sa usa ka obserbasyon: ang tulo ka lihok nga `R U R'`
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-trigger-droit.svg" alt="R U R' — ang sequence, matag lihok">
-<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+<figcaption><code>R U R'</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — ang sequence, matag lihok">
+<figcaption><code>R U' R'</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 Kuhaa ang nasulbad nga cube ug buhata ang `R U R'`. Tan-awa ang front-right nga
@@ -90,10 +91,12 @@ mahulog niini sulod sa usa o duha ka lihok.
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — ang sequence, matag lihok">
+<figcaption><code>F' U' F</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — ang sequence, matag lihok">
+<figcaption><code>F' U F</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
 !!! tip "Pilia ang imong pares, ayaw pagpaagi-agi"

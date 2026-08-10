@@ -26,11 +26,12 @@ of the slot**, and `R U' R'` **puts it back in**.
 
 <figure class="film">
 <img src="/en/assets/cubes/film-trigger-droit.svg" alt="R U R' — the sequence step by step">
-<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+<figcaption><code>R U R'</code> — the sequence step by step</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — the sequence step by step">
+<figcaption><code>R U' R'</code> — the sequence step by step</figcaption>
 </figure>
 
 Take a solved cube and do `R U R'`. Look at the front-right slot: the corner and
@@ -89,10 +90,12 @@ one or two moves.
 
 <figure class="film">
 <img src="/en/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — the sequence step by step">
+<figcaption><code>F' U' F</code> — the sequence step by step</figcaption>
 </figure>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — the sequence step by step">
+<figcaption><code>F' U F</code> — the sequence step by step</figcaption>
 </figure>
 
 !!! tip "Choose your pair, don't just take what comes"

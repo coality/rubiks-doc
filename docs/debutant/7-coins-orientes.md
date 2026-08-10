@@ -19,7 +19,7 @@ arrive sur le dessus.</p>
 
 <figure class="film">
 <img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
-<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+<figcaption><code>R' D' R D</code> — la séquence pas à pas</figcaption>
 </figure>
 
 ## La règle absolue

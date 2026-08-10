@@ -33,6 +33,8 @@ There are only two, and the second is the exact mirror of the first.
 Under each card the sequence is shown **step by step**: every frame is the
 cube before the turn, and the arrow is the move to make.
 
+### Case 1 — the edge goes to the right
+
 <div class="fiche" markdown>
 ![Insertion on the right](../assets/cubes/couronne2-droite.svg)
 <div class="corps" markdown>
@@ -49,7 +51,10 @@ colour on top matches the centre of the right face.</p>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — the sequence step by step">
+<figcaption><code>U R U' R' U' F' U F</code> — the sequence step by step</figcaption>
 </figure>
+
+### Case 2 — the edge goes to the left
 
 <div class="fiche" markdown>
 ![Insertion on the left](../assets/cubes/couronne2-gauche.svg)
@@ -67,6 +72,7 @@ every <code>R</code> becomes <code>L</code>, and every direction is reversed.</p
 
 <figure class="film">
 <img src="/en/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — the sequence step by step">
+<figcaption><code>U' L' U L U F U' F'</code> — the sequence step by step</figcaption>
 </figure>
 
 !!! tip "How to learn two algorithms at once"

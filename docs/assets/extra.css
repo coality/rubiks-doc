@@ -72,7 +72,7 @@
 /* Bande « pas a pas » : un cube par mouvement, la fleche du mouvement en cours.
    Le SVG porte deja les noms des mouvements, d'ou l'absence de legende sous
    chaque vignette. */
-figure.film { margin: 1.2rem 0; }
+figure.film { margin: 1.2rem 0; text-align: center; }
 /* pas de width:100% : une bande courte serait agrandie plus qu'une longue,
    et les cubes n'auraient pas la meme taille d'une figure a l'autre */
 figure.film img, details.film img {
