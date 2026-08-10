@@ -21,6 +21,12 @@ Your beginner method has seven steps. CFOP has four:
     That is what halves your time — and **it requires no algorithm to be learned
     by heart**. If you do only one thing from this section, do that one.
 
+<div class="objectif" markdown>
+![The corner and the edge drop into the slot together](../assets/cubes/3d-paire-f2l.svg)
+<figcaption>F2L inserts the corner <b>and</b> the edge together, into the same slot in one
+go. That is where the gain is — not in the algorithms.</figcaption>
+</div>
+
 ## The order to learn things in
 
 Many people fail by attacking the 57 OLL first. That is the worst route: a lot

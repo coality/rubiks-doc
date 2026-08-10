@@ -43,7 +43,7 @@ colour on top matches the centre of the right face.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+![The edge leaves the top and drops into the front-right slot](../assets/cubes/3d-arete-insere-droite.svg)
 <figcaption>The edge leaves the top layer and drops into the front-right slot. That is all the algorithm does.</figcaption>
 </div>
 
@@ -61,7 +61,7 @@ every <code>R</code> becomes <code>L</code>, and every direction is reversed.</p
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+![The edge leaves the top and drops into the front-left slot](../assets/cubes/3d-arete-insere-gauche.svg)
 <figcaption>The exact mirror: this time the edge drops into the <b>front-left</b> slot.</figcaption>
 </div>
 

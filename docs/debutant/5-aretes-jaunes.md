@@ -1,5 +1,11 @@
 # 5 · Placer les arêtes jaunes
 
+<div class="objectif" markdown>
+![Les quatre arêtes jaunes assorties à leur face](../assets/cubes/but-aretes-jaunes.svg)
+<figcaption>L'objectif : les quatre arêtes jaunes assorties au centre de leur face. Les
+coins, eux, ne sont encore ni placés ni tournés — c'est normal.</figcaption>
+</div>
+
 Tu as une croix jaune, mais ses branches ne sont probablement pas devant les
 bonnes faces. On va les mettre en place **sans toucher au reste**.
 

@@ -1,5 +1,12 @@
 # 6 · Placer les coins jaunes
 
+<div class="objectif" markdown>
+![Les quatre coins à leur place, mais encore mal tournés](../assets/cubes/but-coins-places.svg)
+<figcaption>L'objectif : chaque coin est à sa place — ses trois couleurs sont celles des
+trois faces qu'il touche. Elles ne sont pas encore du bon côté, et c'est
+l'étape 7 qui s'en charge.</figcaption>
+</div>
+
 On met chaque coin **au bon endroit**, sans se soucier de son orientation. Un
 coin peut donc être à sa place tout en montrant du jaune sur le côté : c'est
 correct à cette étape.
@@ -33,7 +40,7 @@ occupe.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+![Trois coins tournent entre eux ; le quatrième ne bouge pas](../assets/cubes/3d-coins-cycle.svg)
 <figcaption>Trois coins tournent entre eux ; le quatrième reste en place. Seul le
 <b>placement</b> compte ici — l'orientation est le sujet de l'étape 7.</figcaption>
 </div>

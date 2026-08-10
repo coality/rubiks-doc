@@ -46,6 +46,13 @@ Prends l'habitude de compter à voix haute. Si tu dépasses 10, cherche pourquoi
 Ne retourne pas le cube pour voir la croix pendant que tu la construis. Apprends
 à la faire **en aveugle, par en dessous**.
 
+<div class="objectif" markdown>
+![La croix blanche vue par en dessous, côtés assortis](../assets/cubes/3d-croix-dessous.svg)
+<figcaption>La croix vue <b>par en dessous</b>, comme tu dois apprendre à la lire : les
+quatre arêtes blanches autour du centre blanc, et chaque côté assorti au centre
+de sa face.</figcaption>
+</div>
+
 C'est déroutant deux jours, puis ça devient naturel — et ça t'économise une
 rotation complète du cube à chaque résolution, plus la réorientation mentale qui
 va avec.

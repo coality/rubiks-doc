@@ -305,6 +305,14 @@ que l'étape ne parle que de placement.
 (`prune()`). Sans ça, renommer une figure laisse l'ancien fichier sur le disque,
 MkDocs le copie dans `site/` et le publie sans que rien ne le cite.
 
+Les figures d'**objectif** d'étape sont rendues depuis un état **réel** calculé
+par le moteur, pas depuis un cube résolu masqué : à la fin de l'étape 5 les
+coins ne sont ni placés ni tournés, et un cube résolu grisé le ferait croire.
+`but-coins-places` utilise le cas OLL 21, le seul état où tout est permuté et
+où seule l'orientation des coins reste — l'assertion vérifie que les trois
+couleurs de chaque coin sont bien celles des trois faces qu'il touche, et que
+les quatre sont tournés.
+
 `build.py` produit aussi les **schémas pédagogiques** de la méthode débutant
 (`gen_teaching`) : les trois familles de pièces, la marguerite, la croix mal
 assortie, coin/arête vs centres, l'arête intruse en 2e couronne, et le cube

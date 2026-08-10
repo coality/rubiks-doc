@@ -1,5 +1,12 @@
 # 6 · Placing the yellow corners
 
+<div class="objectif" markdown>
+![All four corners in place, but still badly turned](../assets/cubes/but-coins-places.svg)
+<figcaption>The goal: every corner is at its place — its three colours are those of the
+three faces it touches. They are not on the right sides yet; step 7 takes care
+of that.</figcaption>
+</div>
+
 We put each corner **in the right spot**, without caring about its orientation.
 A corner can therefore be in its place while showing yellow on the side: that is
 correct at this step.
@@ -32,7 +39,7 @@ It twists the corners along the way: that is normal, step 7 deals with it.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+![Three corners cycle; the fourth does not move](../assets/cubes/3d-coins-cycle.svg)
 <figcaption>Three corners cycle; the fourth stays put. Only <b>placement</b> matters
 here — orientation is what step 7 is about.</figcaption>
 </div>

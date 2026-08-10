@@ -43,7 +43,7 @@ dessus correspond au centre de la face de droite.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+![L'arête quitte le haut et descend dans la fente avant-droite](../assets/cubes/3d-arete-insere-droite.svg)
 <figcaption>L'arête quitte la couche du haut et descend dans la fente avant-droite. C'est tout ce que fait l'algorithme.</figcaption>
 </div>
 
@@ -61,7 +61,7 @@ chaque <code>R</code> devient <code>L</code>, et chaque sens s'inverse.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+![L'arête quitte le haut et descend dans la fente avant-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
 <figcaption>Le miroir exact : l'arête descend cette fois dans la fente <b>avant-gauche</b>.</figcaption>
 </div>
 

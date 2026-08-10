@@ -264,6 +264,33 @@ def gen_teaching():
          lambda fl: (fl['F'][5], fl['R'][3]) != ('G', 'O')
          and all(fl['D'][i] == 'W' for i in (1, 3, 4, 5, 7)))
 
+    # --- objectif de l'etape 5 : les quatre aretes jaunes assorties.
+    # Etat reel de fin d'etape — donc l'etat de depart de l'etape 6 — et non un
+    # cube resolu masque : a ce stade les coins ne sont NI places NI tournes,
+    # un cube resolu le ferait croire.
+    apres5 = solved().apply(invert("U R U' L' U R' U' L"))
+    emit('but-aretes-jaunes', apres5,
+         _keep(('U', (1, 3, 4, 5, 7)), *[(f, (1, 4)) for f in sides]),
+         lambda fl: (all(fl['U'][i] == 'Y' for i in (1, 3, 5, 7))
+                     and all(fl[f][1] == fl[f][4] for f in sides)))
+
+    # --- objectif de l'etape 6 : les quatre coins a leur place, mais tournes.
+    # Le cas OLL 21 : tout est permute, seule l'orientation des coins reste.
+    apres6 = solved().apply(invert(derotate("R U2 R' U' R U R' U' R U' R'")))
+    coins_hauts = _keep(('U', (0, 2, 4, 6, 8)), *[(f, (0, 2, 4)) for f in sides])
+
+    def _coins_places(fl):
+        # les trois couleurs de chaque coin sont celles des trois faces qu'il
+        # touche — l'ordre, lui, est faux : c'est tout le propos de la figure
+        trios = [(('U', 0), ('L', 0), ('B', 2)), (('U', 2), ('B', 0), ('R', 2)),
+                 (('U', 6), ('F', 0), ('L', 2)), (('U', 8), ('R', 0), ('F', 2))]
+        for coin in trios:
+            if set(fl[f][i] for f, i in coin) != set(fl[f][4] for f, _i in coin):
+                return False
+        return sum(1 for i in (0, 2, 6, 8) if fl['U'][i] != 'Y') == 4
+
+    emit('but-coins-places', apres6, coins_hauts, _coins_places)
+
     # --- etape 7 : le cube a l'air detruit au milieu de l'orientation des coins
     mid = solved().apply("R' D' R D R' D' R D")
     emit('cube-casse', mid, None,
@@ -311,6 +338,27 @@ def gen_3d():
     arr = travel('F2', [((0, 1, 1), (0, 0, 1))])
     assert arr[0][1] == ((0, -1, 1), (0, 0, 1)), 'F2 : trajet du petale inattendu'
     emit('3d-petale-descend', daisy, arrows=arr)
+
+    # --- CFOP : le F2L insere le coin ET l'arete d'un seul geste. C'est
+    # l'argument central de la page ; les deux fleches viennent du moteur.
+    pair = "R U' R'"
+    depart = [((-1, 1, 1), (0, 1, 0)), ((0, 1, 1), (0, 1, 0))]
+    arr = travel(pair, depart)
+    fente = {((1, -1, 1), (0, 0, 1)), ((1, 0, 1), (0, 0, 1))}
+    assert set(b for _a, b in arr) == fente, \
+        'F2L : la paire devrait arriver dans la fente avant-droite, pas %r' % (arr,)
+    emit('3d-paire-f2l', solved().apply(invert(pair)), arrows=arr)
+
+    # --- CFOP : la croix telle qu'on doit apprendre a la lire, par en dessous.
+    # La page demande de la construire sans retourner le cube ; une vue de
+    # dessus ne montrerait justement pas ce qu'on doit apprendre a voir.
+    emit('3d-croix-dessous', solved(), cam=CAM_BAS,
+         keep=set(face_index(pos, nrm) for pos, nrm in
+                  [((0, -1, 0), (0, -1, 0)), ((0, -1, 1), (0, -1, 0)),
+                   ((0, -1, -1), (0, -1, 0)), ((1, -1, 0), (0, -1, 0)),
+                   ((-1, -1, 0), (0, -1, 0)),
+                   ((0, -1, 1), (0, 0, 1)), ((1, -1, 0), (1, 0, 0)),
+                   ((0, 0, 1), (0, 0, 1)), ((1, 0, 0), (1, 0, 0))]))
 
     # --- etape 2 : ce qu'il faut avoir vu AVANT de tourner quoi que ce soit.
     # Toute l'action se passe en bas : on regarde donc le cube par en dessous,

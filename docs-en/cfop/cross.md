@@ -44,6 +44,13 @@ Get into the habit of counting out loud. If you go over 10, work out why.
 Do not turn the cube over to look at the cross while you are building it. Learn
 to build it **blind, from underneath**.
 
+<div class="objectif" markdown>
+![The white cross seen from underneath, sides matched](../assets/cubes/3d-croix-dessous.svg)
+<figcaption>The cross seen <b>from underneath</b>, the way you must learn to read it: the
+four white edges around the white centre, each side matching the centre of its
+face.</figcaption>
+</div>
+
 It is disorienting for two days, then it becomes natural — and it saves you a
 full cube rotation on every solve, plus the mental reorientation that goes with
 it.

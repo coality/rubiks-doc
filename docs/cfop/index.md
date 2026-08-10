@@ -22,6 +22,12 @@ Ta méthode débutant fait sept étapes. Le CFOP en fait quatre :
     à apprendre par cœur**. Si tu ne fais qu'une seule chose de cette section,
     fais celle-là.
 
+<div class="objectif" markdown>
+![Le coin et l'arête descendent ensemble dans la fente](../assets/cubes/3d-paire-f2l.svg)
+<figcaption>Le F2L insère le coin <b>et</b> l'arête ensemble, dans la même fente et d'un
+seul geste. C'est là qu'est le gain — pas dans les algorithmes.</figcaption>
+</div>
+
 ## L'ordre dans lequel apprendre
 
 Beaucoup de gens échouent en attaquant les 57 OLL en premier. C'est le pire

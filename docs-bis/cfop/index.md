@@ -22,6 +22,12 @@ Ang imong beginner nga pamaagi adunay pito ka lakang. Ang CFOP upat ra:
     kinahanglan sag-ulohon**. Kung usa ra ka butang ang imong buhaton gikan
     niini nga seksyon, kana na.
 
+<div class="objectif" markdown>
+![Ang corner ug ang edge manaog nga dungan sa slot](../assets/cubes/3d-paire-f2l.svg)
+<figcaption>Ang F2L nagsulod sa corner <b>ug</b> sa edge nga dungan, sa parehas nga slot sa
+usa ka lihok. Diha ang gain — dili sa mga algorithm.</figcaption>
+</div>
+
 ## Ang han-ay sa pagtuon
 
 Daghan ang napakyas tungod kay ilang giatubang ang 57 OLL una. Mao kini ang

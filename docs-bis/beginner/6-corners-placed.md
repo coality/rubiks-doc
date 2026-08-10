@@ -1,5 +1,12 @@
 # 6 · Pagbutang sa dalag nga corner
 
+<div class="objectif" markdown>
+![Ang upat ka corner naa na sa lugar, apan sayop pa ang pagkaliso](../assets/cubes/but-coins-places.svg)
+<figcaption>Ang tumong: ang matag corner naa na sa iyang lugar — ang tulo ka kolor niini
+mao ang tulo ka face nga iyang gitandog. Wala pa sila sa hustong kilid; ang
+step 7 ang mag-atiman niana.</figcaption>
+</div>
+
 Ibutang nato ang matag corner **sa husto nga lugar**, nga dili tagdon ang iyang
 orientation. Busa mahimong naa na ang corner sa iyang lugar apan ang dalag naa sa
 kilid: husto ra kana niini nga lakang.
@@ -34,7 +41,7 @@ maoy moatubang niini.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+![Tulo ka corner ang magtinabangay ug ilis; ang ikaupat dili molihok](../assets/cubes/3d-coins-cycle.svg)
 <figcaption>Tulo ka corner ang mag-ilisay; ang ikaupat magpabilin. Ang <b>placement</b>
 ra ang importante dinhi — ang orientation mao ang step 7.</figcaption>
 </div>

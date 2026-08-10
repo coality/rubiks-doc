@@ -1,5 +1,11 @@
 # 5 · Placing the yellow edges
 
+<div class="objectif" markdown>
+![The four yellow edges matched to their face](../assets/cubes/but-aretes-jaunes.svg)
+<figcaption>The goal: the four yellow edges matched to the centre of their face. The
+corners are neither placed nor turned yet — that is normal.</figcaption>
+</div>
+
 You have a yellow cross, but its arms are probably not in front of the right
 faces. We are going to place them **without touching anything else**.
 

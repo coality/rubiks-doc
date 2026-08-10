@@ -1,5 +1,11 @@
 # 5 · Pagbutang sa dalag nga edge
 
+<div class="objectif" markdown>
+![Ang upat ka dalag nga edge nga pareho sa ilang face](../assets/cubes/but-aretes-jaunes.svg)
+<figcaption>Ang tumong: ang upat ka dalag nga edge pareho na sa centre sa ilang face. Ang
+mga corner wala pa mabutang ug wala pa maliso — normal ra kana.</figcaption>
+</div>
+
 Naa na kay dalag nga cross, apan lagmit ang iyang mga bukton wala pa sa husto nga
 face. Ibutang nato sila **nga walay laing matandog**.
 

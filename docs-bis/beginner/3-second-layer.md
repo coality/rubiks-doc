@@ -44,7 +44,7 @@ ang kolor sa ibabaw motakdo sa center sa tuo nga face.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+![Ang edge mobiya sa ibabaw ug manaog sa front-right nga slot](../assets/cubes/3d-arete-insere-droite.svg)
 <figcaption>Ang edge mobiya sa ibabaw nga layer ug manaog sa front-right nga slot. Mao ra kana ang gibuhat sa algorithm.</figcaption>
 </div>
 
@@ -63,7 +63,7 @@ direksyon mabaliktad.</p>
 </div>
 
 <div class="objectif" markdown>
-![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+![Ang edge mobiya sa ibabaw ug manaog sa front-left nga slot](../assets/cubes/3d-arete-insere-gauche.svg)
 <figcaption>Ang eksaktong mirror: karon manaog ang edge sa <b>front-left</b> nga slot.</figcaption>
 </div>
 

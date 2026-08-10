@@ -35,7 +35,11 @@
       "3d-coin-tourne": "Le coin est à sa place : il ne reste qu'à le faire tourner",
       "3d-coin-trois-centres": "Un coin vit entre trois centres — vue par en dessous",
       "3d-coin-fente": "La fente où le coin doit arriver, vue par en dessous",
-      "3d-coins-cycle": "Trois coins tournent entre eux ; le quatrième ne bouge pas"
+      "3d-coins-cycle": "Trois coins tournent entre eux ; le quatrième ne bouge pas",
+      "but-aretes-jaunes": "Les quatre arêtes jaunes assorties à leur face",
+      "but-coins-places": "Les quatre coins à leur place, mais encore mal tournés",
+      "3d-croix-dessous": "La croix blanche vue par en dessous, côtés assortis",
+      "3d-paire-f2l": "Le coin et l'arête descendent ensemble dans la fente"
     },
     "f2l_case_title": "Cas F2L %d",
     "f2l_case_name": "Cas %d",
@@ -115,7 +119,11 @@
       "3d-coin-tourne": "The corner is in its place: all that is left is to twist it",
       "3d-coin-trois-centres": "A corner lives between three centres — seen from below",
       "3d-coin-fente": "The slot the corner must reach, seen from below",
-      "3d-coins-cycle": "Three corners cycle; the fourth does not move"
+      "3d-coins-cycle": "Three corners cycle; the fourth does not move",
+      "but-aretes-jaunes": "The four yellow edges matched to their face",
+      "but-coins-places": "All four corners in place, but still badly turned",
+      "3d-croix-dessous": "The white cross seen from underneath, sides matched",
+      "3d-paire-f2l": "The corner and the edge drop into the slot together"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",
@@ -195,7 +203,11 @@
       "3d-coin-tourne": "Husto na ang lugar sa corner: ang nahibilin kay lisohon na lang",
       "3d-coin-trois-centres": "Ang corner nagpuyo taliwala sa tulo ka center — tan-aw gikan sa ilawom",
       "3d-coin-fente": "Ang slot nga adtoan sa corner, tan-aw gikan sa ilawom",
-      "3d-coins-cycle": "Tulo ka corner ang magtinabangay ug ilis; ang ikaupat dili molihok"
+      "3d-coins-cycle": "Tulo ka corner ang magtinabangay ug ilis; ang ikaupat dili molihok",
+      "but-aretes-jaunes": "Ang upat ka dalag nga edge nga pareho sa ilang face",
+      "but-coins-places": "Ang upat ka corner naa na sa lugar, apan sayop pa ang pagkaliso",
+      "3d-croix-dessous": "Ang puti nga cross tan-awon gikan sa ilawom, pareho ang mga kilid",
+      "3d-paire-f2l": "Ang corner ug ang edge manaog nga dungan sa slot"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",

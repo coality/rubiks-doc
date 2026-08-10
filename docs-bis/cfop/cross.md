@@ -46,6 +46,13 @@ Batasana ang pag-ihap og kusog. Kung molapas ka sa 10, pangitaa ang hinungdan.
 Ayaw balia ang cube aron tan-awon ang cross samtang gitukod nimo kini. Tun-i ang
 paghimo niini **nga dili makita, gikan sa ilawom**.
 
+<div class="objectif" markdown>
+![Ang puti nga cross tan-awon gikan sa ilawom, pareho ang mga kilid](../assets/cubes/3d-croix-dessous.svg)
+<figcaption>Ang cross tan-awon <b>gikan sa ilawom</b>, sama sa angay nimong makat-onan: ang
+upat ka puti nga edge palibot sa puti nga centre, ug ang matag kilid pareho sa
+centre sa iyang face.</figcaption>
+</div>
+
 Makalibog kini sulod sa duha ka adlaw, dayon mahimo na kining natural — ug
 makadaginot kini nimo og usa ka tibuok rotation sa cube matag solve, ug lakip na
 ang pag-usab sa imong mental nga timailhan.
