@@ -592,11 +592,55 @@ def check_no_orphan_figure():
         ok(True, 'schemas orphelins [%s]' % lang)
 
 
+# --- 8. les trois langues doivent avoir la MEME structure de page ----------
+BLOC_RE = re.compile(
+    r'(?P<titre2>^\#\# [^\n]*)'
+    r'|(?P<titre3>^\#\#\# [^\n]*)'
+    r'|(?P<onglet>^=== "[^\n]*)'
+    r'|(?P<fiche><div class="fiche")'
+    r'|(?P<objectif><div class="objectif")'
+    r'|(?P<grille><div class="algs">)'
+    r'|(?P<bande><figure class="film">)'
+    r'|(?P<repliee><details class="film">)'
+    r'|(?P<admonition>^!!! [^\n]*)', re.M)
+
+
+def structure(texte):
+    """Suite des blocs d'une page, sans leur contenu : titres, fiches, figures,
+    grilles, bandes, onglets, admonitions."""
+    return [m.lastgroup for m in BLOC_RE.finditer(texte)]
+
+
+def check_same_structure():
+    """Une page doit se presenter pareil dans les trois langues.
+
+    check_langs_agree() compare les algorithmes cites ; ici on compare la
+    CHARPENTE. C'est ce qui empeche une figure, un titre ou un onglet ajoute
+    dans une seule langue de passer inapercu — et donc une langue d'expliquer
+    mieux qu'une autre.
+    """
+    for fr_rel, other_rel in PAGES:
+        ref = ref_lang = None
+        for lang, d in LANGS:
+            got = structure(open(path_for(d, fr_rel, other_rel),
+                                 encoding='utf-8').read())
+            if ref is None:
+                ref, ref_lang = got, lang
+            else:
+                ok(got == ref,
+                   '%s : structure differente entre %s et %s (%d blocs vs %d, '
+                   'premiere difference : %s)'
+                   % (fr_rel, ref_lang, lang, len(ref), len(got),
+                      next(('%s vs %s' % (a, b)
+                            for a, b in zip(ref, got) if a != b), 'longueur')))
+
+
 EXTRA = [check_pieces_and_colours, check_centres_fixed, check_notation_semantics,
          check_invariants, check_beginner_method, check_step3_insertions,
          check_step6_zero_one_four, check_step5_two_matched,
          check_f2l_pair_extraction, check_4lll_counts, check_named_algs,
-         check_cross_bounds, check_films, check_no_orphan_figure]
+         check_cross_bounds, check_films, check_no_orphan_figure,
+         check_same_structure]
 
 
 if __name__ == '__main__':

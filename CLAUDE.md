@@ -134,6 +134,10 @@ build :
   algorithme traduit est détectée) ;
 - toute image référencée existe dans la langue concernée (y compris les
   chemins absolus du site français, que la détection laissait passer) ;
+- les trois langues ont la **même charpente de page** — même suite de titres,
+  fiches, figures, grilles, onglets et admonitions. `check_langs_agree` compare
+  les algorithmes cités ; celui-ci compare la structure, et empêche une langue
+  d'expliquer mieux qu'une autre ;
 - toute séquence citée dans une page de tutoriel a sa bande « pas à pas », et
   **aucun schéma généré ne reste orphelin** — dans les trois langues. C'est ce
   contrôle qui a fait apparaître qu'aucune figure ne montrait le cycle de
@@ -240,7 +244,10 @@ du patron déplié. Elle sert à montrer **d'où part une pièce et où elle arr
 - ⚠️ Piège corrigé : les quads doivent être **projetés avant** la mise à
   l'échelle. Sans ça les faces U et R sortent aplaties (aire nulle) et seule la
   face F s'affiche. `test_projection_is_not_degenerate` verrouille ce cas.
-- La face `D` n'est pas visible depuis la caméra : pas de figure 3D pour `D`.
+- La face `D` n'est pas visible depuis la caméra, mais **son arc de rotation
+  l'est** : il passe sous le cube et se lit très bien (`3d-move-d`, et tous les
+  `D` des bandes pas à pas). C'est `B` qui n'est pas illustrable : son arc passe
+  derrière et semble appartenir à la face droite. `L` est à la limite.
 
 ### Les bandes « pas à pas » (`filmstrip`)
 

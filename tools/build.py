@@ -329,8 +329,13 @@ def gen_3d():
 
     # --- notation : reperes et sens des mouvements
     emit('3d-faces', solved(), labels=[('U', 'U'), ('F', 'F'), ('R', 'R')])
+    # D est le mouvement que la page signale comme l'erreur numero un : c'est
+    # justement celui qui manquait. Son arc passe SOUS le cube, donc il se lit
+    # tres bien — contrairement a B, dont l'arc passe derriere et semble
+    # appartenir a la face droite. Pas de figure pour B, donc.
     for name, face, cw in (('3d-move-r', 'R', True), ('3d-move-rp', 'R', False),
-                           ('3d-move-u', 'U', True), ('3d-move-f', 'F', True)):
+                           ('3d-move-u', 'U', True), ('3d-move-f', 'F', True),
+                           ('3d-move-d', 'D', True)):
         emit(name, solved(), turns=[(face, cw)])
 
     # --- etape 1 : le petale descend a sa place avec F2

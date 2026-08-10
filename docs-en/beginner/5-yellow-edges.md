@@ -36,11 +36,18 @@ The corners do not move.</p>
 
 ## How to position it
 
-1. Find the **two edges that are already correct**.
-2. If they are **next to each other** (adjacent): turn the cube so they are at
-   the **back** and on the **right**. Apply the algorithm once.
-3. If they are **opposite** (facing each other): apply the algorithm from any
-   position. You land on the "next to each other" case. Go back to point 2.
+Find the **two edges that are already correct**, then look at how they sit
+relative to each other.
+
+=== "They are next to each other"
+
+    Turn the cube so they are at the **back** and on the **right**. Apply the
+    algorithm once.
+
+=== "They are opposite"
+
+    Apply the algorithm from any position. You land on the "next to each other"
+    case, handled alongside.
 
 !!! tip "Turn the cube, not the top face"
     At this step you may rotate the whole cube around the vertical axis (yellow

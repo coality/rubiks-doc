@@ -67,6 +67,7 @@ And the same for `U`, `D`, `F`, `B`, `L`.
 <figure class="alg"><img src="/en/assets/cubes/3d-move-rp.svg" alt="R'"><figcaption><b>R'</b><br><code>the reverse</code></figcaption></figure>
 <figure class="alg"><img src="/en/assets/cubes/3d-move-u.svg" alt="U"><figcaption><b>U</b><br><code>the top face</code></figcaption></figure>
 <figure class="alg"><img src="/en/assets/cubes/3d-move-f.svg" alt="F"><figcaption><b>F</b><br><code>the front face</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-move-d.svg" alt="D"><figcaption><b>D</b><br><code>the bottom face — the trap</code></figcaption></figure>
 </div>
 
 !!! warning "The clockwise trap"

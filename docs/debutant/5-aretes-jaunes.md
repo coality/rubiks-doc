@@ -37,12 +37,18 @@ tranquille. Les coins ne bougent pas.</p>
 
 ## Comment le placer
 
-1. Trouve les **deux arêtes déjà bien placées**.
-2. Si elles sont **côte à côte** (adjacentes) : tourne le cube pour les avoir à
-   l'**arrière** et à **droite**. Applique l'algorithme une fois.
-3. Si elles sont **opposées** (face à face) : applique l'algorithme depuis
-   n'importe quelle position. Tu retombes sur le cas « côte à côte ». Recommence
-   au point 2.
+Trouve les **deux arêtes déjà bien placées**, puis regarde comment elles sont
+disposées l'une par rapport à l'autre.
+
+=== "Elles sont côte à côte"
+
+    Tourne le cube pour les avoir à l'**arrière** et à **droite**. Applique
+    l'algorithme une fois.
+
+=== "Elles sont opposées"
+
+    Applique l'algorithme depuis n'importe quelle position. Tu retombes sur le
+    cas « côte à côte », traité ci-contre.
 
 !!! tip "Tourner le cube, pas la face du haut"
     À cette étape tu peux faire pivoter le cube entier autour de l'axe vertical

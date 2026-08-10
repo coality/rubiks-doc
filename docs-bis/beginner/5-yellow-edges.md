@@ -37,11 +37,18 @@ ikaupat. Ang corner dili molihok.</p>
 
 ## Unsaon pagposisyon
 
-1. Pangitaa ang **duha ka edge nga husto na**.
-2. Kung **magtapad** sila: tuyoka ang cube aron sila maanaa sa **likod** ug sa
-   **tuo**. Buhata ang algorithm kausa.
-3. Kung **magtapad ang ilang atubangan** (nag-atbang): buhata ang algorithm gikan
-   sa bisan unsang posisyon. Mahulog ka sa case nga "magtapad". Balik sa numero 2.
+Pangitaa ang **duha ka edge nga husto na**, dayon tan-awa kung unsaon nila
+pagkabutang sa usag usa.
+
+=== "Magtapad sila"
+
+    Tuyoka ang cube aron sila maanaa sa **likod** ug sa **tuo**. Buhata ang
+    algorithm kausa.
+
+=== "Nag-atbang sila"
+
+    Buhata ang algorithm gikan sa bisan unsang posisyon. Mahulog ka sa case nga
+    "magtapad", nga naa sa tapad.
 
 !!! tip "Tuyoka ang cube, dili ang ibabaw nga face"
     Niini nga lakang mahimo nimong tuyokon ang tibuok cube palibot sa tindog nga
