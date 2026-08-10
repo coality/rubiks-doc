@@ -30,4 +30,4 @@ python3 tools/seo.py
 
 echo
 echo "OK -> $PWD/site  ($(du -sh site | cut -f1))"
-echo "     fr https://rubik.coality.net/   en /en/   bis /bis/"
+echo "     fr https://rubiks.coality.net/   en /en/   bis /bis/"

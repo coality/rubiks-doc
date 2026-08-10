@@ -1,4 +1,4 @@
-# Contexte : Tutoriel Rubik's Cube (rubik.coality.net)
+# Contexte : Tutoriel Rubik's Cube (rubiks.coality.net)
 
 Site **statique** MkDocs Material. Aucun service ne tourne : le site est un
 dossier de fichiers HTML servi par Apache. Projet indépendant du bot Telegram
@@ -7,7 +7,7 @@ et des autres projets — ne pas mélanger.
 ## État actuel (2026-08-10)
 
 **En ligne et trilingue.** Sources sous `/opt/rubiks-doc`, vhost Apache +
-certificat en place, `https://rubik.coality.net` répond.
+certificat en place, `https://rubiks.coality.net` répond.
 
 - **3 langues**, une par sous-site : `/` français, `/en/` anglais,
   `/bis/` bisaya (cebuano). 20 pages × 3 = 60 pages HTML, 153 schémas × 3
@@ -62,11 +62,19 @@ post-traite le HTML :
 Le script est idempotent (marqueur `<!--seo-->`) et échoue si une page attendue
 manque du site.
 
-### Bascule de domaine vers `rubiks.coality.net` (en cours)
+### Bascule de domaine vers `rubiks.coality.net` (faite le 2026-08-10)
 
-Le site doit passer de `rubik.` à `rubiks.`. Le DNS pointe déjà sur le serveur
-(65.108.123.20, mis à jour chez online.net le 2026-08-10) ; il manque le vhost
-et le certificat.
+Le site est passé de `rubik.` à `rubiks.` : vhost, certificat, sources et build
+sont à jour, les trois langues répondent en HTTPS et `canonical` / `hreflang` /
+sitemaps pointent tous sur `rubiks.`.
+
+⚠️ **Reste à faire, et ce n'est pas cosmétique : l'enregistrement DNS `rubik.`
+a disparu.** Les deux vhosts de redirection **301** (port 80 et 443) sont en
+place et corrects, mais plus personne ne peut les atteindre — `rubik.coality.net`
+ne résout plus. Google, qui a l'ancienne URL en index, voit donc un domaine mort
+au lieu d'une redirection, et l'autorité acquise n'est pas transférée. Il faut
+recréer chez online.net l'enregistrement A `rubik` → 65.108.123.20 et le laisser
+vivre plusieurs mois.
 
 ⚠️ **Ordre obligatoire.** Changer le domaine dans les sources avant que le
 nouvel hôte réponde ferait pointer `canonical`, `hreflang` et les sitemaps vers
@@ -242,7 +250,7 @@ Règles de vérification :
 
 ## Déploiement
 
-`deploy/rubik.coality.net.conf` = vhost Apache (DocumentRoot
+`deploy/rubiks.coality.net.conf` = vhost Apache (DocumentRoot
 `/opt/rubiks-doc/site`, deflate, expires, en-têtes de sécurité).
 `install.sh` fait l'installation complète, en root, une seule fois.
 

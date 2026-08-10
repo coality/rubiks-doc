@@ -7,7 +7,7 @@
 # autres sites du serveur.
 set -euo pipefail
 
-DOMAIN=rubik.coality.net
+DOMAIN=rubiks.coality.net
 SRC=/home/jerome/rubiks-doc
 DST=/opt/rubiks-doc
 EMAIL=collette.jerome@gmail.com

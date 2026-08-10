@@ -1,6 +1,6 @@
 site_name: Résoudre le Rubik's Cube
 site_description: Tutoriel complet et progressif — du premier cube résolu au CFOP
-site_url: https://rubik.coality.net/
+site_url: https://rubiks.coality.net/
 docs_dir: docs
 site_dir: site
 use_directory_urls: true

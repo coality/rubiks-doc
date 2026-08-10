@@ -1,9 +1,9 @@
-# Rubik's Cube tutorial — [rubik.coality.net](https://rubik.coality.net)
+# Rubik's Cube tutorial — [rubiks.coality.net](https://rubiks.coality.net)
 
 A complete beginner-to-CFOP tutorial in three languages:
-[Français](https://rubik.coality.net/) ·
-[English](https://rubik.coality.net/en/) ·
-[Bisaya](https://rubik.coality.net/bis/)
+[Français](https://rubiks.coality.net/) ·
+[English](https://rubiks.coality.net/en/) ·
+[Bisaya](https://rubiks.coality.net/bis/)
 
 Static MkDocs Material site served by Apache. Nothing runs: the site is a
 folder of HTML files.
@@ -94,7 +94,7 @@ diagram is re-rendered from the algorithm, so the two cannot diverge.
 
 ## Deployment
 
-`deploy/rubik.coality.net.conf` is the Apache vhost; `install.sh` does the full
+`deploy/rubiks.coality.net.conf` is the Apache vhost; `install.sh` does the full
 install (move to `/opt`, vhost, certbot).
 
 To move the site to another domain, in one command:

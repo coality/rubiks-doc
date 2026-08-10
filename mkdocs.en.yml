@@ -1,6 +1,6 @@
 site_name: Solving the Rubik's Cube
 site_description: A complete, progressive tutorial — from your first solve to CFOP
-site_url: https://rubik.coality.net/en/
+site_url: https://rubiks.coality.net/en/
 docs_dir: docs-en
 site_dir: site/en
 use_directory_urls: true

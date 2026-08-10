@@ -24,7 +24,7 @@ import sys
 _HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(_HERE, '..'))
 SITE = ROOT + '/site'
-ORIGIN = 'https://rubik.coality.net'
+ORIGIN = 'https://rubiks.coality.net'
 MARK = '<!--seo-->'
 
 # (code, prefixe d'URL, hreflang, code og:locale)

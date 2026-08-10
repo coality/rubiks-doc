@@ -1,6 +1,6 @@
 site_name: Pagsulbad sa Rubik's Cube
 site_description: Kompleto ug hinay-hinay nga tutorial — gikan sa unang solve hangtod sa CFOP
-site_url: https://rubik.coality.net/bis/
+site_url: https://rubiks.coality.net/bis/
 docs_dir: docs-bis
 site_dir: site/bis
 use_directory_urls: true
