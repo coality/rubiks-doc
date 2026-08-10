@@ -31,10 +31,8 @@ Ang laing kolor sa edge (ang orange, naa sa ibabaw) mao ang magsulti kanimo
 
 Duha ra gyud, ug ang ikaduha mao ang eksakto nga mirror sa una.
 
-<div class="objectif" markdown>
-![3d-arete-insere](../assets/cubes/3d-arete-insere.svg)
-<figcaption>Ang edge mobiya sa ibabaw nga layer ug manaog sa front-right nga slot. Mao ra kana ang gibuhat sa algorithm.</figcaption>
-</div>
+Sa ilawom sa matag card, gipakita ang sequence **matag lihok**: ang matag
+hulagway mao ang cube sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 
 <div class="fiche" markdown>
 ![Pagsulod sa tuo](../assets/cubes/couronne2-droite.svg)
@@ -45,9 +43,13 @@ ang kolor sa ibabaw motakdo sa center sa tuo nga face.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+<figcaption>Ang edge mobiya sa ibabaw nga layer ug manaog sa front-right nga slot. Mao ra kana ang gibuhat sa algorithm.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/bis/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — ang sequence, matag lihok">
-<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
 </figure>
 
 <div class="fiche" markdown>
@@ -58,6 +60,11 @@ ang kolor sa ibabaw motakdo sa center sa tuo nga face.</p>
 gi-mirror lang: ang matag <code>R</code> mahimong <code>L</code>, ug ang matag
 direksyon mabaliktad.</p>
 </div>
+</div>
+
+<div class="objectif" markdown>
+![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+<figcaption>Ang eksaktong mirror: karon manaog ang edge sa <b>front-left</b> nga slot.</figcaption>
 </div>
 
 <figure class="film">

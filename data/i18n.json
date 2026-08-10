@@ -33,7 +33,8 @@
       "3d-coin-blanc-avant": "Blanc vers l'avant : R' D' R D une fois",
       "3d-coin-blanc-haut": "Blanc vers le haut : R' D' R D trois fois",
       "3d-coin-blanc-droite": "Blanc vers la droite : R' D' R D cinq fois",
-      "3d-arete-insere": "L'arête quitte le haut et descend dans la fente avant-droite",
+      "3d-arete-insere-droite": "L'arête quitte le haut et descend dans la fente avant-droite",
+      "3d-arete-insere-gauche": "L'arête quitte le haut et descend dans la fente avant-gauche",
       "3d-coin-tourne": "Le coin est à sa place : il ne reste qu'à le faire tourner",
       "3d-coin-trois-centres": "Un coin vit entre trois centres — vue par en dessous",
       "3d-coin-fente": "La fente où le coin doit arriver, vue par en dessous"
@@ -114,7 +115,8 @@
       "3d-coin-blanc-avant": "White facing front: R' D' R D once",
       "3d-coin-blanc-haut": "White facing up: R' D' R D three times",
       "3d-coin-blanc-droite": "White facing right: R' D' R D five times",
-      "3d-arete-insere": "The edge leaves the top and drops into the front-right slot",
+      "3d-arete-insere-droite": "The edge leaves the top and drops into the front-right slot",
+      "3d-arete-insere-gauche": "The edge leaves the top and drops into the front-left slot",
       "3d-coin-tourne": "The corner is in its place: all that is left is to twist it",
       "3d-coin-trois-centres": "A corner lives between three centres — seen from below",
       "3d-coin-fente": "The slot the corner must reach, seen from below"
@@ -195,7 +197,8 @@
       "3d-coin-blanc-avant": "Puti nag-atubang sa atubangan: R' D' R D kausa",
       "3d-coin-blanc-haut": "Puti nag-atubang sa ibabaw: R' D' R D katulo",
       "3d-coin-blanc-droite": "Puti nag-atubang sa tuo: R' D' R D kalima",
-      "3d-arete-insere": "Ang edge mobiya sa ibabaw ug manaog sa front-right nga slot",
+      "3d-arete-insere-droite": "Ang edge mobiya sa ibabaw ug manaog sa front-right nga slot",
+      "3d-arete-insere-gauche": "Ang edge mobiya sa ibabaw ug manaog sa front-left nga slot",
       "3d-coin-tourne": "Husto na ang lugar sa corner: ang nahibilin kay lisohon na lang",
       "3d-coin-trois-centres": "Ang corner nagpuyo taliwala sa tulo ka center — tan-aw gikan sa ilawom",
       "3d-coin-fente": "Ang slot nga adtoan sa corner, tan-aw gikan sa ilawom"

@@ -30,10 +30,8 @@ elle doit descendre : vers la face orange.
 
 Il n'y en a que deux, et le second est le miroir exact du premier.
 
-<div class="objectif" markdown>
-![3d-arete-insere](../assets/cubes/3d-arete-insere.svg)
-<figcaption>L'arête quitte la couche du haut et descend dans la fente avant-droite. C'est tout ce que fait l'algorithme.</figcaption>
-</div>
+Sous chaque fiche, la séquence est reprise **pas à pas** : chaque vignette
+montre l'état avant de tourner, et la flèche le mouvement à faire.
 
 <div class="fiche" markdown>
 ![Insertion à droite](../assets/cubes/couronne2-droite.svg)
@@ -44,9 +42,13 @@ dessus correspond au centre de la face de droite.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+<figcaption>L'arête quitte la couche du haut et descend dans la fente avant-droite. C'est tout ce que fait l'algorithme.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — la séquence pas à pas">
-<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
 </figure>
 
 <div class="fiche" markdown>
@@ -56,6 +58,11 @@ dessus correspond au centre de la face de droite.</p>
 <p><b>L'arête doit partir à gauche.</b> Exactement la même séquence, en miroir :
 chaque <code>R</code> devient <code>L</code>, et chaque sens s'inverse.</p>
 </div>
+</div>
+
+<div class="objectif" markdown>
+![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+<figcaption>Le miroir exact : l'arête descend cette fois dans la fente <b>avant-gauche</b>.</figcaption>
 </div>
 
 <figure class="film">

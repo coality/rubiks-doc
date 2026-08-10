@@ -30,10 +30,8 @@ down: towards the orange face.
 
 There are only two, and the second is the exact mirror of the first.
 
-<div class="objectif" markdown>
-![3d-arete-insere](../assets/cubes/3d-arete-insere.svg)
-<figcaption>The edge leaves the top layer and drops into the front-right slot. That is all the algorithm does.</figcaption>
-</div>
+Under each card the sequence is shown **step by step**: every frame is the
+cube before the turn, and the arrow is the move to make.
 
 <div class="fiche" markdown>
 ![Insertion on the right](../assets/cubes/couronne2-droite.svg)
@@ -44,9 +42,13 @@ colour on top matches the centre of the right face.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-arete-insere-droite](../assets/cubes/3d-arete-insere-droite.svg)
+<figcaption>The edge leaves the top layer and drops into the front-right slot. That is all the algorithm does.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/en/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — the sequence step by step">
-<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
 </figure>
 
 <div class="fiche" markdown>
@@ -56,6 +58,11 @@ colour on top matches the centre of the right face.</p>
 <p><b>The edge must go to the left.</b> Exactly the same sequence, mirrored:
 every <code>R</code> becomes <code>L</code>, and every direction is reversed.</p>
 </div>
+</div>
+
+<div class="objectif" markdown>
+![3d-arete-insere-gauche](../assets/cubes/3d-arete-insere-gauche.svg)
+<figcaption>The exact mirror: this time the edge drops into the <b>front-left</b> slot.</figcaption>
 </div>
 
 <figure class="film">

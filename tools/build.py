@@ -68,8 +68,17 @@ def write(name, svg):
 
 
 def fig_title(name):
-    """Titre traduit d'un schema fixe, repere par son nom de fichier."""
-    return STR['figures'].get(name, name)
+    """Titre traduit d'un schema fixe, repere par son nom de fichier.
+
+    Echoue si la traduction manque : un `.get(name, name)` silencieux laisserait
+    passer un `<title>` / `aria-label` en francais dans le site anglais ou
+    bisaya, et rien ne le signalerait.
+    """
+    try:
+        return STR['figures'][name]
+    except KeyError:
+        raise KeyError('titre de figure « %s » absent de data/i18n.json pour %s'
+                       % (name, LANG))
 
 
 # ---------------------------------------------------------------- OLL / PLL
@@ -337,12 +346,15 @@ def gen_3d():
         assert arr[0][1][1] == (0, -1, 0), '%s : le blanc devrait finir en bas' % name
         emit(name, st, arrows=arr)
 
-    # --- etape 3 : l'arete descend dans la fente avant-droite
-    ins = "U R U' R' U' F' U F"
-    st = solved().apply(invert(ins))
-    arr = travel(ins, [((0, 1, 1), (0, 0, 1))])
-    assert arr[0][1] == ((1, 0, 1), (0, 0, 1)), 'insertion droite : trajet inattendu'
-    emit('3d-arete-insere', st, arrows=arr)
+    # --- etape 3 : l'arete descend dans sa fente, a droite ou a gauche.
+    # Les deux cas sont miroirs : ils mentent le meme droit a une figure.
+    UF = ((0, 1, 1), (0, 0, 1))
+    for cote, ins, cible in (('droite', "U R U' R' U' F' U F", ((1, 0, 1), (0, 0, 1))),
+                             ('gauche', "U' L' U L U F U' F'", ((-1, 0, 1), (0, 0, 1)))):
+        arr = travel(ins, [UF])
+        assert arr[0][1] == cible, \
+            'insertion %s : l\'arete arrive en %r, %r attendu' % (cote, arr[0][1], cible)
+        emit('3d-arete-insere-' + cote, solved().apply(invert(ins)), arrows=arr)
 
     # --- etape 7 : le coin est a sa place, il ne reste qu'a le tourner
     tw = ' '.join([SEQ_COIN] * 2)
