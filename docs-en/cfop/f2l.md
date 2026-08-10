@@ -64,10 +64,6 @@ then put the pair away. This is where all the intuitive work lies:
 - **Bring the other piece** above it with `U`, `U'` or `U2`.
 - **Close it up** by undoing the opening move.
 
-<figure class="film">
-<img src="/en/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — the sequence step by step">
-</figure>
-
 !!! tip "The reflex that unblocks 90% of cases"
     If you cannot see what to do: **open the slot** (`R U R'`), look at what
     happens, `U` to reposition, **close it up**. In the vast majority of cases
@@ -90,6 +86,10 @@ one or two moves.
     Many people rotate the cube so as to always work front-right. That is a
     wasted rotation on every pair. Learn to insert **front-left** too, with
     `F' U' F` and `F' U F`, which is its mirror.
+
+<figure class="film">
+<img src="/en/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — the sequence step by step">
+</figure>
 
 <figure class="film">
 <img src="/en/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — the sequence step by step">

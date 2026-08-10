@@ -65,10 +65,6 @@ direksyon, dayon isulod ang pares. Dinhi naa ang tanang intuitive nga trabaho:
 - **Dad-a ang laing piraso** sa ibabaw niini gamit ang `U`, `U'` o `U2`.
 - **Siradohi** pinaagi sa pagbalik sa lihok nga imong giablihan.
 
-<figure class="film">
-<img src="/bis/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — ang sequence, matag lihok">
-</figure>
-
 !!! tip "Ang reflex nga makasulbad sa 90% sa mga case"
     Kung dili nimo makita unsay buhaton: **ablihi ang slot** (`R U R'`), tan-awa
     unsay nahitabo, `U` aron ibalhin, dayon **siradohi**. Sa kadaghanan sa mga
@@ -91,6 +87,10 @@ mahulog niini sulod sa usa o duha ka lihok.
     Daghan ang motuyok sa cube aron kanunay magtrabaho sa front-right. Usa kana
     ka nausik nga rotation matag pares. Tun-i usab ang pagsulod sa **front-left**
     gamit ang `F' U' F` ug `F' U F`, nga mao ang mirror niini.
+
+<figure class="film">
+<img src="/bis/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — ang sequence, matag lihok">
+</figure>
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — ang sequence, matag lihok">

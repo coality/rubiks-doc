@@ -25,6 +25,7 @@ I18N = json.load(open(ROOT + '/data/i18n.json', encoding='utf-8'))
 
 # etat courant de la generation (fixe par run_lang)
 LANG, DOCS, BASE, REFDIR, STR, NAMES = None, None, None, None, None, None
+WRITTEN = set()          # schemas produits par la langue en cours
 
 
 def set_lang(code, docsdir, base, refdir):
@@ -34,6 +35,7 @@ def set_lang(code, docsdir, base, refdir):
     path = ROOT + '/data/names.%s.json' % code
     NAMES = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else None
     os.makedirs(DOCS + '/assets/cubes', exist_ok=True)
+    WRITTEN.clear()
 
 
 def name_of(kind, cid, default):
@@ -64,7 +66,22 @@ def labeled(alg):
 def write(name, svg):
     with open('%s/assets/cubes/%s.svg' % (DOCS, name), 'w', encoding='utf-8') as fh:
         fh.write(svg)
+    WRITTEN.add(name)
     return 'assets/cubes/%s.svg' % name
+
+
+def prune():
+    """Supprime les schemas qu'on ne produit plus.
+
+    Sans ca, renommer une figure laisse l'ancien fichier sur le disque : MkDocs
+    le copie dans site/ et le publie, alors que plus aucune page ne le cite.
+    """
+    d = DOCS + '/assets/cubes'
+    old = [f for f in os.listdir(d)
+           if f.endswith('.svg') and f[:-4] not in WRITTEN]
+    for f in old:
+        os.remove(os.path.join(d, f))
+    return old
 
 
 def fig_title(name):
@@ -173,7 +190,6 @@ def gen_beginner():
         ('couronne2-droite', "U R U' R' U' F' U F"),
         ('couronne2-gauche', "U' L' U L U F U' F'"),
         ('coins-placer', "U R U' L' U R' U' L"),
-        ('aretes-placer', "R U R' U R U2 R' U"),
     ]
     out = {}
     for name, alg in specs:
@@ -232,17 +248,9 @@ def gen_teaching():
          lambda fl: all(fl['D'][i] == 'W' for i in (1, 3, 4, 5, 7))
          and fl['F'][7] != 'G')
 
-    # --- etape 2 : un coin vit entre trois centres
-    emit('coin-trois-centres', solved(),
-         _keep(('D', (4, 8)), ('F', (4, 8)), ('R', (4, 6))))
-
-    # --- etape 2 : un coin blanc en attente dans la couche du haut
-    up = solved().apply("R U R'")
-    emit('coin-en-haut', up,
-         _keep(('U', tuple(range(9))), ('D', tuple(range(9))),
-               *[(f, (0, 1, 2, 4, 6, 7, 8)) for f in sides]),
-         lambda fl: sum(1 for f in sides for i in (0, 2) if fl[f][i] == 'W')
-         + sum(1 for i in (0, 2, 6, 8) if fl['U'][i] == 'W') >= 1)
+    # (les deux figures a plat de l'etape 2 — le coin entre trois centres et le
+    # coin blanc en attente — ont ete remplacees par leurs versions 3D, qui
+    # montrent en plus la fente d'arrivee. Voir gen_3d().)
 
     # --- etape 3 : une arete vit entre deux centres
     emit('arete-deux-centres', solved(),
@@ -355,6 +363,26 @@ def gen_3d():
         assert arr[0][1] == cible, \
             'insertion %s : l\'arete arrive en %r, %r attendu' % (cote, arr[0][1], cible)
         emit('3d-arete-insere-' + cote, solved().apply(invert(ins)), arrows=arr)
+
+    # --- etape 6 : trois coins tournent entre eux, le quatrieme ne bouge pas.
+    # Le schema a plat ne peut pas le montrer : l'algo retourne les coins en les
+    # deplacant, donc l'autocollant du haut ne vient pas du haut et pll_arrows()
+    # n'a rien a tracer. Le trajet 3D, lui, suit la piece quoi qu'il arrive.
+    cyc = "U R U' L' U R' U' L"
+    hauts = [(1, 1, 1), (-1, 1, 1), (1, 1, -1), (-1, 1, -1)]
+    N_HAUT = (0, 1, 0)
+    arr = travel(cyc, [(p, N_HAUT) for p in hauts])
+    bouge = [(a, b) for a, b in arr if a[0] != b[0]]
+    assert len(bouge) == 3, \
+        'etape 6 : %d coins deplaces, la page en annonce 3' % len(bouge)
+    assert len([a for a, b in arr if a[0] == b[0]]) == 1, \
+        'etape 6 : le coin epargne devrait etre unique'
+    # On relie le dessus au dessus, pas l'autocollant a son arrivee reelle :
+    # l'algo retourne les coins en les deplacant, et une fleche qui plongerait
+    # vers une face laterale ferait croire a un changement d'etage. L'etape ne
+    # parle que de PLACEMENT — l'orientation est le sujet de l'etape 7.
+    emit('3d-coins-cycle', solved().apply(invert(cyc)),
+         arrows=[(a, (b[0], N_HAUT)) for a, b in bouge])
 
     # --- etape 7 : le coin est a sa place, il ne reste qu'a le tourner
     tw = ' '.join([SEQ_COIN] * 2)
@@ -496,6 +524,10 @@ def run_lang(code, docsdir, base, refdir):
     figs.update(gen_films())
     oll, pll, f2l = gen_ll('oll'), gen_ll('pll'), gen_f2l()
     emit_pages(oll, pll, f2l)
+    perimes = prune()
+    if perimes:
+        print('       %d schema(s) perime(s) supprime(s) : %s'
+              % (len(perimes), ', '.join(sorted(perimes))))
     copy_static()
     if code == 'fr':   # artefacts de debug, une seule langue suffit
         json.dump({'figures': figs, 'beginner': beg},

@@ -134,8 +134,10 @@ build :
   algorithme traduit est détectée) ;
 - toute image référencée existe dans la langue concernée (y compris les
   chemins absolus du site français, que la détection laissait passer) ;
-- toute séquence citée dans une page de tutoriel a sa bande « pas à pas »,
-  et aucune bande générée ne reste orpheline — dans les trois langues ;
+- toute séquence citée dans une page de tutoriel a sa bande « pas à pas », et
+  **aucun schéma généré ne reste orphelin** — dans les trois langues. C'est ce
+  contrôle qui a fait apparaître qu'aucune figure ne montrait le cycle de
+  l'étape 6, et que trois schémas étaient encore fabriqués pour personne ;
 - sémantique de la notation : `R2` = deux `R`, `r` = `R` + `M'`, `x` = `R M' L'`,
   `M` suit `L`, les centres ne bougent jamais (200 mélanges) ;
 - comptages : 6 centres / 12 arêtes / 8 coins, 9 autocollants par couleur,
@@ -290,6 +292,18 @@ terminent la première couronne et que `k±1` ne la terminent pas.
 
 (L'étape 7 dit aussi « 2 ou 4 fois » : là c'est **correct**, le coin est déjà à
 sa place et la séquence ne fait que le tourner.)
+
+⚠️ `pll_arrows()` ne trace une flèche que si l'autocollant du haut **vient** du
+haut. L'algorithme de l'étape 6 retourne les coins en les déplaçant : aucune
+flèche n'est donc possible sur son schéma à plat, et le cycle ne se montre
+qu'en 3D (`3d-coins-cycle`), où `travel()` suit la pièce quelle que soit son
+orientation. Les flèches y relient **le dessus au dessus** : une flèche qui
+plongerait vers une face latérale ferait croire à un changement d'étage, alors
+que l'étape ne parle que de placement.
+
+`build.py` supprime en fin de génération les schémas qu'il ne produit plus
+(`prune()`). Sans ça, renommer une figure laisse l'ancien fichier sur le disque,
+MkDocs le copie dans `site/` et le publie sans que rien ne le cite.
 
 `build.py` produit aussi les **schémas pédagogiques** de la méthode débutant
 (`gen_teaching`) : les trois familles de pièces, la marguerite, la croix mal

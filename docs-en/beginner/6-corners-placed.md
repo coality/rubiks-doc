@@ -31,6 +31,12 @@ It twists the corners along the way: that is normal, step 7 deals with it.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+<figcaption>Three corners cycle; the fourth stays put. Only <b>placement</b> matters
+here — orientation is what step 7 is about.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/en/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — the sequence step by step">
 <figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>

@@ -570,11 +570,33 @@ def check_films():
            % (lang, sorted(used ^ ref)))
 
 
+def check_no_orphan_figure():
+    """Aucun schema produit ne doit rester invisible.
+
+    Le symetrique de check_films(), etendu a tous les schemas : une figure
+    generee que plus aucune page ne cite est du poids mort publie, et surtout le
+    signe d'une illustration perdue en cours de route — c'est ainsi que l'etape 6
+    s'est retrouvee sans rien pour montrer son cycle de coins.
+    """
+    import glob
+    for lang, d in LANGS:
+        used = set()
+        for fr_rel, other_rel in PAGES:
+            used |= set(imgs_in(open(path_for(d, fr_rel, other_rel),
+                                     encoding='utf-8').read()))
+        produits = set(os.path.basename(p)[:-4]
+                       for p in glob.glob(os.path.join(ROOT, d, 'assets/cubes/*.svg')))
+        for orphelin in sorted(produits - used):
+            ok(False, '%s.svg [%s] : schema genere mais cite par aucune page'
+               % (orphelin, lang))
+        ok(True, 'schemas orphelins [%s]' % lang)
+
+
 EXTRA = [check_pieces_and_colours, check_centres_fixed, check_notation_semantics,
          check_invariants, check_beginner_method, check_step3_insertions,
          check_step6_zero_one_four, check_step5_two_matched,
          check_f2l_pair_extraction, check_4lll_counts, check_named_algs,
-         check_cross_bounds, check_films]
+         check_cross_bounds, check_films, check_no_orphan_figure]
 
 
 if __name__ == '__main__':

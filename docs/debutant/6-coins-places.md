@@ -32,6 +32,12 @@ occupe.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+<figcaption>Trois coins tournent entre eux ; le quatrième reste en place. Seul le
+<b>placement</b> compte ici — l'orientation est le sujet de l'étape 7.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — la séquence pas à pas">
 <figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>

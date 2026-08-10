@@ -33,6 +33,12 @@ maoy moatubang niini.</p>
 </div>
 </div>
 
+<div class="objectif" markdown>
+![3d-coins-cycle](../assets/cubes/3d-coins-cycle.svg)
+<figcaption>Tulo ka corner ang mag-ilisay; ang ikaupat magpabilin. Ang <b>placement</b>
+ra ang importante dinhi — ang orientation mao ang step 7.</figcaption>
+</div>
+
 <figure class="film">
 <img src="/bis/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — ang sequence, matag lihok">
 <figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>

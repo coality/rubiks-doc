@@ -65,10 +65,6 @@ puis ranger la paire. C'est là qu'est tout le travail intuitif :
 - **Amène l'autre pièce** au-dessus avec `U`, `U'` ou `U2`.
 - **Referme** en inversant le mouvement d'ouverture.
 
-<figure class="film">
-<img src="/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — la séquence pas à pas">
-</figure>
-
 !!! tip "Le réflexe qui débloque 90 % des cas"
     Si tu ne vois pas quoi faire : **ouvre la fente** (`R U R'`), regarde ce qui
     se passe, `U` pour repositionner, **referme**. Dans la grande majorité des
@@ -91,6 +87,10 @@ eux en un ou deux mouvements.
     Beaucoup tournent le cube pour toujours travailler à l'avant-droite. C'est
     une rotation perdue à chaque paire. Apprends à insérer aussi à
     **l'avant-gauche** avec `F' U' F` et `F' U F`, qui en est le miroir.
+
+<figure class="film">
+<img src="/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — la séquence pas à pas">
+</figure>
 
 <figure class="film">
 <img src="/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — la séquence pas à pas">
