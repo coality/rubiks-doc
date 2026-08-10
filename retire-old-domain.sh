@@ -42,8 +42,13 @@ if getent hosts "$OLD" >/dev/null 2>&1; then
 fi
 echo "  $OLD ne resout plus"
 
-code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 "http://$OLD/" || echo 000)"
-[ "$code" = 000 ] || die "http://$OLD/ repond encore ($code) : ne pas retirer."
+# On teste le code de sortie de curl, pas le code HTTP : avec -w, curl imprime
+# deja « 000 » quand il n'a pas pu joindre l'hote *et* sort en erreur, donc un
+# « || echo 000 » en collait un second et la comparaison ne pouvait pas coller.
+# curl ne sort 0 que s'il a obtenu une reponse — c'est exactement la question.
+if curl -s -o /dev/null --max-time 10 "http://$OLD/" 2>/dev/null; then
+    die "http://$OLD/ repond encore : ne pas retirer."
+fi
 echo "  plus rien ne repond sur $OLD"
 
 # ------------------------------------------------------------- 2. les vhosts

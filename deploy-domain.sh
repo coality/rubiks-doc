@@ -142,11 +142,11 @@ sudo -u "$OWNER" -H bash -lc "cd '$HERE' && ./build.sh"
 step "6/6  verification"
 fail=0
 for path in / /en/ /bis/ /sitemap.xml /robots.txt; do
-    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$NEW$path")"
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$NEW$path" || true)"
     printf '  %-16s %s\n' "$path" "$code"
     [ "$code" = 200 ] || fail=1
 done
-code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "http://$OLD/")"
+code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "http://$OLD/" || true)"
 printf '  %-16s %s (301 attendu)\n' "$OLD" "$code"
 [ "$code" = 301 ] || fail=1
 

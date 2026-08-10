@@ -81,7 +81,10 @@ sudo -u "$OWNER" -H bash -lc "cd '$HERE' && ./build.sh" | tail -3
 step "4/4  verification de https://$DOMAIN/"
 fail=0
 for path in / /en/ /bis/ /404.html /robots.txt /sitemap.xml; do
-    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$DOMAIN$path" || echo 000)"
+    # « || echo 000 » concatenerait le 000 deja imprime par -w : on neutralise
+    # le code de sortie de curl sans toucher a ce qu'il ecrit.
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$DOMAIN$path" || true)"
+    [ -n "$code" ] || code=000
     printf '  %-16s %s\n' "$path" "$code"
     [ "$code" = 200 ] || fail=1
 done
