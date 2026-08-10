@@ -74,12 +74,17 @@ un hôte injoignable — c'est précisément ce qui détruit un référencement.
 `tools/switch_domain.py` refuse donc de s'exécuter tant que le HTTPS du nouveau
 domaine n'est pas valide.
 
-1. `sudo ./migrate-domain.sh rubiks.coality.net` — vhost, `configtest`,
-   `reload`, certbot, puis remplacement de l'ancien vhost par une **redirection
-   301** (`deploy/rubik.coality.net-redirect.conf`) qui transfère le
-   référencement acquis, chemin par chemin.
-2. `python3 tools/switch_domain.py rubiks.coality.net && ./build.sh` — réécrit
-   les `site_url`, `tools/seo.py`, README et ce fichier, puis reconstruit.
+Une seule commande fait tout, en s'arrêtant à la première erreur :
+
+    sudo ./deploy-domain.sh rubiks.coality.net
+
+Elle enchaîne : contrôle du DNS → vhost + `configtest` + `reload` → certbot →
+redirection **301** de l'ancien domaine (les deux vhosts, port 80 **et** 443 —
+sans le 443, `https://ancien/` continue de servir le site et Google voit deux
+copies) → `switch_domain.py` + `build.sh` sous le compte non privilégié →
+vérification HTTPS des trois langues, du sitemap et du canonical.
+
+Le script est idempotent et sauvegarde tout vhost qu'il remplace.
 
 Ne **jamais** faire `systemctl restart apache2` : ~18 autres vhosts tournent
 dessus. `apache2ctl configtest` puis `systemctl reload apache2`.

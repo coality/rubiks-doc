@@ -97,6 +97,14 @@ diagram is re-rendered from the algorithm, so the two cannot diverge.
 `deploy/rubik.coality.net.conf` is the Apache vhost; `install.sh` does the full
 install (move to `/opt`, vhost, certbot).
 
+To move the site to another domain, in one command:
+
+    sudo ./deploy-domain.sh newdomain.example
+
+It checks DNS, installs the vhost, gets the certificate, 301-redirects the old
+domain (both :80 and :443), rewrites the sources, rebuilds, and verifies the
+result over HTTPS. Apache is reloaded, never restarted.
+
 ## License
 
 [MIT](LICENSE). Rubik's Cube algorithms are facts, not works. The prose is
