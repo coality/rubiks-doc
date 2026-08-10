@@ -25,6 +25,15 @@ Upat ka pares, upat ka slot, ug human na ang duha ka tulo ka bahin sa cube.
 Ang tibuok F2L nagsukad sa usa ka obserbasyon: ang tulo ka lihok nga `R U R'`
 **maggawas sa pares gikan sa slot**, ug ang `R U' R'` **magbalik niini**.
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-trigger-droit.svg" alt="R U R' — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
+<figure class="film">
+<img src="/bis/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — ang sequence, matag lihok">
+</figure>
+
 Kuhaa ang nasulbad nga cube ug buhata ang `R U R'`. Tan-awa ang front-right nga
 slot: ang corner ug ang edge nanggawas, dungan, ngadto sa ibabaw nga layer.
 Buhata ang `R U' R'` aron ibalik sila.
@@ -56,6 +65,10 @@ direksyon, dayon isulod ang pares. Dinhi naa ang tanang intuitive nga trabaho:
 - **Dad-a ang laing piraso** sa ibabaw niini gamit ang `U`, `U'` o `U2`.
 - **Siradohi** pinaagi sa pagbalik sa lihok nga imong giablihan.
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — ang sequence, matag lihok">
+</figure>
+
 !!! tip "Ang reflex nga makasulbad sa 90% sa mga case"
     Kung dili nimo makita unsay buhaton: **ablihi ang slot** (`R U R'`), tan-awa
     unsay nahitabo, `U` aron ibalhin, dayon **siradohi**. Sa kadaghanan sa mga
@@ -78,6 +91,10 @@ mahulog niini sulod sa usa o duha ka lihok.
     Daghan ang motuyok sa cube aron kanunay magtrabaho sa front-right. Usa kana
     ka nausik nga rotation matag pares. Tun-i usab ang pagsulod sa **front-left**
     gamit ang `F' U' F` ug `F' U F`, nga mao ang mirror niini.
+
+<figure class="film">
+<img src="/bis/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — ang sequence, matag lihok">
+</figure>
 
 !!! tip "Pilia ang imong pares, ayaw pagpaagi-agi"
     Human sa cross, tan-awa ang upat ka pares ug sugdi sa **labing sayon** —

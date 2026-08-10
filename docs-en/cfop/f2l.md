@@ -24,6 +24,15 @@ Four pairs, four slots, and two thirds of the cube is done.
 The whole of F2L rests on one observation: the trio `R U R'` **pulls the pair out
 of the slot**, and `R U' R'` **puts it back in**.
 
+<figure class="film">
+<img src="/en/assets/cubes/film-trigger-droit.svg" alt="R U R' — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
+<figure class="film">
+<img src="/en/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — the sequence step by step">
+</figure>
+
 Take a solved cube and do `R U R'`. Look at the front-right slot: the corner and
 the edge have come out of it, together, into the top layer. Do `R U' R'` to put
 them back.
@@ -55,6 +64,10 @@ then put the pair away. This is where all the intuitive work lies:
 - **Bring the other piece** above it with `U`, `U'` or `U2`.
 - **Close it up** by undoing the opening move.
 
+<figure class="film">
+<img src="/en/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — the sequence step by step">
+</figure>
+
 !!! tip "The reflex that unblocks 90% of cases"
     If you cannot see what to do: **open the slot** (`R U R'`), look at what
     happens, `U` to reposition, **close it up**. In the vast majority of cases
@@ -77,6 +90,10 @@ one or two moves.
     Many people rotate the cube so as to always work front-right. That is a
     wasted rotation on every pair. Learn to insert **front-left** too, with
     `F' U' F` and `F' U F`, which is its mirror.
+
+<figure class="film">
+<img src="/en/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — the sequence step by step">
+</figure>
 
 !!! tip "Choose your pair, don't just take what comes"
     After the cross, look at all four pairs and start with the **easiest** — the

@@ -108,7 +108,10 @@ build :
   des écritures : les U-perms en tranche M y sont un choix assumé) ;
 - les trois langues citent exactement les mêmes séquences (une coquille dans un
   algorithme traduit est détectée) ;
-- toute image référencée existe dans la langue concernée ;
+- toute image référencée existe dans la langue concernée (y compris les
+  chemins absolus du site français, que la détection laissait passer) ;
+- toute séquence citée dans une page de tutoriel a sa bande « pas à pas »,
+  et aucune bande générée ne reste orpheline — dans les trois langues ;
 - sémantique de la notation : `R2` = deux `R`, `r` = `R` + `M'`, `x` = `R M' L'`,
   `M` suit `L`, les centres ne bougent jamais (200 mélanges) ;
 - comptages : 6 centres / 12 arêtes / 8 coins, 9 autocollants par couleur,
@@ -166,7 +169,7 @@ Apache sert `site/` immédiatement après : rien à recharger.
 | Écrit à la main | Généré par `build.sh` (NE PAS ÉDITER) |
 |---|---|
 | `docs/*.md`, `docs-en/*.md`, `docs-bis/*.md` (sauf ci-contre) | `docs/avance/{oll,pll,f2l}.md` et `docs-{en,bis}/advanced/*.md` |
-| `data/oll.json`, `data/pll.json` (source FR) | `docs*/assets/cubes/*.svg` (142 schémas × 3) |
+| `data/oll.json`, `data/pll.json` (source FR) | `docs*/assets/cubes/*.svg` (schémas + 26 bandes `film-*.svg`, × 3) |
 | `data/i18n.json`, `data/names.{en,bis}.json`, `data/intros/<lang>/*.md` | `data/f2l_raw.json` (recherche exhaustive) |
 | `mkdocs*.yml`, `docs/assets/extra.css` (copiée vers les autres langues) | |
 
@@ -212,6 +215,37 @@ du patron déplié. Elle sert à montrer **d'où part une pièce et où elle arr
   l'échelle. Sans ça les faces U et R sortent aplaties (aire nulle) et seule la
   face F s'affiche. `test_projection_is_not_degenerate` verrouille ce cas.
 - La face `D` n'est pas visible depuis la caméra : pas de figure 3D pour `D`.
+
+### Les bandes « pas à pas » (`filmstrip`)
+
+Chaque séquence citée dans une page de tutoriel est illustrée par **une bande
+d'un seul SVG** : un cube par mouvement, montrant l'état **avant** de tourner,
+la flèche de ce mouvement et son nom sous la vignette, plus une dernière
+vignette pour le résultat.
+
+- L'état de départ est **le cas que la séquence résout** (`case_state(alg)`),
+  comme les schémas à plat : la bande et la fiche ne peuvent pas diverger. Une
+  assertion de `gen_films()` vérifie que la dernière vignette est bien un cube
+  résolu (à une rotation près, pour les algos qui contiennent `x`).
+- Les flèches viennent de `move_arcs()`, qui **déduit** l'axe, les tranches
+  concernées et le sens de `MOVES`, la table du moteur. Rien n'est ressaisi :
+  une flèche ne peut pas contredire le mouvement qu'elle nomme. Un mouvement
+  large (`r`) dessine donc deux arcs, une tranche (`M`) un anneau au milieu du
+  cube, une rotation (`x`) un anneau autour du tout.
+- Les vignettes d'une bande partagent **une boîte englobante commune** : sans
+  ça le cube sauterait d'une vignette à l'autre selon la place prise par les
+  flèches.
+- `test_render3d.py` rejoue, pour chaque mouvement, la rotation que le moteur
+  fait subir aux autocollants et vérifie que l'arc tourne dans le même sens —
+  c'est ce qui empêche une bande de montrer un mouvement à l'envers.
+
+⚠️ Mesurer un sens de rotation en comparant seulement le premier et le dernier
+point de l'arc **ne marche pas** : un demi-tour ou une rotation dépassent 180°
+et la différence se replie en changeant de signe. On somme les pas.
+
+Les bandes sont posées dans les pages en HTML brut : `<figure class="film">`
+quand la page enseigne l'algorithme, `<details class="film">` replié quand elle
+ne fait que le citer (glossaire) ou qu'elle en liste beaucoup (4LLL).
 
 ### Erreur de contenu trouvée par le moteur (2026-08-10)
 

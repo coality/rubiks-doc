@@ -5,6 +5,14 @@ cd "$(dirname "$(readlink -f "$0")")"
 
 MK="docker run --rm --user $(id -u):$(id -g) -v $PWD:/docs squidfunk/mkdocs-material:latest"
 
+# Un site/ appartenant a root (build lance en root une fois) fait echouer
+# MkDocs par un PermissionError illisible. Autant le dire tout de suite.
+if [ -n "$(find site ! -writable -print -quit 2>/dev/null)" ]; then
+    echo "site/ n'est pas accessible en ecriture pour $(id -un) :" >&2
+    echo "    sudo chown -R $(id -un):$(id -gn) $PWD/site" >&2
+    exit 1
+fi
+
 echo "== 1/6  auto-tests du moteur de cube et du rendu 3D =="
 python3 tools/test_cube.py | tail -2
 python3 tools/test_render3d.py

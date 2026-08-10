@@ -10,9 +10,9 @@ import json, os, sys, shutil
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
 from cube import (Cube, solved, invert, derotate, case_state, is_ll_alg,
-                  face_index, FACES)
+                  orient_std, face_index, FACES)
 from render import render_net, render_ll, pll_arrows, PAINT, _svg, _body, _sticker, S, G, T, P
-from render3d import render3d, travel, CAM_BAS
+from render3d import render3d, filmstrip, travel, CAM_BAS
 
 ROOT = os.path.normpath(os.path.join(_HERE, '..'))
 
@@ -354,6 +354,65 @@ def gen_3d():
     return out
 
 
+# ------------------------------------------------- sequences pas a pas (3D)
+# Toute sequence citee dans une page de tutoriel a sa bande. La liste est
+# verrouillee par tools/check_content.py : citer une sequence dans une page
+# sans l'ajouter ici fait echouer le build.
+FILMS = [
+    # methode debutant
+    ('coin-blanc',              "R' D' R D"),
+    ('couronne2-droite',        "U R U' R' U' F' U F"),
+    ('couronne2-gauche',        "U' L' U L U F U' F'"),
+    ('croix-jaune',             "F R U R' U' F'"),
+    ('aretes-jaunes',           "R U' R U R U R U' R' U' R2"),
+    ('coins-places',            "U R U' L' U R' U' L"),
+    # 4LLL — orientation des coins
+    ('sune',                    "R U R' U R U2 R'"),
+    ('antisune',                "R U2 R' U' R U' R'"),
+    ('double-sune',             "R U2 R' U' R U R' U' R U' R'"),
+    ('pi',                      "R U2 R2 U' R2 U' R2 U2 R"),
+    ('tete',                    "R2 D' R U2 R' D R U2 R"),
+    ('chaussette',              "r U R' U' r' F R F'"),
+    ('noeud-papillon',          "F' r U R' U' r' F R"),
+    # 4LLL — permutation des coins, puis des aretes
+    ('aperm-a',                 "x R' U R' D2 R U' R' D2 R2"),
+    ('aperm-b',                 "x R2 D2 R U R' D2 R U' R"),
+    ('eperm',                   "x' R U' R' D R U R' D' R U R' D R U' R' D'"),
+    ('uperm-a',                 "M2 U M U2 M' U M2"),
+    ('uperm-b',                 "M2 U' M U2 M' U' M2"),
+    ('hperm',                   "M2 U M2 U2 M2 U M2"),
+    ('zperm',                   "M' U M2 U M2 U M' U2 M2"),
+    # declencheurs de F2L, sexy move, T-perm (glossaire)
+    ('trigger-droit',           "R U R'"),
+    ('trigger-droit-inverse',   "R U' R'"),
+    ('trigger-gauche',          "F' U' F"),
+    ('trigger-gauche-inverse',  "F' U F"),
+    ('sexy',                    "R U R' U'"),
+    ('tperm',                   "R U R' U' R' F R2 U' R' U' R U R' F'"),
+]
+
+
+def gen_films():
+    """Une bande de vignettes par sequence : l'etat avant chaque mouvement, la
+    fleche de ce mouvement et son nom.
+
+    L'etat de depart est le cas que la sequence resout — la meme convention que
+    les schemas a plat, donc la bande et la fiche ne peuvent pas diverger. Les
+    vignettes sont deroulees par le moteur dans filmstrip() : elles disent donc
+    exactement ce que fait l'algorithme, et l'assertion ci-dessous verifie que
+    la derniere montre bien un cube resolu.
+    """
+    out = {}
+    for slug, alg in FILMS:
+        start = case_state(alg)
+        assert orient_std(start.copy().apply(alg)).is_solved(), \
+            '%s : « %s » ne resout pas l\'etat de depart de sa bande' % (slug, alg)
+        svg = filmstrip(alg, start, title=STR['film_title'] % alg,
+                        last=STR['film_result'])
+        out['film-' + slug] = write('film-' + slug, svg)
+    return out
+
+
 # ------------------------------------------------------------------- pages
 def cards(rows):
     out = ['<div class="algs">']
@@ -422,6 +481,7 @@ def run_lang(code, docsdir, base, refdir):
     beg = gen_beginner()
     figs.update(gen_teaching())
     figs.update(gen_3d())
+    figs.update(gen_films())
     oll, pll, f2l = gen_ll('oll'), gen_ll('pll'), gen_f2l()
     emit_pages(oll, pll, f2l)
     copy_static()

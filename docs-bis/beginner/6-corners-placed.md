@@ -33,6 +33,11 @@ maoy moatubang niini.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-coins-places.svg" alt="U R U' L' U R' U' L — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 ## Unsaon pagposisyon
 
 === "Naay usa ka corner nga husto"

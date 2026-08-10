@@ -44,6 +44,11 @@ colour on top matches the centre of the right face.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 <div class="fiche" markdown>
 ![Insertion on the left](../assets/cubes/couronne2-gauche.svg)
 <div class="corps" markdown>
@@ -52,6 +57,10 @@ colour on top matches the centre of the right face.</p>
 every <code>R</code> becomes <code>L</code>, and every direction is reversed.</p>
 </div>
 </div>
+
+<figure class="film">
+<img src="/en/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — the sequence step by step">
+</figure>
 
 !!! tip "How to learn two algorithms at once"
     Do not learn them separately. Remember the right-hand version, then remember

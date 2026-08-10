@@ -18,6 +18,11 @@
 : A sequence of the form "do A, do B, undo A, undo B". It disturbs only a very
   small part of the cube. `R' D' R D` is one.
 
+<details class="film">
+<summary><code>R' D' R D</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+</details>
+
 **Corner**
 : A piece with **three** stickers, at a vertex of the cube. There are 8.
 
@@ -78,13 +83,33 @@
 : `R U R' U'`. The most used sequence on the cube. Repeated six times, it returns
   to the starting point.
 
+<details class="film">
+<summary><code>R U R' U'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-sexy.svg" alt="R U R' U' — the sequence step by step">
+</details>
+
 **Sune**
 : `R U R' U R U2 R'`. Orients three corners. With its mirror the **anti-Sune**
   (`R U2 R' U' R U' R'`), it is the first real OLL algorithm to learn.
 
+<details class="film">
+<summary><code>R U R' U R U2 R'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — the sequence step by step">
+</details>
+
+<details class="film">
+<summary><code>R U2 R' U' R U' R'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — the sequence step by step">
+</details>
+
 **T-perm**
 : `R U R' U' R' F R2 U' R' U' R U R' F'`. The best-known PLL: it swaps two
   corners and two edges.
+
+<details class="film">
+<summary><code>R U R' U' R' F R2 U' R' U' R U R' F'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-tperm.svg" alt="R U R' U' R' F R2 U' R' U' R U R' F' — the sequence step by step">
+</details>
 
 ## Measurements
 

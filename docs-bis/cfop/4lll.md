@@ -31,6 +31,11 @@ matag case.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 <div class="algs">
 <figure class="alg"><img src="/bis/assets/cubes/eo-point.svg" alt="Ang dot"><figcaption><b>Ang dot</b><br><code>3 ka beses</code></figcaption></figure>
 <figure class="alg"><img src="/bis/assets/cubes/eo-equerre.svg" alt="Ang L"><figcaption><b>Ang L</b><br><code>2 ka beses</code></figcaption></figure>
@@ -54,6 +59,35 @@ Pito ka case. Mao gyud kini ang pito ka OLL diin human na ang cross, busa
 <figure class="alg"><img src="/bis/assets/cubes/oll-25.svg" alt="Bowtie"><figcaption><b>Bowtie</b><br><code>F' r U R' U' r' F R</code></figcaption></figure>
 </div>
 
+<details class="film">
+<summary>Sune · <code>R U R' U R U2 R'</code></summary>
+<img src="/bis/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Anti-Sune · <code>R U2 R' U' R U' R'</code></summary>
+<img src="/bis/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Double Sune · <code>R U2 R' U' R U R' U' R U' R'</code></summary>
+<img src="/bis/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Pi · <code>R U2 R2 U' R2 U' R2 U2 R</code></summary>
+<img src="/bis/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Headlights · <code>R2 D' R U2 R' D R U2 R</code></summary>
+<img src="/bis/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Sock · <code>r U R' U' r' F R F'</code></summary>
+<img src="/bis/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Bowtie · <code>F' r U R' U' r' F R</code></summary>
+<img src="/bis/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — ang sequence, matag lihok">
+</details>
+
 !!! tip "Sugdi niining duha"
     Ang **Sune** ug ang **Anti-Sune** mirror sa usag usa, ug silang duha ra
     naglangkob sa dako nga bahin sa mga case. Ang laing lima mahimo usab tanan
@@ -74,6 +108,19 @@ iyang corner.
 <figure class="alg"><img src="/bis/assets/cubes/pll-e.svg" alt="E-perm"><figcaption><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></figcaption></figure>
 </div>
 
+<details class="film">
+<summary>A-perm a · <code>x R' U R' D2 R U' R' D2 R2</code></summary>
+<img src="/bis/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>A-perm b · <code>x R2 D2 R U R' D2 R U' R</code></summary>
+<img src="/bis/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>E-perm · <code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></summary>
+<img src="/bis/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — ang sequence, matag lihok">
+</details>
+
 !!! info "Ang A-perm magtuyok sa cube"
     Ang `x` sa sinugdanan usa ka rotation sa tibuok cube: itikig nimo ang cube
     paluyo sa dili pa magbuhat, ug lahi ang imong pagkupot sa katapusan. Normal
@@ -92,6 +139,23 @@ nagsukad sa `M` nga slice.
 <figure class="alg"><img src="/bis/assets/cubes/pll-h.svg" alt="H-perm"><figcaption><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></figcaption></figure>
 <figure class="alg"><img src="/bis/assets/cubes/pll-z.svg" alt="Z-perm"><figcaption><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></figcaption></figure>
 </div>
+
+<details class="film">
+<summary>U-perm a · <code>M2 U M U2 M' U M2</code></summary>
+<img src="/bis/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>U-perm b · <code>M2 U' M U2 M' U' M2</code></summary>
+<img src="/bis/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>H-perm · <code>M2 U M2 U2 M2 U M2</code></summary>
+<img src="/bis/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — ang sequence, matag lihok">
+</details>
+<details class="film">
+<summary>Z-perm · <code>M' U M2 U M2 U M' U2 M2</code></summary>
+<img src="/bis/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — ang sequence, matag lihok">
+</details>
 
 !!! tip "Kining upat ang una nga tun-an"
     Mubo sila, kanunay sila motungha, ug apil sila sa kompleto nga 21 PLL. Walay

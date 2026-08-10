@@ -59,6 +59,11 @@ Pendant l'orientation des coins, tu ne dois faire que des `U` entre les
 répétitions de `R' D' R D`. Le cube doit rester rigoureusement immobile dans tes
 mains.
 
+<details class="film">
+<summary><code>R' D' R D</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
+</details>
+
 Si c'est déjà cassé : reprends le cube depuis l'[étape 1](debutant/1-croix-blanche.md).
 Ça ira vite, tu connais le chemin.
 

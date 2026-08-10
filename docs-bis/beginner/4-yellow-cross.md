@@ -21,6 +21,11 @@ kausa, kaduha o katulo — mao ra kana ang sulod niini nga lakang.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 ## Ang tulo ka case
 
 <div class="algs">

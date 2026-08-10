@@ -24,6 +24,11 @@ tranquille. Les coins ne bougent pas.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/assets/cubes/film-aretes-jaunes.svg" alt="R U' R U R U R U' R' U' R2 — la séquence pas à pas">
+<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+</figure>
+
 ## Comment le placer
 
 1. Trouve les **deux arêtes déjà bien placées**.

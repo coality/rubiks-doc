@@ -128,3 +128,9 @@ cube, ug hinay-hinaya pa.
 Kung ang `R U R' U'` × 6 makabalik nimo sa nasulbad nga cube sa unang sulay,
 kabalo na ka mobasa sa notation. Puwede na ka mosugod sa
 [beginner nga pamaagi](beginner/index.md).
+
+
+<details class="film">
+<summary><code>R U R' U'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-sexy.svg" alt="R U R' U' — ang sequence, matag lihok">
+</details>

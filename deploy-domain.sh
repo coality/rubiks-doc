@@ -29,8 +29,14 @@ step() { echo; echo "== $* =="; }
 [ -n "$NEW" ] || die "usage : sudo $0 <nouveau-domaine>"
 [ "$(id -u)" = 0 ] || die "a lancer en root : sudo $0 $NEW"
 
-# l'utilisateur non privilegie qui possede les sources et lance le build
-OWNER="${SUDO_USER:-$(stat -c %U "$HERE")}"
+# L'utilisateur non privilegie qui possede les sources et lance le build. SUDO_USER vaut « root » quand le script est lance
+# depuis un shell root : le prendre au mot ferait construire site/ en root, et
+# les builds suivants echoueraient en PermissionError. On retombe alors sur le
+# proprietaire des sources.
+OWNER="${SUDO_USER:-}"
+if [ -z "$OWNER" ] || [ "$OWNER" = root ]; then
+    OWNER="$(stat -c %U "$HERE")"
+fi
 id "$OWNER" >/dev/null 2>&1 || die "utilisateur « $OWNER » inconnu"
 
 # ---------------------------------------------------------------- 1. DNS

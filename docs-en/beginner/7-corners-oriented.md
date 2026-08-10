@@ -18,6 +18,11 @@ top.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 ## The absolute rule
 
 !!! danger "NEVER turn the whole cube during this step"

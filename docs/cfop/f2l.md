@@ -25,6 +25,15 @@ Quatre paires, quatre fentes, et les deux tiers du cube sont faits.
 Tout le F2L repose sur une observation : le trio `R U R'` **sort la paire de la
 fente**, et `R U' R'` **l'y range**.
 
+<figure class="film">
+<img src="/assets/cubes/film-trigger-droit.svg" alt="R U R' — la séquence pas à pas">
+<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+</figure>
+
+<figure class="film">
+<img src="/assets/cubes/film-trigger-droit-inverse.svg" alt="R U' R' — la séquence pas à pas">
+</figure>
+
 Prends un cube résolu et fais `R U R'`. Regarde la fente avant-droite : le coin
 et l'arête en sont sortis, ensemble, dans la couche du haut. Fais `R U' R'` pour
 les remettre.
@@ -56,6 +65,10 @@ puis ranger la paire. C'est là qu'est tout le travail intuitif :
 - **Amène l'autre pièce** au-dessus avec `U`, `U'` ou `U2`.
 - **Referme** en inversant le mouvement d'ouverture.
 
+<figure class="film">
+<img src="/assets/cubes/film-trigger-gauche.svg" alt="F' U' F — la séquence pas à pas">
+</figure>
+
 !!! tip "Le réflexe qui débloque 90 % des cas"
     Si tu ne vois pas quoi faire : **ouvre la fente** (`R U R'`), regarde ce qui
     se passe, `U` pour repositionner, **referme**. Dans la grande majorité des
@@ -78,6 +91,10 @@ eux en un ou deux mouvements.
     Beaucoup tournent le cube pour toujours travailler à l'avant-droite. C'est
     une rotation perdue à chaque paire. Apprends à insérer aussi à
     **l'avant-gauche** avec `F' U' F` et `F' U F`, qui en est le miroir.
+
+<figure class="film">
+<img src="/assets/cubes/film-trigger-gauche-inverse.svg" alt="F' U F — la séquence pas à pas">
+</figure>
 
 !!! tip "Choisis ta paire, ne subis pas"
     Après la croix, regarde les quatre paires et commence par la **plus facile**

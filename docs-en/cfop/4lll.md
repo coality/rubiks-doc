@@ -29,6 +29,11 @@ each case.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 <div class="algs">
 <figure class="alg"><img src="/en/assets/cubes/eo-point.svg" alt="The dot"><figcaption><b>The dot</b><br><code>3 times</code></figcaption></figure>
 <figure class="alg"><img src="/en/assets/cubes/eo-equerre.svg" alt="The L"><figcaption><b>The L</b><br><code>2 times</code></figcaption></figure>
@@ -52,6 +57,35 @@ Seven cases. They are exactly the seven OLL where the cross is already done, so
 <figure class="alg"><img src="/en/assets/cubes/oll-25.svg" alt="Bowtie"><figcaption><b>Bowtie</b><br><code>F' r U R' U' r' F R</code></figcaption></figure>
 </div>
 
+<details class="film">
+<summary>Sune · <code>R U R' U R U2 R'</code></summary>
+<img src="/en/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — the sequence step by step">
+</details>
+<details class="film">
+<summary>Anti-Sune · <code>R U2 R' U' R U' R'</code></summary>
+<img src="/en/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — the sequence step by step">
+</details>
+<details class="film">
+<summary>Double Sune · <code>R U2 R' U' R U R' U' R U' R'</code></summary>
+<img src="/en/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — the sequence step by step">
+</details>
+<details class="film">
+<summary>Pi · <code>R U2 R2 U' R2 U' R2 U2 R</code></summary>
+<img src="/en/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — the sequence step by step">
+</details>
+<details class="film">
+<summary>Headlights · <code>R2 D' R U2 R' D R U2 R</code></summary>
+<img src="/en/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — the sequence step by step">
+</details>
+<details class="film">
+<summary>Sock · <code>r U R' U' r' F R F'</code></summary>
+<img src="/en/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — the sequence step by step">
+</details>
+<details class="film">
+<summary>Bowtie · <code>F' r U R' U' r' F R</code></summary>
+<img src="/en/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — the sequence step by step">
+</details>
+
 !!! tip "Start with these two"
     **Sune** and **Anti-Sune** are mirrors of each other and between them cover a
     good share of the cases. The other five can in fact all be solved by applying
@@ -71,6 +105,19 @@ correctly placed.
 <figure class="alg"><img src="/en/assets/cubes/pll-e.svg" alt="E-perm"><figcaption><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></figcaption></figure>
 </div>
 
+<details class="film">
+<summary>A-perm a · <code>x R' U R' D2 R U' R' D2 R2</code></summary>
+<img src="/en/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — the sequence step by step">
+</details>
+<details class="film">
+<summary>A-perm b · <code>x R2 D2 R U R' D2 R U' R</code></summary>
+<img src="/en/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — the sequence step by step">
+</details>
+<details class="film">
+<summary>E-perm · <code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></summary>
+<img src="/en/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — the sequence step by step">
+</details>
+
 !!! info "The A-perms rotate the cube"
     The `x` at the start is a whole-cube rotation: you tip the cube backwards
     before executing, and you finish holding it differently. That is normal.
@@ -88,6 +135,23 @@ Four cases, and the best algorithms on the cube: short, fast, and built on the
 <figure class="alg"><img src="/en/assets/cubes/pll-h.svg" alt="H-perm"><figcaption><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></figcaption></figure>
 <figure class="alg"><img src="/en/assets/cubes/pll-z.svg" alt="Z-perm"><figcaption><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></figcaption></figure>
 </div>
+
+<details class="film">
+<summary>U-perm a · <code>M2 U M U2 M' U M2</code></summary>
+<img src="/en/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — the sequence step by step">
+</details>
+<details class="film">
+<summary>U-perm b · <code>M2 U' M U2 M' U' M2</code></summary>
+<img src="/en/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — the sequence step by step">
+</details>
+<details class="film">
+<summary>H-perm · <code>M2 U M2 U2 M2 U M2</code></summary>
+<img src="/en/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — the sequence step by step">
+</details>
+<details class="film">
+<summary>Z-perm · <code>M' U M2 U M2 U M' U2 M2</code></summary>
+<img src="/en/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — the sequence step by step">
+</details>
 
 !!! tip "These four are the ones to learn first"
     They are short, they come up all the time, and they are part of the full 21

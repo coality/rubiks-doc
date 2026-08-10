@@ -69,6 +69,29 @@
 .objectif img { max-width: 340px; width: 100%; height: auto; }
 .objectif figcaption { font-size: .8rem; opacity: .75; margin-top: .4rem; }
 
+/* Bande « pas a pas » : un cube par mouvement, la fleche du mouvement en cours.
+   Le SVG porte deja les noms des mouvements, d'ou l'absence de legende sous
+   chaque vignette. */
+figure.film { margin: 1.2rem 0; }
+/* pas de width:100% : une bande courte serait agrandie plus qu'une longue,
+   et les cubes n'auraient pas la meme taille d'une figure a l'autre */
+figure.film img, details.film img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+figure.film figcaption { font-size: .8rem; opacity: .75; margin-top: .4rem; }
+details.film { margin: .35rem 0; }
+details.film > summary {
+  cursor: pointer;
+  font-size: .82rem;
+  padding: .25rem 0;
+  opacity: .85;
+}
+details.film > summary code { font-size: .95em; }
+details.film > img { margin: .4rem 0 .8rem; }
+
 /* Table de notation */
 .md-typeset table:not([class]) code { white-space: nowrap; }
 

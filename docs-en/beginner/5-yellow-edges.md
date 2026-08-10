@@ -23,6 +23,11 @@ The corners do not move.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-aretes-jaunes.svg" alt="R U' R U R U R U' R' U' R2 — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 ## How to position it
 
 1. Find the **two edges that are already correct**.

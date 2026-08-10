@@ -21,6 +21,11 @@ une, deux ou trois fois — c'est tout le contenu de cette étape.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — la séquence pas à pas">
+<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+</figure>
+
 ## Les trois cas
 
 <div class="algs">

@@ -124,3 +124,9 @@ cube, more slowly.
 
 Once `R U R' U'` × 6 brings you back to a solved cube first try, you can read the
 notation. You are ready for the [beginner method](beginner/index.md).
+
+
+<details class="film">
+<summary><code>R U R' U'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-sexy.svg" alt="R U R' U' — the sequence step by step">
+</details>

@@ -45,6 +45,11 @@ ang kolor sa ibabaw motakdo sa center sa tuo nga face.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 <div class="fiche" markdown>
 ![Pagsulod sa wala](../assets/cubes/couronne2-gauche.svg)
 <div class="corps" markdown>
@@ -54,6 +59,10 @@ gi-mirror lang: ang matag <code>R</code> mahimong <code>L</code>, ug ang matag
 direksyon mabaliktad.</p>
 </div>
 </div>
+
+<figure class="film">
+<img src="/bis/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — ang sequence, matag lihok">
+</figure>
 
 !!! tip "Unsaon pagsag-ulo sa duha ka algorithm dungan"
     Ayaw sila tun-i nga bulag. Sag-uloha ang bersyon sa tuo, dayon hinumdomi ang

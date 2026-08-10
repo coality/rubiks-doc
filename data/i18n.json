@@ -74,7 +74,11 @@
       "b-arete-casee": "L’arête est déjà dans la fente",
       "c-coin-case": "Le coin est déjà dans la fente",
       "d-les-deux-cases": "Les deux sont dans la fente, mal placés"
-    }
+    },
+    "film_title": "%s — la séquence pas à pas",
+    "film_result": "résultat",
+    "film_caption": "La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.",
+    "film_summary": "la séquence pas à pas"
   },
   "en": {
     "figures": {
@@ -151,7 +155,11 @@
       "b-arete-casee": "The edge is already in the slot",
       "c-coin-case": "The corner is already in the slot",
       "d-les-deux-cases": "Both are in the slot, badly placed"
-    }
+    },
+    "film_title": "%s — the sequence step by step",
+    "film_result": "result",
+    "film_caption": "The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.",
+    "film_summary": "the sequence step by step"
   },
   "bis": {
     "figures": {
@@ -228,6 +236,10 @@
       "b-arete-casee": "Ang edge naa na sa slot",
       "c-coin-case": "Ang corner naa na sa slot",
       "d-les-deux-cases": "Naa na silang duha sa slot, apan sayop ang pagkabutang"
-    }
+    },
+    "film_title": "%s — ang sequence, matag lihok",
+    "film_result": "resulta",
+    "film_caption": "Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.",
+    "film_summary": "ang sequence, matag lihok"
   }
 }

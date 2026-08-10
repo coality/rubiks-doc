@@ -73,7 +73,11 @@ def algs_in(text):
 
 
 def imgs_in(text):
-    return re.findall(r'(?:src="|\]\()(?:/(?:en|bis)/)?(?:\.\./)*assets/cubes/([a-z0-9\-]+)\.svg', text)
+    # les blocs HTML bruts referencent les images en absolu, avec le prefixe de
+    # langue : « /assets/... » en francais, « /en/assets/... » ailleurs. Le « / »
+    # nu doit etre accepte, sinon les images du site francais echappent au controle.
+    return re.findall(r'(?:src="|\]\()(?:/(?:en|bis))?/?(?:\.\./)*'
+                      r'assets/cubes/([a-z0-9\-]+)\.svg', text)
 
 
 # --- 1. tout algorithme cite doit etre analysable par le moteur ------------
@@ -525,11 +529,52 @@ def check_cross_bounds():
        'cfop/croix : moyenne %.3f, la page annonce « un peu moins de 6 »' % mean)
 
 
+# --- les bandes « pas a pas » : une par sequence citee, dans les 3 langues ---
+REFERENCE_PAGES = ('avance/', 'advanced/')
+
+
+def _tutorial_pages():
+    return [(fr, ot) for fr, ot in PAGES if not fr.startswith(REFERENCE_PAGES)]
+
+
+def check_films():
+    """Toute sequence citee dans une page de tutoriel doit avoir sa bande, et
+    toute bande generee doit etre montree quelque part — dans les trois langues.
+
+    C'est ce qui empeche une page d'annoncer un algorithme sans l'illustrer, et
+    une bande de rester orpheline apres un remaniement de page.
+    """
+    from build import FILMS
+    known = {alg: slug for slug, alg in FILMS}
+    ok(len(known) == len(FILMS), 'films : deux entrees pour la meme sequence')
+
+    per_lang = {}
+    for lang, d in LANGS:
+        used = set()
+        for fr_rel, other_rel in _tutorial_pages():
+            txt = open(path_for(d, fr_rel, other_rel), encoding='utf-8').read()
+            for alg in algs_in(txt):
+                ok(alg in known,
+                   '%s [%s] : la sequence « %s » est citee sans bande pas a pas '
+                   '(ajouter FILMS dans tools/build.py)' % (fr_rel, lang, alg))
+            used |= set(imgs_in(txt)) & set('film-' + s for s in known.values())
+        per_lang[lang] = used
+
+    for slug in known.values():
+        for lang in per_lang:
+            ok('film-' + slug in per_lang[lang],
+               'film-%s.svg [%s] : bande generee mais montree nulle part' % (slug, lang))
+    ref = per_lang['fr']
+    for lang, used in per_lang.items():
+        ok(used == ref, 'les bandes montrees en %s different du francais (%s)'
+           % (lang, sorted(used ^ ref)))
+
+
 EXTRA = [check_pieces_and_colours, check_centres_fixed, check_notation_semantics,
          check_invariants, check_beginner_method, check_step3_insertions,
          check_step6_zero_one_four, check_step5_two_matched,
          check_f2l_pair_extraction, check_4lll_counts, check_named_algs,
-         check_cross_bounds]
+         check_cross_bounds, check_films]
 
 
 if __name__ == '__main__':

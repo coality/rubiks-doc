@@ -58,6 +58,11 @@ the whole cube** during [step 7](beginner/7-corners-oriented.md).
 While orienting the corners you must only do `U` moves between the repetitions of
 `R' D' R D`. The cube must stay rigorously still in your hands.
 
+<details class="film">
+<summary><code>R' D' R D</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+</details>
+
 If it is already broken: start the cube again from
 [step 1](beginner/1-white-cross.md). It will be quick, you know the way.
 

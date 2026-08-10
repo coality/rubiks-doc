@@ -56,6 +56,11 @@ A move should be done **with one finger**, not with the wrist.
     fingers. If you readjust your grip between moves, the fingertrick is not
     there yet. Repeat it slowly until the grip stops moving.
 
+<details class="film">
+<summary><code>R U R' U'</code> — the sequence step by step</summary>
+<img src="/en/assets/cubes/film-sexy.svg" alt="R U R' U' — the sequence step by step">
+</details>
+
 ## The hardware
 
 !!! warning "The original cube is a real handicap"

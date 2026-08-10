@@ -24,6 +24,11 @@ ikaupat. Ang corner dili molihok.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-aretes-jaunes.svg" alt="R U' R U R U R U' R' U' R2 — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 ## Unsaon pagposisyon
 
 1. Pangitaa ang **duha ka edge nga husto na**.

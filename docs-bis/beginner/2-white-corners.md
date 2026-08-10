@@ -62,6 +62,11 @@ sa husto nga direksyon. <b>Ayaw gyud hunong sa tunga.</b></p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 !!! tip "Dili nimo kinahanglan mag-ihap"
     Balika lang hangtod nga mahiluna ang corner, ang puti naa sa ubos. Ang mga
     hulagway sa ibabaw naa ra aron dili ka mabalaka kung morag dugay na: normal

@@ -18,6 +18,11 @@ nga sticker moabot sa ibabaw.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
+<figcaption>Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.</figcaption>
+</figure>
+
 ## Ang lagda nga dili gyud lapason
 
 !!! danger "AYAW GYUD tuyoka ang tibuok cube niini nga lakang"

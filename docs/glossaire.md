@@ -24,6 +24,11 @@
 : Séquence de la forme « faire A, faire B, défaire A, défaire B ». Elle ne
   dérange qu'une toute petite partie du cube. `R' D' R D` en est un.
 
+<details class="film">
+<summary><code>R' D' R D</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
+</details>
+
 **Fente** (*slot*)
 : L'emplacement d'une paire coin + arête dans les deux premières couronnes. Il y
   en a quatre.
@@ -75,13 +80,33 @@
 : `R U R' U'`. La séquence la plus utilisée du cube. Répétée six fois, elle
   ramène au point de départ.
 
+<details class="film">
+<summary><code>R U R' U'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-sexy.svg" alt="R U R' U' — la séquence pas à pas">
+</details>
+
 **Sune**
 : `R U R' U R U2 R'`. Oriente trois coins. Avec son miroir l'**anti-Sune**
   (`R U2 R' U' R U' R'`), c'est le premier vrai algorithme d'OLL à apprendre.
 
+<details class="film">
+<summary><code>R U R' U R U2 R'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — la séquence pas à pas">
+</details>
+
+<details class="film">
+<summary><code>R U2 R' U' R U' R'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — la séquence pas à pas">
+</details>
+
 **T-perm**
 : `R U R' U' R' F R2 U' R' U' R U R' F'`. Le PLL le plus connu : il échange deux
   coins et deux arêtes.
+
+<details class="film">
+<summary><code>R U R' U' R' F R2 U' R' U' R U R' F'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-tperm.svg" alt="R U R' U' R' F R2 U' R' U' R U R' F' — la séquence pas à pas">
+</details>
 
 **Perms nommées** (A, E, F, G, H, J, N, R, T, U, V, Y, Z)
 : Les 21 cas de PLL, nommés d'après la forme dessinée par les flèches de

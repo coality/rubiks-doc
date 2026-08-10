@@ -19,6 +19,11 @@
   bawia ang B". Gamay ra kaayo ang bahin sa cube nga iyang matandog. Ang
   `R' D' R D` usa niini.
 
+<details class="film">
+<summary><code>R' D' R D</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
+</details>
+
 **Corner**
 : Piraso nga adunay **tulo** ka sticker, naa sa eskina sa cube. Naay 8.
 
@@ -82,14 +87,34 @@
 : `R U R' U'`. Ang labing gamit nga sunod-sunod sa cube. Kung balikon og unom ka
   beses, mobalik kini sa gisugdan.
 
+<details class="film">
+<summary><code>R U R' U'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-sexy.svg" alt="R U R' U' — ang sequence, matag lihok">
+</details>
+
 **Sune**
 : `R U R' U R U2 R'`. Mag-orient og tulo ka corner. Uban sa iyang mirror nga
   **anti-Sune** (`R U2 R' U' R U' R'`), mao kini ang unang tinuod nga algorithm
   sa OLL nga tun-an.
 
+<details class="film">
+<summary><code>R U R' U R U2 R'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — ang sequence, matag lihok">
+</details>
+
+<details class="film">
+<summary><code>R U2 R' U' R U' R'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — ang sequence, matag lihok">
+</details>
+
 **T-perm**
 : `R U R' U' R' F R2 U' R' U' R U R' F'`. Ang labing ilado nga PLL: magbayloay
   siya og duha ka corner ug duha ka edge.
+
+<details class="film">
+<summary><code>R U R' U' R' F R2 U' R' U' R U R' F'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-tperm.svg" alt="R U R' U' R' F R2 U' R' U' R U R' F' — ang sequence, matag lihok">
+</details>
 
 ## Ang mga sukod
 

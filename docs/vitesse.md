@@ -57,6 +57,11 @@ Un mouvement doit se faire **d'un doigt**, pas du poignet.
     doigts. Si tu réajustes ta prise entre deux mouvements, le doigté n'est pas
     encore acquis. Répète-le lentement jusqu'à ce que la prise ne bouge plus.
 
+<details class="film">
+<summary><code>R U R' U'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-sexy.svg" alt="R U R' U' — la séquence pas à pas">
+</details>
+
 ## Le matériel
 
 !!! warning "Le cube d'origine est un handicap réel"

@@ -5,13 +5,15 @@ on la verifie mecaniquement, face par face.
 """
 import math
 import os
+import re
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
 
-from cube import Cube, NORMALS, solved
-from render3d import basis, turn_points, travel, project, sticker_center, _dot, _norm
+from cube import Cube, NORMALS, MOVES, AXIS_IDX, solved, parse
+from render3d import (basis, arc3, travel, project, sticker_center, move_arcs_3d,
+                      filmstrip, R_SLICE, SPAN_QUARTER, _dot)
 
 OK = 0
 
@@ -55,7 +57,7 @@ def test_arc_follows_the_move():
         n = NORMALS[face]
         u, v = basis(n)
         for cw in (True, False):
-            pts3 = _arc_3d(face, cw)
+            pts3 = arc3(face, cw)
             a0 = math.degrees(math.atan2(_dot(pts3[0], v), _dot(pts3[0], u)))
             a1 = math.degrees(math.atan2(_dot(pts3[-1], v), _dot(pts3[-1], u)))
             d = (a1 - a0 + 180.0) % 360.0 - 180.0
@@ -64,28 +66,11 @@ def test_arc_follows_the_move():
                   % (face, '' if cw else "'", d))
 
 
-def _arc_3d(face, cw, span=150.0, radius=0.95):
-    """Memes points que turn_points(), mais gardes en 3D pour le test."""
-    n = NORMALS[face]
-    u, v = basis(n)
-    from render3d import _D
-    w = _norm([d - k * _dot(_D, n) for d, k in zip(_D, n)])
-    mid = math.degrees(math.atan2(_dot(w, v), _dot(w, u)))
-    half = span / 2.0
-    a0, a1 = (mid + half, mid - half) if cw else (mid - half, mid + half)
-    out = []
-    for i in range(3):
-        t = math.radians(a0 + (a1 - a0) * i / 2.0)
-        out.append(tuple(u[k] * radius * math.cos(t) + v[k] * radius * math.sin(t)
-                         for k in range(3)))
-    return out
-
-
 def test_arc_is_on_the_visible_side():
     """L'arc doit etre devant, sinon la fleche passe derriere le cube."""
     from render3d import _D
     for face in ('U', 'F', 'R'):
-        for p in _arc_3d(face, True):
+        for p in arc3(face, True):
             check(_dot(p, _D) > -0.5,
                   "%s : un point de l'arc est derriere le cube" % face)
 
@@ -113,10 +98,107 @@ def test_projection_is_not_degenerate():
         check(area > 0.05, 'facette %r : quad projete degenere (aire %.3f)' % ((pos, nrm), area))
 
 
+# --- mouvements dessines pas a pas ----------------------------------------
+# tous les mouvements que le site illustre, primes et demi-tours compris
+TOKENS = ["R", "R'", "R2", "L", "L'", "L2", "U", "U'", "U2", "D", "D'", "D2",
+          "F", "F'", "F2", "B", "B'", "M", "M'", "M2", "r", "r'", "l", "u",
+          "x", "x'", "y", "y'", "z"]
+
+
+def _axis_angle(axis, p):
+    """Direction d'un point autour d'un axe, en degres, dans le plan normal."""
+    n = {'x': (1, 0, 0), 'y': (0, 1, 0), 'z': (0, 0, 1)}[axis]
+    u, v = basis(n)
+    r = [a - b * _dot(p, n) for a, b in zip(p, n)]
+    return math.degrees(math.atan2(_dot(r, v), _dot(r, u)))
+
+
+def test_move_arcs_match_engine():
+    """Pour chaque mouvement, l'arc dessine tourne dans le sens ou le moteur
+    fait tourner les autocollants concernes. C'est LA verification qui empeche
+    une bande « pas a pas » de montrer un mouvement a l'envers."""
+    for tok in TOKENS:
+        (base, mult), = parse(tok)
+        axis, layers, q1 = MOVES[base]
+        quarters = (q1 * mult) % 4
+        i = AXIS_IDX[axis]
+
+        # des facettes qui tournent vraiment : dans une tranche concernee, et
+        # pas sur l'axe (celles-la ne feraient que pivoter sur place)
+        starts = [k for k in solved().st
+                  if k[0][i] in layers and any(k[0][j] for j in range(3) if j != i)]
+        check(starts, '%s : aucune facette a verifier' % tok)
+
+        expected = {1: 270.0, 2: 180.0, 3: 90.0}[quarters]
+        for src, dst in travel(tok, starts):
+            a0 = _axis_angle(axis, sticker_center(*src))
+            a1 = _axis_angle(axis, sticker_center(*dst))
+            check(abs((a1 - a0) % 360.0 - expected) < 1e-6,
+                  '%s : le moteur emmene une facette de %.0f a %.0f deg '
+                  '(delta %.0f, attendu %.0f)'
+                  % (tok, a0, a1, (a1 - a0) % 360.0, expected))
+
+        arcs = move_arcs_3d(tok)
+        check(arcs, '%s : aucun arc dessine' % tok)
+        for arc in arcs:
+            # somme des pas : un arc peut depasser 180 deg (demi-tour, rotation),
+            # donc on ne peut pas simplement comparer le premier et le dernier
+            # point — la difference se replierait et changerait de signe.
+            d = sum((_axis_angle(axis, b) - _axis_angle(axis, a) + 180.0) % 360.0 - 180.0
+                    for a, b in zip(arc, arc[1:]))
+            check((d < 0) == (quarters != 3),
+                  "%s : l'arc tourne a l'envers de ce que fait le moteur "
+                  '(%.0f deg)' % (tok, d))
+            if quarters == 2:       # un demi-tour doit se voir : arc plus long
+                check(abs(d) > SPAN_QUARTER + 1e-9,
+                      '%s : demi-tour dessine comme un quart de tour (%.0f deg)'
+                      % (tok, abs(d)))
+
+
+def test_move_arcs_show_every_moving_layer():
+    """Un mouvement large en dessine deux, une tranche une seule, une rotation
+    du cube entier un seul anneau : le lecteur doit voir ce qui bouge."""
+    for tok, expected in (('R', 1), ("R'", 1), ('M', 1), ('r', 2), ('l', 2),
+                          ('u', 2), ('x', 1), ('y', 1)):
+        check(len(move_arcs_3d(tok)) == expected,
+              '%s : %d arc(s), %d attendu(s)' % (tok, len(move_arcs_3d(tok)), expected))
+
+
+def test_arcs_never_pass_inside_the_cube():
+    """Un arc qui traverse le cube est illisible : le rayon des tranches doit
+    degager la section 3x3 (demi-diagonale 2.12), pas seulement ses faces."""
+    check(R_SLICE > 1.5 * math.sqrt(2.0), 'rayon de tranche trop court : %.2f' % R_SLICE)
+    for tok in TOKENS:
+        for arc in move_arcs_3d(tok):
+            for p in arc:
+                check(max(abs(c) for c in p) > 1.5 + 1e-9,
+                      '%s : un point de l\'arc est a l\'interieur du cube %r' % (tok, p))
+
+
+def test_filmstrip_follows_the_algorithm():
+    """La bande a une vignette par mouvement plus une pour le resultat, et les
+    legendes sont exactement les mouvements, dans l'ordre."""
+    alg = "R' D' R D"
+    svg = filmstrip(alg, solved(), 'test', 'fin')
+    caps = re.findall(r'<text[^>]*>([^<]*)</text>', svg)
+    check(caps == alg.split() + ['fin'],
+          'legendes inattendues : %r' % (caps,))
+    # une vignette = un fond arrondi ; 4 mouvements + le resultat
+    check(svg.count('rx="8"') == 5, 'nombre de vignettes inattendu')
+    # le dernier etat est bien celui du moteur : la bande part du cas et finit resolu
+    from cube import case_state, orient_std
+    end = case_state(alg).apply(alg)
+    check(orient_std(end).is_solved(), 'la bande devrait finir sur un cube resolu')
+
+
 if __name__ == '__main__':
     test_moves_turn_clockwise()
     test_arc_follows_the_move()
     test_arc_is_on_the_visible_side()
     test_travel_matches_engine()
     test_projection_is_not_degenerate()
+    test_move_arcs_match_engine()
+    test_move_arcs_show_every_moving_layer()
+    test_arcs_never_pass_inside_the_cube()
+    test_filmstrip_follows_the_algorithm()
     print('rendu 3D : %d verifications OK' % OK)

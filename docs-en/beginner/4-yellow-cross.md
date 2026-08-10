@@ -21,6 +21,11 @@ once, twice or three times — that is the whole of this step.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-croix-jaune.svg" alt="F R U R' U' F' — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 ## The three cases
 
 <div class="algs">

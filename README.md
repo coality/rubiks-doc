@@ -29,10 +29,10 @@ Apache serves `site/` immediately. The script stops at the first failure:
 
 | Step | Checks |
 |---|---|
-| 1 | 30 engine self-tests, 108 3D-rendering self-tests |
+| 1 | 30 engine self-tests, 2016 3D-rendering self-tests |
 | 2 | every algorithm valid, 57 OLL + 21 PLL proven complete |
 | 3 | generates diagrams and reference pages for the 3 languages |
-| 4 | 1008 content checks across the 3 languages |
+| 4 | 2974 content checks across the 3 languages |
 | 5 | three `mkdocs build --strict` |
 | 6 | hreflang, meta descriptions, robots.txt, sitemap index |
 
@@ -91,6 +91,11 @@ diagram is re-rendered from the algorithm, so the two cannot diverge.
 - Diagrams are rendered from the algorithms themselves.
 - 3D arrows come from the engine: label each facelet with its origin, apply the
   algorithm, read where it landed. Rotation direction is checked face by face.
+- Every sequence quoted in a tutorial page gets a step-by-step strip: one 3D cube
+  per move, showing the cube **before** the turn, an arrow for that turn and its
+  name. The arrows are derived from the engine's move table — axis, layers and
+  direction are never retyped — and a test replays each move on the engine to
+  confirm the arrow turns the same way.
 
 ## Deployment
 

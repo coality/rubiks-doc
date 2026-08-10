@@ -58,6 +58,11 @@ Ang usa ka lihok kinahanglan buhaton **sa usa ka tudlo**, dili sa pulso.
     lihok, wala pa nimo makab-ot ang fingertrick. Balika hinay-hinay hangtod nga
     dili na molihok ang imong pagkupot.
 
+<details class="film">
+<summary><code>R U R' U'</code> — ang sequence, matag lihok</summary>
+<img src="/bis/assets/cubes/film-sexy.svg" alt="R U R' U' — ang sequence, matag lihok">
+</details>
+
 ## Ang gamit
 
 !!! warning "Ang orihinal nga cube usa gyud ka babag"

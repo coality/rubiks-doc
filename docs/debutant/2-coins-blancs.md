@@ -60,6 +60,11 @@ dans le bon sens. <b>Ne t'arrête jamais en cours de route.</b></p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
+<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+</figure>
+
 !!! tip "Tu n'as pas besoin de compter"
     Répète simplement jusqu'à ce que le coin soit posé, blanc en bas. Les
     schémas ci-dessus ne sont là que pour te rassurer quand ça semble long :

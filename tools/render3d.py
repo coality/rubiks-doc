@@ -13,7 +13,7 @@ Reperes du moteur : x droite, y haut, z vers l'observateur.
 """
 import math
 
-from cube import Cube, NORMALS, face_index
+from cube import Cube, NORMALS, NORMAL_TO_FACE, MOVES, face_index, parse
 from render import PAINT, BODY, EDGE
 
 # --- camera ----------------------------------------------------------------
@@ -181,8 +181,14 @@ def _stroke_pair(d):
     return [_path(d, INK, 7.0), _path(d, CHALK, 3.4, ' marker-end="url(#h3)"')]
 
 
-def turn_points(face, clockwise=True, span=150.0, radius=0.95, lift=0.42):
-    """Arc 2D au-dessus d'une face, montrant le sens de rotation du mouvement.
+# rayons des arcs : sur la face, autour d'une tranche, autour du cube entier
+R_FACE, R_SLICE, R_WHOLE = 0.95, 2.15, 2.45
+SPAN_QUARTER, SPAN_HALF, SPAN_WHOLE = 150.0, 250.0, 210.0
+LIFT = 0.42
+
+
+def arc3(face, clockwise=True, span=SPAN_QUARTER, radius=R_FACE, depth=1.92):
+    """Arc EN 3D au-dessus d'une face, montrant le sens de rotation du mouvement.
 
     (u, v, n) est direct : tourner de u vers v (theta croissant) est ANTIhoraire
     vu depuis l'exterieur de la face. Un mouvement sans prime — horaire par
@@ -191,6 +197,13 @@ def turn_points(face, clockwise=True, span=150.0, radius=0.95, lift=0.42):
 
     L'arc est centre sur la direction de la face qui **fait face a la camera** :
     la fleche se lit alors sur la partie visible, et non derriere le cube.
+
+    `depth` est la distance du plan de l'arc au centre du cube, le long de la
+    normale : 1.92 le pose juste au-dessus de la face, 0 au milieu du cube (pour
+    une tranche), -1.92 au-dessus de la face opposee.
+
+    Le rendu comme les tests passent par cette fonction : le sens verifie est
+    donc bien celui qui est dessine, et non une reconstitution.
     """
     n = NORMALS[face]
     u, v = basis(n)
@@ -199,34 +212,59 @@ def turn_points(face, clockwise=True, span=150.0, radius=0.95, lift=0.42):
     mid = math.degrees(math.atan2(_dot(w, v), _dot(w, u)))
     half = span / 2.0
     a0, a1 = (mid + half, mid - half) if clockwise else (mid - half, mid + half)
-    c = _mul(n, 1.5 + lift)
+    c = _mul(n, depth)
     pts = []
     steps = 28
     for i in range(steps + 1):
         t = math.radians(a0 + (a1 - a0) * i / steps)
-        p = _add(c, _add(_mul(u, radius * math.cos(t)), _mul(v, radius * math.sin(t))))
-        pts.append(project(p))
+        pts.append(_add(c, _add(_mul(u, radius * math.cos(t)),
+                                _mul(v, radius * math.sin(t)))))
     return pts
 
 
-# --- rendu -----------------------------------------------------------------
-def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(), cam=CAM):
-    """Vue isometrique du cube.
+def turn_points(face, clockwise=True, span=SPAN_QUARTER, radius=R_FACE, depth=1.92):
+    """Le meme arc, projete a l'ecran."""
+    return [project(p) for p in arc3(face, clockwise, span, radius, depth)]
 
-    keep    : ensemble de (face, index) a garder en couleur (le reste grise)
-    arrows  : liste de ((pos,nrm), (pos,nrm)) — trajets de pieces
-    turns   : liste de (face, clockwise) — sens d'un mouvement
-    labels  : liste de (face, texte) — lettre posee au centre de la face
-    cam     : point de vue (CAM par defaut, CAM_BAS pour voir la couche du bas)
+
+
+def move_arcs_3d(token):
+    """Arcs EN 3D montrant ce que fait UN mouvement — deduits de `MOVES`, la
+    table du moteur. L'axe, les tranches concernees et le sens ne sont donc pas
+    ressaisis ici : une fleche ne peut pas contredire le mouvement qu'elle nomme.
     """
-    set_camera(cam)
-    try:
-        return _render(cube, title, keep, arrows, turns, labels)
-    finally:
-        set_camera()
+    (base, mult), = parse(token)
+    axis, layers, q1 = MOVES[base]
+    quarters = (q1 * mult) % 4
+    assert quarters, 'mouvement sans effet : %r' % token
+    n = {'x': (1, 0, 0), 'y': (0, 1, 0), 'z': (0, 0, 1)}[axis]
+    face = NORMAL_TO_FACE[n]
+    # quarters compte les quarts de tour HORAIRES autour de l'axe positif :
+    # 1 -> horaire, 3 -> antihoraire, 2 -> demi-tour (le sens ne veut rien dire)
+    clockwise = quarters != 3
+    span = SPAN_HALF if quarters == 2 else SPAN_QUARTER
+
+    if len(layers) == 3:                       # rotation du cube entier
+        return [arc3(face, clockwise, SPAN_WHOLE, R_WHOLE, 0.0)]
+    out = []
+    for lay in sorted(layers, reverse=True):   # de l'axe positif vers l'autre
+        if lay == 0:                           # tranche du milieu : on l'encercle
+            out.append(arc3(face, clockwise, span, R_SLICE, 0.0))
+        else:                                  # face exterieure : arc pose dessus
+            out.append(arc3(face, clockwise, span, R_FACE, lay * (1.5 + LIFT)))
+    return out
 
 
-def _render(cube, title, keep, arrows, turns, labels):
+def move_arcs(token):
+    """Les memes arcs, projetes a l'ecran."""
+    return [[project(p) for p in a] for a in move_arcs_3d(token)]
+
+
+# --- rendu -----------------------------------------------------------------
+def _scene(cube, keep=None, arrows=(), turns=(), arcs=()):
+    """Geometrie d'une figure, en unites de cubie — rien n'est encore mis a
+    l'echelle. Sert aussi bien a une figure isolee qu'a une vignette de bande,
+    ce qui garantit que les deux se dessinent exactement pareil."""
     quads = []
     for (pos, nrm), col in cube.st.items():
         if not visible(nrm):
@@ -240,44 +278,146 @@ def _render(cube, title, keep, arrows, turns, labels):
     corners = [(sx * 1.5, sy * 1.5, sz * 1.5)
                for sx in (-1, 1) for sy in (-1, 1) for sz in (-1, 1)]
     body = _hull([project(p) for p in corners])
+    return dict(quads=quads, body=body,
+                arcs=[turn_points(f, cw) for f, cw in turns] + [list(a) for a in arcs],
+                curves=[_travel_2d(a, b) for a, b in arrows])
 
-    arcs = [turn_points(f, cw) for f, cw in turns]
-    curves = [_travel_2d(a, b) for a, b in arrows]
-    geo = [q for _d, q, _c in quads] + [body] + arcs + [list(c) for c in curves]
+
+def _extent(scenes):
+    """Boite englobante commune a plusieurs figures.
+
+    Commune, et non par figure : sans ca le cube sauterait d'une vignette a
+    l'autre au gre de la place prise par les fleches, et la bande deviendrait
+    illisible."""
+    geo = []
+    for sc in scenes:
+        geo += [q for _d, q, _c in sc['quads']] + [sc['body']] + sc['arcs']
+        geo += [list(c) for c in sc['curves']]
     xs = [p[0] for g in geo for p in g]
     ys = [p[1] for g in geo for p in g]
-    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
-    w = (maxx - minx) * SCALE + 2 * PAD
-    h = (maxy - miny) * SCALE + 2 * PAD
+    return min(xs), max(xs), min(ys), max(ys)
 
-    def sc(p):
-        return ((p[0] - minx) * SCALE + PAD, (p[1] - miny) * SCALE + PAD)
 
-    parts = ['<rect x="0" y="0" width="%.1f" height="%.1f" rx="8" fill="%s"/>'
-             % (w, h, BODY)]
-    parts.append(_poly([sc(p) for p in body], BODY, EDGE, 2.0))
-    for _d, quad, col in quads:
-        pts = [sc(p) for p in quad]
-        parts.append(_poly(pts, PAINT[col]))
-
-    if arcs or curves:
-        parts.append(_arrow_defs())
-    for pts in arcs:
+def _paint(scene, sc, labels=()):
+    parts = [_poly([sc(p) for p in scene['body']], BODY, EDGE, 2.0)]
+    for _d, quad, col in scene['quads']:
+        parts.append(_poly([sc(p) for p in quad], PAINT[col]))
+    for pts in scene['arcs']:
         d = 'M %.2f,%.2f' % sc(pts[0]) + ''.join(' L %.2f,%.2f' % sc(p) for p in pts[1:])
         parts += _stroke_pair(d)
-    for pa, ctrl, pb in curves:
+    for pa, ctrl, pb in scene['curves']:
         parts += _stroke_pair('M %.2f,%.2f Q %.2f,%.2f %.2f,%.2f'
                               % (sc(pa) + sc(ctrl) + sc(pb)))
-
     for face, text in labels:
         x, y = sc(project(_mul(NORMALS[face], 1.62)))
-        parts.append('<text x="%.1f" y="%.1f" text-anchor="middle" '
-                     'dominant-baseline="central" font-family="system-ui,sans-serif" '
-                     'font-size="30" font-weight="700" fill="%s" stroke="%s" '
-                     'stroke-width="4" paint-order="stroke">%s</text>'
-                     % (x, y, CHALK, INK, text))
+        parts.append(_text(x, y, text, 30))
+    return parts
 
+
+def _text(x, y, txt, size, weight=700):
+    return ('<text x="%.1f" y="%.1f" text-anchor="middle" '
+            'dominant-baseline="central" font-family="system-ui,sans-serif" '
+            'font-size="%d" font-weight="%d" fill="%s" stroke="%s" '
+            'stroke-width="4" paint-order="stroke">%s</text>'
+            % (x, y, size, weight, CHALK, INK, _esc(txt)))
+
+
+def _esc(t):
+    return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+def _svg(w, h, parts, title):
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %.0f %.0f" '
             'width="%.0f" height="%.0f" role="img" aria-label="%s">'
             '<title>%s</title>%s</svg>'
-            % (w, h, w, h, title, title, ''.join(parts)))
+            % (w, h, w, h, _esc(title), _esc(title), ''.join(parts)))
+
+
+def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(), cam=CAM):
+    """Vue isometrique du cube.
+
+    keep    : ensemble de (face, index) a garder en couleur (le reste grise)
+    arrows  : liste de ((pos,nrm), (pos,nrm)) — trajets de pieces
+    turns   : liste de (face, clockwise) — sens d'un mouvement
+    labels  : liste de (face, texte) — lettre posee au centre de la face
+    cam     : point de vue (CAM par defaut, CAM_BAS pour voir la couche du bas)
+    """
+    set_camera(cam)
+    try:
+        scene = _scene(cube, keep, arrows, turns)
+        minx, maxx, miny, maxy = _extent([scene])
+        w = (maxx - minx) * SCALE + 2 * PAD
+        h = (maxy - miny) * SCALE + 2 * PAD
+
+        def sc(p):
+            return ((p[0] - minx) * SCALE + PAD, (p[1] - miny) * SCALE + PAD)
+
+        parts = ['<rect x="0" y="0" width="%.1f" height="%.1f" rx="8" fill="%s"/>'
+                 % (w, h, BODY)]
+        parts += _paint(scene, sc, labels)
+        if scene['arcs'] or scene['curves']:
+            parts.insert(1, _arrow_defs())
+        return _svg(w, h, parts, title)
+    finally:
+        set_camera()
+
+
+# --- bande de vignettes ----------------------------------------------------
+CELL = 132.0        # largeur d'une vignette a l'ecran, en pixels
+CELL_GAP = 7.0
+CAPTION = 30.0      # bandeau du nom du mouvement, sous la vignette
+MAX_COLS = 6
+
+
+def filmstrip(alg, start, title='', last='', cam=CAM):
+    """Bande « pas a pas » : une vignette par mouvement, montrant l'etat AVANT
+    de tourner, la fleche du mouvement en cours et son nom.
+
+    Les etats comme les fleches sont calcules en deroulant `alg` sur `start`
+    avec le moteur : la bande ne peut donc pas raconter autre chose que
+    l'algorithme qu'elle illustre. Une derniere vignette montre le resultat.
+    """
+    set_camera(cam)
+    try:
+        return _filmstrip(alg, start, title, last)
+    finally:
+        set_camera()
+
+
+def _filmstrip(alg, start, title, last):
+    cube = start.copy()
+    scenes, caps = [], []
+    for tok in alg.split():
+        scenes.append(_scene(cube, arcs=move_arcs(tok)))
+        caps.append(tok)
+        cube = cube.copy().apply(tok)
+    scenes.append(_scene(cube))                 # le resultat, sans fleche
+    caps.append(last)
+
+    minx, maxx, miny, maxy = _extent(scenes)
+    n = len(scenes)
+    rows = (n + MAX_COLS - 1) // MAX_COLS
+    cols = (n + rows - 1) // rows               # rangees equilibrees
+    k = (CELL - 2 * PAD) / (maxx - minx)        # pixels par unite de cubie
+    ch = (maxy - miny) * k + 2 * PAD            # hauteur de la partie cube
+    cellh = ch + CAPTION
+    w = cols * CELL + (cols - 1) * CELL_GAP
+    h = rows * cellh + (rows - 1) * CELL_GAP
+
+    def sc(p):                                   # coordonnees internes a l'echelle SCALE
+        return ((p[0] - minx) * SCALE + PAD * SCALE / k,
+                (p[1] - miny) * SCALE + PAD * SCALE / k)
+
+    parts = [_arrow_defs()]
+    for i, (scene, cap) in enumerate(zip(scenes, caps)):
+        ox = (i % cols) * (CELL + CELL_GAP)
+        oy = (i // cols) * (cellh + CELL_GAP)
+        parts.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="8" '
+                     'fill="%s"/>' % (ox, oy, CELL, cellh, BODY))
+        # le contenu est dessine a l'echelle native puis reduit : les epaisseurs
+        # de trait et les pointes de fleche gardent donc les memes proportions
+        parts.append('<g transform="translate(%.2f,%.2f) scale(%.4f)">' % (ox, oy, k / SCALE))
+        parts += _paint(scene, sc)
+        parts.append('</g>')
+        parts.append(_text(ox + CELL / 2.0, oy + ch + CAPTION / 2.0 - 2, cap, 20))
+    return _svg(w, h, parts, title)

@@ -60,6 +60,11 @@ the right way round. <b>Never stop part way through.</b></p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+<figcaption>The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.</figcaption>
+</figure>
+
 !!! tip "You don't have to count"
     Just repeat until the corner is seated, white underneath. The diagrams above
     are only there to reassure you when it feels long: five repetitions is

@@ -44,6 +44,11 @@ dessus correspond au centre de la face de droite.</p>
 </div>
 </div>
 
+<figure class="film">
+<img src="/assets/cubes/film-couronne2-droite.svg" alt="U R U' R' U' F' U F — la séquence pas à pas">
+<figcaption>La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.</figcaption>
+</figure>
+
 <div class="fiche" markdown>
 ![Insertion à gauche](../assets/cubes/couronne2-gauche.svg)
 <div class="corps" markdown>
@@ -52,6 +57,10 @@ dessus correspond au centre de la face de droite.</p>
 chaque <code>R</code> devient <code>L</code>, et chaque sens s'inverse.</p>
 </div>
 </div>
+
+<figure class="film">
+<img src="/assets/cubes/film-couronne2-gauche.svg" alt="U' L' U L U F U' F' — la séquence pas à pas">
+</figure>
 
 !!! tip "Comment retenir deux algorithmes d'un coup"
     Ne les apprends pas séparément. Retiens la version de droite, puis retiens la

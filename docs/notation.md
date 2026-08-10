@@ -124,3 +124,9 @@ depuis un cube résolu, plus lentement.
 
 Quand `R U R' U'` × 6 te ramène au cube résolu du premier coup, tu sais lire la
 notation. Tu peux attaquer la [méthode débutant](debutant/index.md).
+
+
+<details class="film">
+<summary><code>R U R' U'</code> — la séquence pas à pas</summary>
+<img src="/assets/cubes/film-sexy.svg" alt="R U R' U' — la séquence pas à pas">
+</details>
