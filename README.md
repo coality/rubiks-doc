@@ -102,6 +102,12 @@ diagram is re-rendered from the algorithm, so the two cannot diverge.
 `deploy/rubiks.coality.net.conf` is the Apache vhost; `install.sh` does the full
 install (move to `/opt`, vhost, certbot).
 
+If a build was ever run as root, `site/` ends up owned by root and the next
+unprivileged build deletes what it can before failing — leaving no `index.html`
+and a 403. `sudo ./repair-site.sh` gives `site/` back to the owner of the
+sources, drops leftover `site.old*` trees, rebuilds and checks the three
+languages over HTTPS. It never touches Apache.
+
 To move the site to another domain, in one command:
 
     sudo ./deploy-domain.sh newdomain.example

@@ -288,5 +288,29 @@ Règles de vérification :
 `/opt/rubiks-doc/site`, deflate, expires, en-têtes de sécurité).
 `install.sh` fait l'installation complète, en root, une seule fois.
 
+### Quand `site/` a été construit en root
+
+MkDocs **nettoie son `site_dir` avant de construire**. Si un build a été lancé
+en root, les fichiers appartiennent à root et le build suivant, non privilégié,
+supprime ce qu'il peut avant d'échouer en `PermissionError` : il ne reste plus
+d'`index.html` et l'accueil répond **403**. C'est arrivé le 2026-08-10.
+
+    sudo ./repair-site.sh
+
+rend `site/` à l'utilisateur des sources, supprime les arbres `site.old*`
+laissés par une réparation, reconstruit sous cet utilisateur et vérifie les
+trois langues en HTTPS. Idempotent, et il ne touche pas à Apache : le
+DocumentRoot ne bouge pas, le contenu est remplacé en place.
+
+Sans privilège, la parade est de remplacer l'arbre entier — `/opt/rubiks-doc`
+appartient à l'utilisateur, donc `cp -r site site.new && mv site site.old && mv
+site.new site` suffit à retrouver un `site/` accessible en écriture, avec une
+interruption d'une fraction de seconde.
+
+`build.sh` refuse désormais de démarrer si un fichier de `site/` n'est pas
+accessible en écriture, et `deploy-domain.sh` n'accepte plus `root` comme
+utilisateur de build (`SUDO_USER` vaut `root` quand on lance depuis un shell
+root — c'est l'origine de l'incident).
+
 ⚠️ Prudence réseau : jamais de `systemctl restart apache2` (couperait les ~18
 autres sites) — toujours `apache2ctl configtest` puis `systemctl reload`.
