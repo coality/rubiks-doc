@@ -300,6 +300,24 @@ terminent la première couronne et que `k±1` ne la terminent pas.
 (L'étape 7 dit aussi « 2 ou 4 fois » : là c'est **correct**, le coin est déjà à
 sa place et la séquence ne fait que le tourner.)
 
+### Le piège de l'avant-dernier mouvement (2026-08-12)
+
+Autre erreur trouvée par le moteur, et qui explique le « à chaque fois ça casse
+tout » des débutants : après les **trois premiers** mouvements de `R' D' R D`,
+la face blanche est complète et chaque côté montre une bande unie. **Ça a l'air
+fini** — mais la couronne est décalée d'un quart de tour par rapport aux
+centres, et c'est le dernier `D` qui la remet en phase.
+
+`_first_layer_done()` ne le voyait pas : il comparait la rangée du bas **à
+elle-même** (`fl[f][i] == fl[f][7]`) au lieu de la comparer au **centre** de sa
+face. Une couronne hors de phase passait donc pour terminée. Corrigé, et le
+build vérifie maintenant qu'**aucun arrêt intermédiaire** ne finit la couronne —
+ce qui verrouille le « ne t'arrête jamais en cours de route » de la page.
+
+L'étape 2 dit désormais explicitement de **garder le blanc en bas** : la
+séquence contient des `D`, elle tourne donc la face blanche pendant l'exécution,
+et rien ne le disait.
+
 ⚠️ `pll_arrows()` ne trace une flèche que si l'autocollant du haut **vient** du
 haut. L'algorithme de l'étape 6 retourne les coins en les déplaçant : aucune
 flèche n'est donc possible sur son schéma à plat, et le cycle ne se montre

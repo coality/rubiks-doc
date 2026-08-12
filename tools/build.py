@@ -310,9 +310,16 @@ COIN_CASES = [('3d-coin-blanc-avant', 1, (0, 0, 1)),
 
 
 def _first_layer_done(cube):
+    """La premiere couronne est-elle vraiment finie ?
+
+    Comparer la rangee du bas a elle-meme ne suffit pas : apres `R' D' R`, elle
+    est unie ET la face blanche est complete, mais l'ensemble est decale d'un
+    quart de tour par rapport aux centres. On compare donc au CENTRE de chaque
+    face, sinon une couronne hors de phase passerait pour terminee.
+    """
     fl = cube.facelets()
     return (all(x == 'W' for x in fl['D'])
-            and all(fl[f][i] == fl[f][7] for f in 'FRBL' for i in (6, 7, 8)))
+            and all(fl[f][i] == fl[f][4] for f in 'FRBL' for i in (6, 7, 8)))
 
 
 def gen_3d():
@@ -403,6 +410,14 @@ def gen_3d():
                 assert not _first_layer_done(
                     st.copy().apply(' '.join([SEQ_COIN] * bad))), \
                     '%s : %d repetitions ne devraient pas suffire' % (name, bad)
+        # « ne t'arrete jamais en cours de route » : aucun arret intermediaire
+        # ne finit la couronne. Le piege est a l'avant-dernier mouvement, ou
+        # tout a l'air fini alors que le bas est decale d'un quart de tour.
+        partiel = st.copy()
+        for i, coup in enumerate(alg.split()[:-1], 1):
+            partiel.apply(coup)
+            assert not _first_layer_done(partiel), \
+                '%s : s\'arreter au mouvement %d finirait la couronne' % (name, i)
         arr = travel(alg, [((1, 1, 1), white_normal)])
         assert arr[0][1][1] == (0, -1, 0), '%s : le blanc devrait finir en bas' % name
         emit(name, st, arrows=arr)

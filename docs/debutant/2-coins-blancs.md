@@ -24,6 +24,17 @@ destination possible — tout le reste est grisé.</figcaption>
 
 ## La manœuvre
 
+**Garde la croix blanche en bas** pendant toute l'étape, et ne retourne pas le
+cube. La séquence contient des `D` : elle fait donc tourner la face blanche
+pendant que tu l'exécutes. C'est normal, tout se remet en place au dernier
+mouvement.
+
+!!! warning "Le piège : à l'avant-dernier mouvement, ça a l'air fini"
+    Après les **trois premiers mouvements**, la face blanche est complète et
+    chaque côté montre une bande unie. Beaucoup s'arrêtent là. Pourtant la
+    couronne est **décalée d'un quart de tour** par rapport aux centres : c'est
+    le dernier mouvement qui la remet en phase. Va toujours jusqu'au bout.
+
 Toutes les illustrations de cette section montrent l'état **avant** de tourner :
 regarde-les, identifie ton cas, et seulement ensuite exécute.
 

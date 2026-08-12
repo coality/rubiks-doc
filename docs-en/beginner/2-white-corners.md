@@ -24,6 +24,16 @@ possible destination — everything else is greyed out.</figcaption>
 
 ## The manoeuvre
 
+**Keep the white cross on the bottom** for this whole step, and do not turn the
+cube over. The sequence contains `D` moves, so it turns the white face while you
+run it. That is normal — everything falls back into place on the last move.
+
+!!! warning "The trap: one move from the end, it looks finished"
+    After the **first three moves** the white face is complete and every side
+    shows a solid band. Many people stop there. But the layer is **a quarter
+    turn out of phase** with the centres — the last move puts it back. Always
+    go to the end.
+
 Every diagram in this section shows the state **before** you turn anything:
 look at them, identify your case, and only then execute.
 
