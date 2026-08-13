@@ -355,9 +355,31 @@ Règles de vérification :
 
 ## Déploiement
 
-`deploy/rubiks.coality.net.conf` = vhost Apache (DocumentRoot
-`/opt/rubiks-doc/site`, deflate, expires, en-têtes de sécurité).
+`deploy/rubiks.coality.net.conf` = vhost Apache du **port 80**.
 `install.sh` fait l'installation complète, en root, une seule fois.
+
+⚠️ **Le vhost qui sert le trafic n'est pas celui du dépôt.** Certbot crée
+`rubiks.coality.net-le-ssl.conf` en copiant le vhost HTTP, puis les deux
+divergent — et c'est la copie HTTPS qui répond à tout le monde. Corriger le
+fichier du dépôt et le réinstaller n'avait donc **aucun effet visible** ; ça a
+coûté une demi-journée de « rien n'a changé ». Les réglages communs (Directory,
+deflate, expires, en-têtes) vivent maintenant dans
+`deploy/rubiks-common.conf`, installé en `conf-available/` et **inclus par les
+deux vhosts**. Il n'est volontairement pas activé par `a2enconf` : il ne doit
+pas s'appliquer aux ~18 autres sites.
+
+    sudo ./deploy-vhost.sh
+
+installe les deux, fait inclure la conf commune par le vhost de certbot en
+retirant ses blocs dupliqués, `configtest` + `reload`, puis **vérifie les
+en-têtes réellement servis en HTTPS** — c'est cette dernière étape qui manquait.
+
+⚠️ **Pas de cache long sur les schémas.** Le vhost portait « les schémas de cube
+ne changent jamais une fois publiés » et 30 jours de cache. C'est faux : ils sont
+régénérés à chaque build et **gardent leur nom de fichier**. Sans empreinte dans
+le nom, tout cache long sert des figures périmées. Une heure partout, et le HTML
+à zéro seconde (plus `no-cache`, car l'ordre entre `mod_expires` et
+`mod_headers` n'est pas garanti).
 
 ### Quand `site/` a été construit en root
 
