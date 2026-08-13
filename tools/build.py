@@ -345,6 +345,17 @@ def gen_3d():
                            ('3d-move-d', 'D', True)):
         emit(name, solved(), turns=[(face, cw)])
 
+    # --- etape 2 : comment tenir le cube. La page enchainait deux vues « par en
+    # dessous » sans avoir jamais montre l'orientation : impossible de les lire.
+    # Le meme cube, des deux cotes, avec le meme masque.
+    tenue = set(face_index(pos, nrm) for pos, nrm in
+                [((0, -1, 0), (0, -1, 0)), ((0, -1, 1), (0, -1, 0)),
+                 ((0, -1, -1), (0, -1, 0)), ((1, -1, 0), (0, -1, 0)),
+                 ((-1, -1, 0), (0, -1, 0)),
+                 ((0, 1, 0), (0, 1, 0)), ((0, 0, 1), (0, 0, 1)), ((1, 0, 0), (1, 0, 0))])
+    emit('3d-tenue-dessus', solved(), keep=tenue)
+    emit('3d-tenue-dessous', solved(), keep=tenue, cam=CAM_BAS)
+
     # --- etape 1 : le petale descend a sa place avec F2
     daisy = solved().apply('F2 R2 B2 L2')
     arr = travel('F2', [((0, 1, 1), (0, 0, 1))])

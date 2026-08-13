@@ -9,6 +9,27 @@ colour on each side face.</figcaption>
 Four corners are left to place: the ones containing white. You are going to
 insert them one by one, always the same way.
 
+## How to hold the cube
+
+Yellow is **on top**, and the white cross you have just built is **underneath**.
+You do not turn the cube over during this whole step.
+
+<div class="algs">
+<figure class="alg"><img src="/en/assets/cubes/3d-tenue-dessus.svg" alt="What you see"><figcaption><b>What you see</b><br><code>yellow on top</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-tenue-dessous.svg" alt="What is underneath"><figcaption><b>What is underneath</b><br><code>the white cross</code></figcaption></figure>
+</div>
+
+So the diagrams on this page that show the cube **from underneath** read like
+the picture on the right: you are looking at your cube from below, without
+turning it over.
+
+!!! info "Learned it elsewhere with white on top?"
+    That is another convention, just as valid, and it is **the same gesture seen
+    from the other side**: with white on top it is written `R' U' R U`, with
+    white on the bottom `R' D' R D`. Turning the cube over swaps the two — and
+    `R' D' R D` does nothing useful if your white face is up. On this site white
+    stays on the bottom from start to finish.
+
 ## The principle
 
 A corner goes **between three centres**. The white-green-orange corner therefore
@@ -23,23 +44,6 @@ possible destination — everything else is greyed out.</figcaption>
 </div>
 
 ## The manoeuvre
-
-**Keep the white cross on the bottom** for this whole step, and do not turn the
-cube over. The sequence contains `D` moves, so it turns the white face while you
-run it. That is normal — everything falls back into place on the last move.
-
-!!! info "Learned it elsewhere with white on top?"
-    That is another convention, just as valid, and it is **the same gesture seen
-    from the other side**: with white on top it is written `R' U' R U`, with
-    white on the bottom `R' D' R D`. Turning the cube over swaps the two — and
-    `R' D' R D` does nothing useful if your white face is up. On this site white
-    stays on the bottom from start to finish.
-
-!!! warning "The trap: one move from the end, it looks finished"
-    After the **first three moves** the white face is complete and every side
-    shows a solid band. Many people stop there. But the layer is **a quarter
-    turn out of phase** with the centres — the last move puts it back. Always
-    go to the end.
 
 Every diagram in this section shows the state **before** you turn anything:
 look at them, identify your case, and only then execute.
@@ -85,6 +89,14 @@ the turn, and the arrow is the move to make.
 <figcaption><code>R' D' R D</code> — the sequence step by step</figcaption>
 </figure>
 
+!!! warning "Never stop in the middle"
+    During the manoeuvre the bottom of the cube looks wrecked: that is normal, the
+    sequence takes a piece out and puts it back.
+
+    One move from the end it is the opposite: everything looks finished, the
+    white face is complete. It is in fact a quarter turn out of place, and the
+    last move puts it right. Always go to the end.
+
 !!! tip "You don't have to count"
     Just repeat until the corner is seated, white underneath. The diagrams above
     are only there to reassure you when it feels long: five repetitions is
@@ -92,11 +104,6 @@ the turn, and the arrow is the move to make.
 
     What never works here is **2 or 4**: an even number brings the corner back
     to exactly where it started.
-
-!!! warning "Do not stop halfway"
-    Between two repetitions the bottom of the cube looks broken. That is normal:
-    the sequence pulls a piece out and puts it back. If you stop in the middle,
-    you break the cross. **Always go on until the corner is seated.**
 
 ## The corner is stuck at the bottom but wrong
 

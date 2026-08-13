@@ -9,6 +9,26 @@ bonne couleur sur chaque face latérale.</figcaption>
 Il reste quatre coins à placer : ceux qui contiennent du blanc. Tu vas les
 insérer un par un, toujours de la même façon.
 
+## Comment tenir le cube
+
+Le jaune est **en haut**, et la croix blanche que tu viens de faire est **en
+bas**. Tu ne retournes pas le cube de toute l'étape.
+
+<div class="algs">
+<figure class="alg"><img src="/assets/cubes/3d-tenue-dessus.svg" alt="Ce que tu vois"><figcaption><b>Ce que tu vois</b><br><code>le jaune en haut</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-tenue-dessous.svg" alt="Ce qu'il y a dessous"><figcaption><b>Ce qu'il y a dessous</b><br><code>la croix blanche</code></figcaption></figure>
+</div>
+
+Les schémas de cette page qui montrent le cube **par en dessous** se lisent donc
+comme la figure de droite : tu regardes ton cube d'en bas, sans le retourner.
+
+!!! info "Tu as appris ailleurs avec le blanc en haut ?"
+    C'est une autre convention, tout aussi valable, et c'est **le même geste vu
+    de l'autre côté** : avec le blanc en haut il s'écrit `R' U' R U`, avec le
+    blanc en bas `R' D' R D`. Retourner le cube échange les deux — et `R' D' R D`
+    ne donne rien de bon si tu as le blanc en haut. Sur ce site, le blanc reste
+    en bas du début à la fin.
+
 ## Le principe
 
 Un coin va **entre trois centres**. Le coin blanc-vert-orange va donc à
@@ -23,24 +43,6 @@ destination possible — tout le reste est grisé.</figcaption>
 </div>
 
 ## La manœuvre
-
-**Garde la croix blanche en bas** pendant toute l'étape, et ne retourne pas le
-cube. La séquence contient des `D` : elle fait donc tourner la face blanche
-pendant que tu l'exécutes. C'est normal, tout se remet en place au dernier
-mouvement.
-
-!!! info "Tu as appris ailleurs avec le blanc en haut ?"
-    C'est une autre convention, tout aussi valable, et c'est **le même geste vu
-    de l'autre côté** : avec le blanc en haut il s'écrit `R' U' R U`, avec le
-    blanc en bas `R' D' R D`. Retourner le cube échange les deux — et `R' D' R D`
-    ne donne rien de bon si tu as le blanc en haut. Sur ce site, le blanc reste
-    en bas du début à la fin.
-
-!!! warning "Le piège : à l'avant-dernier mouvement, ça a l'air fini"
-    Après les **trois premiers mouvements**, la face blanche est complète et
-    chaque côté montre une bande unie. Beaucoup s'arrêtent là. Pourtant la
-    couronne est **décalée d'un quart de tour** par rapport aux centres : c'est
-    le dernier mouvement qui la remet en phase. Va toujours jusqu'au bout.
 
 Toutes les illustrations de cette section montrent l'état **avant** de tourner :
 regarde-les, identifie ton cas, et seulement ensuite exécute.
@@ -86,6 +88,14 @@ l'état avant de tourner, et la flèche le mouvement à faire.
 <figcaption><code>R' D' R D</code> — la séquence pas à pas</figcaption>
 </figure>
 
+!!! warning "Ne t'arrête jamais en cours de route"
+    Pendant la manœuvre, le bas du cube a l'air cassé : c'est normal, la séquence
+    sort une pièce et la remet.
+
+    À l'**avant-dernier mouvement**, c'est l'inverse : tout a l'air fini, la face
+    blanche est complète. Elle est pourtant décalée d'un quart de tour, et c'est
+    le dernier mouvement qui la remet en place. Va toujours jusqu'au bout.
+
 !!! tip "Tu n'as pas besoin de compter"
     Répète simplement jusqu'à ce que le coin soit posé, blanc en bas. Les
     schémas ci-dessus ne sont là que pour te rassurer quand ça semble long :
@@ -93,11 +103,6 @@ l'état avant de tourner, et la flèche le mouvement à faire.
 
     En revanche, **2 et 4 ne marchent jamais** ici : un nombre pair ramène le
     coin exactement d'où il vient.
-
-!!! warning "Ne t'arrête pas au milieu"
-    Entre deux répétitions, le bas du cube a l'air cassé. C'est normal : la
-    séquence sort une pièce et la remet. Si tu t'arrêtes en cours de route, tu
-    casses la croix. **Va toujours jusqu'à ce que le coin soit posé.**
 
 ## Le coin est coincé en bas mais mal placé
 

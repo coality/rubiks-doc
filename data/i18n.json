@@ -40,7 +40,9 @@
       "but-coins-places": "Les quatre coins à leur place, mais encore mal tournés",
       "3d-croix-dessous": "La croix blanche vue par en dessous, côtés assortis",
       "3d-paire-f2l": "Le coin et l'arête descendent ensemble dans la fente",
-      "3d-move-d": "D — la face du bas : horaire vue de dessous, donc antihoraire vue de dessus"
+      "3d-move-d": "D — la face du bas : horaire vue de dessous, donc antihoraire vue de dessus",
+      "3d-tenue-dessus": "Ce que tu vois : le centre jaune est en haut",
+      "3d-tenue-dessous": "Ce qu'il y a dessous : la croix blanche de l'étape 1"
     },
     "f2l_case_title": "Cas F2L %d",
     "f2l_case_name": "Cas %d",
@@ -125,7 +127,9 @@
       "but-coins-places": "All four corners in place, but still badly turned",
       "3d-croix-dessous": "The white cross seen from underneath, sides matched",
       "3d-paire-f2l": "The corner and the edge drop into the slot together",
-      "3d-move-d": "D — the bottom face: clockwise seen from below, so anticlockwise from above"
+      "3d-move-d": "D — the bottom face: clockwise seen from below, so anticlockwise from above",
+      "3d-tenue-dessus": "What you see: the yellow centre is on top",
+      "3d-tenue-dessous": "What is underneath: the white cross from step 1"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",
@@ -210,7 +214,9 @@
       "but-coins-places": "Ang upat ka corner naa na sa lugar, apan sayop pa ang pagkaliso",
       "3d-croix-dessous": "Ang puti nga cross tan-awon gikan sa ilawom, pareho ang mga kilid",
       "3d-paire-f2l": "Ang corner ug ang edge manaog nga dungan sa slot",
-      "3d-move-d": "D — ang ubos nga face: clockwise tan-awon gikan sa ilawom, mao nga baliktad kon gikan sa ibabaw"
+      "3d-move-d": "D — ang ubos nga face: clockwise tan-awon gikan sa ilawom, mao nga baliktad kon gikan sa ibabaw",
+      "3d-tenue-dessus": "Ang imong makita: ang dalag nga centre naa sa ibabaw",
+      "3d-tenue-dessous": "Ang naa sa ilawom: ang puti nga cross gikan sa step 1"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",

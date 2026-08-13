@@ -9,6 +9,27 @@ husto og kolor sa matag kilid nga face.</figcaption>
 Upat ka corner pa ang ibutang: kadtong adunay puti. Isulod nimo sila usa-usa,
 kanunay sa parehong paagi.
 
+## Unsaon pagkupot sa cube
+
+Ang dalag naa sa **ibabaw**, ug ang puti nga cross nga imong gihimo naa sa
+**ilawom**. Dili nimo baliha ang cube sa tibuok niini nga lakang.
+
+<div class="algs">
+<figure class="alg"><img src="/bis/assets/cubes/3d-tenue-dessus.svg" alt="Ang imong makita"><figcaption><b>Ang imong makita</b><br><code>dalag sa ibabaw</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-tenue-dessous.svg" alt="Ang naa sa ilawom"><figcaption><b>Ang naa sa ilawom</b><br><code>ang puti nga cross</code></figcaption></figure>
+</div>
+
+Busa ang mga hulagway niini nga panid nga nagpakita sa cube **gikan sa ilawom**
+basahon sama sa hulagway sa tuo: gitan-aw nimo ang imong cube gikan sa ubos,
+nga wala kini gibali.
+
+!!! info "Nakakat-on ka sa laing dapit nga ang puti naa sa ibabaw?"
+    Laing convention kana, husto usab, ug **pareho ra nga lihok tan-awon gikan
+    sa pikas**: kon ang puti naa sa ibabaw, `R' U' R U` ang sulat; kon ang puti
+    naa sa ubos, `R' D' R D`. Ang pagbali sa cube mao ang mag-ilis niini — ug
+    ang `R' D' R D` walay pulos kon ang puti nimo naa sa ibabaw. Dinhi sa site,
+    ang puti magpabilin sa ubos gikan sa sinugdan hangtod sa kataposan.
+
 ## Ang prinsipyo
 
 Ang corner mosulod **sa taliwala sa tulo ka center**. Busa ang
@@ -23,23 +44,6 @@ Mao ra kana ang iyang posible nga adtoan — gray ang tanan nga uban.</figcaptio
 </div>
 
 ## Ang paagi
-
-**Ipabilin ang puti nga cross sa ubos** sa tibuok niini nga lakang, ug ayaw
-baliha ang cube. Ang sequence naay mga `D`: busa gituyok niini ang puti nga face
-samtang gibuhat nimo. Normal ra — mobalik ang tanan sa katapusang lihok.
-
-!!! info "Nakakat-on ka sa laing dapit nga ang puti naa sa ibabaw?"
-    Laing convention kana, husto usab, ug **pareho ra nga lihok tan-awon gikan
-    sa pikas**: kon ang puti naa sa ibabaw, `R' U' R U` ang sulat; kon ang puti
-    naa sa ubos, `R' D' R D`. Ang pagbali sa cube mao ang mag-ilis niini — ug
-    ang `R' D' R D` walay pulos kon ang puti nimo naa sa ibabaw. Dinhi sa site,
-    ang puti magpabilin sa ubos gikan sa sinugdan hangtod sa kataposan.
-
-!!! warning "Ang lit-ag: usa ka lihok una matapos, morag human na"
-    Human sa **unang tulo ka lihok**, kompleto na ang puti nga face ug ang matag
-    kilid nagpakita og bug-os nga banda. Daghan ang mohunong didto. Apan ang
-    layer **sayop og usa ka quarter turn** kumpara sa mga centre — ang katapusang
-    lihok ang magbalik niini. Humana kanunay.
 
 Ang tanan nga hulagway niini nga seksyon nagpakita sa kahimtang **sa dili pa**
 ka motuyok: tan-awa sila, ilha ang imong case, ug ugma-damlag pa buhata.
@@ -87,6 +91,14 @@ sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 <figcaption><code>R' D' R D</code> — ang sequence, matag lihok</figcaption>
 </figure>
 
+!!! warning "Ayaw gyud hunong sa tunga"
+    Samtang gibuhat nimo, morag guba ang ubos sa cube: normal ra kana, ang
+    sequence mokuha og piraso ug ibalik dayon.
+
+    Sa usa ka lihok una matapos, baliktad: morag human na ang tanan, kompleto na
+    ang puti nga face. Apan sayop kini og usa ka quarter turn, ug ang katapusang
+    lihok ang magbalik niini. Humana gyud kanunay.
+
 !!! tip "Dili nimo kinahanglan mag-ihap"
     Balika lang hangtod nga mahiluna ang corner, ang puti naa sa ubos. Ang mga
     hulagway sa ibabaw naa ra aron dili ka mabalaka kung morag dugay na: normal
@@ -94,12 +106,6 @@ sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 
     Ang **2 ug 4 dili gyud molihok** dinhi: ang parehas nga numero magbalik sa
     corner sa iyang gigikanan gyud.
-
-!!! warning "Ayaw hunong sa tunga"
-    Sa taliwala sa duha ka balik, morag guba ang ubos nga bahin sa cube. Normal
-    ra kana: ang sunod-sunod nga lihok maggawas og piraso ug mobalik niini. Kung
-    mohunong ka sa tunga, maguba ang cross. **Padayon kanunay hangtod nga
-    mahiluna ang corner.**
 
 ## Naipit ang corner sa ubos apan sayop ang dapit
 
