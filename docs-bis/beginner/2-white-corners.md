@@ -28,6 +28,13 @@ Mao ra kana ang iyang posible nga adtoan — gray ang tanan nga uban.</figcaptio
 baliha ang cube. Ang sequence naay mga `D`: busa gituyok niini ang puti nga face
 samtang gibuhat nimo. Normal ra — mobalik ang tanan sa katapusang lihok.
 
+!!! info "Nakakat-on ka sa laing dapit nga ang puti naa sa ibabaw?"
+    Laing convention kana, husto usab, ug **pareho ra nga lihok tan-awon gikan
+    sa pikas**: kon ang puti naa sa ibabaw, `R' U' R U` ang sulat; kon ang puti
+    naa sa ubos, `R' D' R D`. Ang pagbali sa cube mao ang mag-ilis niini — ug
+    ang `R' D' R D` walay pulos kon ang puti nimo naa sa ibabaw. Dinhi sa site,
+    ang puti magpabilin sa ubos gikan sa sinugdan hangtod sa kataposan.
+
 !!! warning "Ang lit-ag: usa ka lihok una matapos, morag human na"
     Human sa **unang tulo ka lihok**, kompleto na ang puti nga face ug ang matag
     kilid nagpakita og bug-os nga banda. Daghan ang mohunong didto. Apan ang

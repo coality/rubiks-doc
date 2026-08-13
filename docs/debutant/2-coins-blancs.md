@@ -29,6 +29,13 @@ cube. La séquence contient des `D` : elle fait donc tourner la face blanche
 pendant que tu l'exécutes. C'est normal, tout se remet en place au dernier
 mouvement.
 
+!!! info "Tu as appris ailleurs avec le blanc en haut ?"
+    C'est une autre convention, tout aussi valable, et c'est **le même geste vu
+    de l'autre côté** : avec le blanc en haut il s'écrit `R' U' R U`, avec le
+    blanc en bas `R' D' R D`. Retourner le cube échange les deux — et `R' D' R D`
+    ne donne rien de bon si tu as le blanc en haut. Sur ce site, le blanc reste
+    en bas du début à la fin.
+
 !!! warning "Le piège : à l'avant-dernier mouvement, ça a l'air fini"
     Après les **trois premiers mouvements**, la face blanche est complète et
     chaque côté montre une bande unie. Beaucoup s'arrêtent là. Pourtant la

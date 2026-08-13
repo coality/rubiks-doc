@@ -500,6 +500,16 @@ FILMS = [
 ]
 
 
+# Sequences citees dans une page pour comparaison, mais volontairement PAS
+# illustrees : les mettre en bande laisserait croire qu'on les enseigne.
+# Toute entree ici doit etre justifiee — c'est une derogation, pas un debarras.
+CITEES_SANS_BANDE = {
+    # convention « blanc en haut », citee a l'etape 2 pour dire que ce n'est
+    # pas celle du site. C'est le meme geste que R' D' R D, cube retourne.
+    "R' U' R U",
+}
+
+
 def gen_films():
     """Une bande de vignettes par sequence : l'etat avant chaque mouvement, la
     fleche de ce mouvement et son nom.

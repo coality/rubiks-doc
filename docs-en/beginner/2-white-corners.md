@@ -28,6 +28,13 @@ possible destination — everything else is greyed out.</figcaption>
 cube over. The sequence contains `D` moves, so it turns the white face while you
 run it. That is normal — everything falls back into place on the last move.
 
+!!! info "Learned it elsewhere with white on top?"
+    That is another convention, just as valid, and it is **the same gesture seen
+    from the other side**: with white on top it is written `R' U' R U`, with
+    white on the bottom `R' D' R D`. Turning the cube over swaps the two — and
+    `R' D' R D` does nothing useful if your white face is up. On this site white
+    stays on the bottom from start to finish.
+
 !!! warning "The trap: one move from the end, it looks finished"
     After the **first three moves** the white face is complete and every side
     shows a solid band. Many people stop there. But the layer is **a quarter

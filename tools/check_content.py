@@ -544,7 +544,7 @@ def check_films():
     C'est ce qui empeche une page d'annoncer un algorithme sans l'illustrer, et
     une bande de rester orpheline apres un remaniement de page.
     """
-    from build import FILMS
+    from build import FILMS, CITEES_SANS_BANDE
     known = {alg: slug for slug, alg in FILMS}
     ok(len(known) == len(FILMS), 'films : deux entrees pour la meme sequence')
 
@@ -554,6 +554,8 @@ def check_films():
         for fr_rel, other_rel in _tutorial_pages():
             txt = open(path_for(d, fr_rel, other_rel), encoding='utf-8').read()
             for alg in algs_in(txt):
+                if alg in CITEES_SANS_BANDE:      # citee pour comparaison
+                    continue
                 ok(alg in known,
                    '%s [%s] : la sequence « %s » est citee sans bande pas a pas '
                    '(ajouter FILMS dans tools/build.py)' % (fr_rel, lang, alg))
@@ -635,12 +637,26 @@ def check_same_structure():
                             for a, b in zip(ref, got) if a != b), 'longueur')))
 
 
+def check_orientation_equivalente():
+    """« Le meme geste, cube retourne » : l'etape 2 l'affirme, on le prouve.
+
+    Retourner le cube echange U et D dans l'ecriture des mouvements. La sequence
+    du site avec le blanc en bas et celle de la convention blanc en haut doivent
+    donc etre conjuguees par x2 — sinon la note induirait le lecteur en erreur.
+    """
+    for alg in _rand_algs(40, 14):
+        a = solved().apply(alg).apply("R' D' R D")
+        b = solved().apply(alg).apply('x2').apply("R' U' R U").apply('x2')
+        ok(a.st == b.st,
+           "R' D' R D et R' U' R U ne sont pas le meme geste retourne (%s)" % alg)
+
+
 EXTRA = [check_pieces_and_colours, check_centres_fixed, check_notation_semantics,
          check_invariants, check_beginner_method, check_step3_insertions,
          check_step6_zero_one_four, check_step5_two_matched,
          check_f2l_pair_extraction, check_4lll_counts, check_named_algs,
          check_cross_bounds, check_films, check_no_orphan_figure,
-         check_same_structure]
+         check_same_structure, check_orientation_equivalente]
 
 
 if __name__ == '__main__':
