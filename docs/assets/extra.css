@@ -92,6 +92,33 @@ details.film > summary {
 details.film > summary code { font-size: .95em; }
 details.film > img { margin: .4rem 0 .8rem; }
 
+/* Fiche d'un cas de reference : etat + nom + algorithme, puis la bande pas a
+   pas juste dessous. Tout est visible : chercher un cas dans une grille puis
+   deplier un bloc pour voir les cubes, personne ne le fait. */
+.cas {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: .5rem 1rem;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid rgba(128, 128, 128, .22);
+}
+.cas .etat { width: 118px; height: auto; display: block; }
+.cas .titre { font-size: .9rem; line-height: 1.5; }
+.cas .titre code { font-size: .95em; word-spacing: .12em; }
+.cas .film {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+@media screen and (max-width: 44em) {
+  .cas { grid-template-columns: 92px minmax(0, 1fr); }
+  .cas .etat { width: 92px; }
+}
+
 /* Table de notation */
 .md-typeset table:not([class]) code { white-space: nowrap; }
 

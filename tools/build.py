@@ -601,31 +601,23 @@ def gen_films():
 
 # ------------------------------------------------------------------- pages
 def cards(rows):
-    """Grille des cas, puis la bande « pas a pas » de chacun, repliee.
+    """Un bloc par cas : le schema du cas, son nom, son algorithme, et la bande
+    pas a pas juste en dessous — tout visible.
 
-    Les bandes sont sous la grille et non dans les fiches : une bande fait toute
-    la largeur du texte, elle ne tient pas dans une case de 148 px.
+    L'ancienne mise en page (grille de vignettes, puis les bandes repliees plus
+    bas) obligeait a retenir le nom d'un cas, a le retrouver dans la liste, puis
+    a deplier. Personne ne fait ca.
     """
-    out = ['<div class="algs">']
+    out = []
     for r in rows:
         out.append(
-            '<figure class="alg">'
-            '<img src="%s/%s" alt="%s" loading="lazy">'
-            '<figcaption><b>%s</b><br><code>%s</code></figcaption>'
-            '</figure>' % (BASE, r['img'], r['name'], r['name'], r['alg']))
-    out.append('</div>')
-    out.append('')
-    for r in rows:
-        # un algo qui contient x, y ou z laisse le cube tenu autrement : la
-        # derniere vignette montre alors un cube resolu mais retourne, ce qui
-        # surprend si on ne le dit pas
-        tourne = (' — %s' % STR['film_rotation']
-                  if any(m[0] in 'xyz' for m in r['alg'].split()) else '')
-        out.append(
-            '<details class="film">\n<summary>%s · <code>%s</code>%s</summary>\n'
-            '<img src="%s/%s" alt="%s" loading="lazy">\n</details>'
-            % (r['name'], r['alg'], tourne, BASE, r['film'],
-               STR['film_title'] % r['alg']))
+            '<div class="cas">\n'
+            '<img class="etat" src="%s/%s" alt="%s" loading="lazy">\n'
+            '<div class="titre"><b>%s</b><br><code>%s</code></div>\n'
+            '<img class="film" src="%s/%s" alt="%s" loading="lazy">\n'
+            '</div>'
+            % (BASE, r['img'], r['name'], r['name'], r['alg'],
+               BASE, r['film'], STR['film_title'] % r['alg']))
     return '\n'.join(out)
 
 

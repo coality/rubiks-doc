@@ -47,44 +47,41 @@ dans chaque cas.</p>
 Sept cas. Ce sont exactement les sept OLL où la croix est déjà faite, donc **rien
 ne sera à réapprendre** le jour où tu passeras à l'OLL complet.
 
-<div class="algs">
-<figure class="alg"><img src="/assets/cubes/oll-27.svg" alt="Sune"><figcaption><b>Sune</b><br><code>R U R' U R U2 R'</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-26.svg" alt="Anti-Sune"><figcaption><b>Anti-Sune</b><br><code>R U2 R' U' R U' R'</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-21.svg" alt="Double Sune"><figcaption><b>Double Sune</b><br><code>R U2 R' U' R U R' U' R U' R'</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-22.svg" alt="Pi"><figcaption><b>Pi</b><br><code>R U2 R2 U' R2 U' R2 U2 R</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-23.svg" alt="Tête"><figcaption><b>Tête</b><br><code>R2 D' R U2 R' D R U2 R</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-24.svg" alt="Chaussette"><figcaption><b>Chaussette</b><br><code>r U R' U' r' F R F'</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/oll-25.svg" alt="Nœud papillon"><figcaption><b>Nœud papillon</b><br><code>F' r U R' U' r' F R</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-27.svg" alt="Sune" loading="lazy">
+<div class="titre"><b>Sune</b><br><code>R U R' U R U2 R'</code></div>
+<img class="film" src="/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — la séquence pas à pas" loading="lazy">
 </div>
-
-<details class="film">
-<summary>Sune · <code>R U R' U R U2 R'</code></summary>
-<img src="/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Anti-Sune · <code>R U2 R' U' R U' R'</code></summary>
-<img src="/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Double Sune · <code>R U2 R' U' R U R' U' R U' R'</code></summary>
-<img src="/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Pi · <code>R U2 R2 U' R2 U' R2 U2 R</code></summary>
-<img src="/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Tête · <code>R2 D' R U2 R' D R U2 R</code></summary>
-<img src="/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Chaussette · <code>r U R' U' r' F R F'</code></summary>
-<img src="/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Nœud papillon · <code>F' r U R' U' r' F R</code></summary>
-<img src="/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — la séquence pas à pas">
-</details>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-26.svg" alt="Anti-Sune" loading="lazy">
+<div class="titre"><b>Anti-Sune</b><br><code>R U2 R' U' R U' R'</code></div>
+<img class="film" src="/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-21.svg" alt="Double Sune" loading="lazy">
+<div class="titre"><b>Double Sune</b><br><code>R U2 R' U' R U R' U' R U' R'</code></div>
+<img class="film" src="/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-22.svg" alt="Pi" loading="lazy">
+<div class="titre"><b>Pi</b><br><code>R U2 R2 U' R2 U' R2 U2 R</code></div>
+<img class="film" src="/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-23.svg" alt="Tête" loading="lazy">
+<div class="titre"><b>Tête</b><br><code>R2 D' R U2 R' D R U2 R</code></div>
+<img class="film" src="/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-24.svg" alt="Chaussette" loading="lazy">
+<div class="titre"><b>Chaussette</b><br><code>r U R' U' r' F R F'</code></div>
+<img class="film" src="/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/oll-25.svg" alt="Nœud papillon" loading="lazy">
+<div class="titre"><b>Nœud papillon</b><br><code>F' r U R' U' r' F R</code></div>
+<img class="film" src="/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — la séquence pas à pas" loading="lazy">
+</div>
 
 !!! tip "Commence par ces deux-là"
     **Sune** et **Anti-Sune** sont miroirs l'un de l'autre et couvrent à eux
@@ -99,24 +96,21 @@ ne sera à réapprendre** le jour où tu passeras à l'OLL complet.
 Trois cas. Repère les **paires de couleurs identiques** sur les côtés (les
 « phares ») : la face qui en a deux est celle qui a ses coins déjà bien placés.
 
-<div class="algs">
-<figure class="alg"><img src="/assets/cubes/pll-aa.svg" alt="A-perm a"><figcaption><b>A-perm a</b><br><code>x R' U R' D2 R U' R' D2 R2</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/pll-ab.svg" alt="A-perm b"><figcaption><b>A-perm b</b><br><code>x R2 D2 R U R' D2 R U' R</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/pll-e.svg" alt="E-perm"><figcaption><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-aa.svg" alt="A-perm a" loading="lazy">
+<div class="titre"><b>A-perm a</b><br><code>x R' U R' D2 R U' R' D2 R2</code></div>
+<img class="film" src="/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — la séquence pas à pas" loading="lazy">
 </div>
-
-<details class="film">
-<summary>A-perm a · <code>x R' U R' D2 R U' R' D2 R2</code></summary>
-<img src="/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>A-perm b · <code>x R2 D2 R U R' D2 R U' R</code></summary>
-<img src="/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>E-perm · <code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></summary>
-<img src="/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — la séquence pas à pas">
-</details>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-ab.svg" alt="A-perm b" loading="lazy">
+<div class="titre"><b>A-perm b</b><br><code>x R2 D2 R U R' D2 R U' R</code></div>
+<img class="film" src="/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-e.svg" alt="E-perm" loading="lazy">
+<div class="titre"><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></div>
+<img class="film" src="/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — la séquence pas à pas" loading="lazy">
+</div>
 
 !!! info "Les A-perms tournent le cube"
     Le `x` du début est une rotation du cube entier : tu bascules le cube vers
@@ -129,29 +123,26 @@ Trois cas. Repère les **paires de couleurs identiques** sur les côtés (les
 Quatre cas, et les meilleurs algorithmes du cube : courts, rapides, et fondés
 sur la tranche `M`.
 
-<div class="algs">
-<figure class="alg"><img src="/assets/cubes/pll-ua.svg" alt="U-perm a"><figcaption><b>U-perm a</b><br><code>M2 U M U2 M' U M2</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/pll-ub.svg" alt="U-perm b"><figcaption><b>U-perm b</b><br><code>M2 U' M U2 M' U' M2</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/pll-h.svg" alt="H-perm"><figcaption><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/pll-z.svg" alt="Z-perm"><figcaption><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-ua.svg" alt="U-perm a" loading="lazy">
+<div class="titre"><b>U-perm a</b><br><code>M2 U M U2 M' U M2</code></div>
+<img class="film" src="/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — la séquence pas à pas" loading="lazy">
 </div>
-
-<details class="film">
-<summary>U-perm a · <code>M2 U M U2 M' U M2</code></summary>
-<img src="/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>U-perm b · <code>M2 U' M U2 M' U' M2</code></summary>
-<img src="/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>H-perm · <code>M2 U M2 U2 M2 U M2</code></summary>
-<img src="/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — la séquence pas à pas">
-</details>
-<details class="film">
-<summary>Z-perm · <code>M' U M2 U M2 U M' U2 M2</code></summary>
-<img src="/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — la séquence pas à pas">
-</details>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-ub.svg" alt="U-perm b" loading="lazy">
+<div class="titre"><b>U-perm b</b><br><code>M2 U' M U2 M' U' M2</code></div>
+<img class="film" src="/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-h.svg" alt="H-perm" loading="lazy">
+<div class="titre"><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></div>
+<img class="film" src="/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — la séquence pas à pas" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/assets/cubes/pll-z.svg" alt="Z-perm" loading="lazy">
+<div class="titre"><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></div>
+<img class="film" src="/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — la séquence pas à pas" loading="lazy">
+</div>
 
 !!! tip "Ces quatre-là sont à apprendre en premier"
     Ils sont courts, ils reviennent tout le temps, et ils font partie des 21 PLL

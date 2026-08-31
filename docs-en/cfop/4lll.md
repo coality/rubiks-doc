@@ -47,44 +47,41 @@ each case.</p>
 Seven cases. They are exactly the seven OLL where the cross is already done, so
 **nothing will have to be relearned** the day you move to full OLL.
 
-<div class="algs">
-<figure class="alg"><img src="/en/assets/cubes/oll-27.svg" alt="Sune"><figcaption><b>Sune</b><br><code>R U R' U R U2 R'</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-26.svg" alt="Anti-Sune"><figcaption><b>Anti-Sune</b><br><code>R U2 R' U' R U' R'</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-21.svg" alt="Double Sune"><figcaption><b>Double Sune</b><br><code>R U2 R' U' R U R' U' R U' R'</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-22.svg" alt="Pi"><figcaption><b>Pi</b><br><code>R U2 R2 U' R2 U' R2 U2 R</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-23.svg" alt="Headlights"><figcaption><b>Headlights</b><br><code>R2 D' R U2 R' D R U2 R</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-24.svg" alt="Sock"><figcaption><b>Sock</b><br><code>r U R' U' r' F R F'</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/oll-25.svg" alt="Bowtie"><figcaption><b>Bowtie</b><br><code>F' r U R' U' r' F R</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-27.svg" alt="Sune" loading="lazy">
+<div class="titre"><b>Sune</b><br><code>R U R' U R U2 R'</code></div>
+<img class="film" src="/en/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — the sequence step by step" loading="lazy">
 </div>
-
-<details class="film">
-<summary>Sune · <code>R U R' U R U2 R'</code></summary>
-<img src="/en/assets/cubes/film-sune.svg" alt="R U R' U R U2 R' — the sequence step by step">
-</details>
-<details class="film">
-<summary>Anti-Sune · <code>R U2 R' U' R U' R'</code></summary>
-<img src="/en/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — the sequence step by step">
-</details>
-<details class="film">
-<summary>Double Sune · <code>R U2 R' U' R U R' U' R U' R'</code></summary>
-<img src="/en/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — the sequence step by step">
-</details>
-<details class="film">
-<summary>Pi · <code>R U2 R2 U' R2 U' R2 U2 R</code></summary>
-<img src="/en/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — the sequence step by step">
-</details>
-<details class="film">
-<summary>Headlights · <code>R2 D' R U2 R' D R U2 R</code></summary>
-<img src="/en/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — the sequence step by step">
-</details>
-<details class="film">
-<summary>Sock · <code>r U R' U' r' F R F'</code></summary>
-<img src="/en/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — the sequence step by step">
-</details>
-<details class="film">
-<summary>Bowtie · <code>F' r U R' U' r' F R</code></summary>
-<img src="/en/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — the sequence step by step">
-</details>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-26.svg" alt="Anti-Sune" loading="lazy">
+<div class="titre"><b>Anti-Sune</b><br><code>R U2 R' U' R U' R'</code></div>
+<img class="film" src="/en/assets/cubes/film-antisune.svg" alt="R U2 R' U' R U' R' — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-21.svg" alt="Double Sune" loading="lazy">
+<div class="titre"><b>Double Sune</b><br><code>R U2 R' U' R U R' U' R U' R'</code></div>
+<img class="film" src="/en/assets/cubes/film-double-sune.svg" alt="R U2 R' U' R U R' U' R U' R' — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-22.svg" alt="Pi" loading="lazy">
+<div class="titre"><b>Pi</b><br><code>R U2 R2 U' R2 U' R2 U2 R</code></div>
+<img class="film" src="/en/assets/cubes/film-pi.svg" alt="R U2 R2 U' R2 U' R2 U2 R — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-23.svg" alt="Headlights" loading="lazy">
+<div class="titre"><b>Headlights</b><br><code>R2 D' R U2 R' D R U2 R</code></div>
+<img class="film" src="/en/assets/cubes/film-tete.svg" alt="R2 D' R U2 R' D R U2 R — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-24.svg" alt="Sock" loading="lazy">
+<div class="titre"><b>Sock</b><br><code>r U R' U' r' F R F'</code></div>
+<img class="film" src="/en/assets/cubes/film-chaussette.svg" alt="r U R' U' r' F R F' — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/oll-25.svg" alt="Bowtie" loading="lazy">
+<div class="titre"><b>Bowtie</b><br><code>F' r U R' U' r' F R</code></div>
+<img class="film" src="/en/assets/cubes/film-noeud-papillon.svg" alt="F' r U R' U' r' F R — the sequence step by step" loading="lazy">
+</div>
 
 !!! tip "Start with these two"
     **Sune** and **Anti-Sune** are mirrors of each other and between them cover a
@@ -99,24 +96,21 @@ Three cases. Spot the **pairs of identical colours** on the sides (the
 "headlights"): the face that has a pair is the one whose corners are already
 correctly placed.
 
-<div class="algs">
-<figure class="alg"><img src="/en/assets/cubes/pll-aa.svg" alt="A-perm a"><figcaption><b>A-perm a</b><br><code>x R' U R' D2 R U' R' D2 R2</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/pll-ab.svg" alt="A-perm b"><figcaption><b>A-perm b</b><br><code>x R2 D2 R U R' D2 R U' R</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/pll-e.svg" alt="E-perm"><figcaption><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-aa.svg" alt="A-perm a" loading="lazy">
+<div class="titre"><b>A-perm a</b><br><code>x R' U R' D2 R U' R' D2 R2</code></div>
+<img class="film" src="/en/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — the sequence step by step" loading="lazy">
 </div>
-
-<details class="film">
-<summary>A-perm a · <code>x R' U R' D2 R U' R' D2 R2</code></summary>
-<img src="/en/assets/cubes/film-aperm-a.svg" alt="x R' U R' D2 R U' R' D2 R2 — the sequence step by step">
-</details>
-<details class="film">
-<summary>A-perm b · <code>x R2 D2 R U R' D2 R U' R</code></summary>
-<img src="/en/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — the sequence step by step">
-</details>
-<details class="film">
-<summary>E-perm · <code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></summary>
-<img src="/en/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — the sequence step by step">
-</details>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-ab.svg" alt="A-perm b" loading="lazy">
+<div class="titre"><b>A-perm b</b><br><code>x R2 D2 R U R' D2 R U' R</code></div>
+<img class="film" src="/en/assets/cubes/film-aperm-b.svg" alt="x R2 D2 R U R' D2 R U' R — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-e.svg" alt="E-perm" loading="lazy">
+<div class="titre"><b>E-perm</b><br><code>x' R U' R' D R U R' D' R U R' D R U' R' D'</code></div>
+<img class="film" src="/en/assets/cubes/film-eperm.svg" alt="x' R U' R' D R U R' D' R U R' D R U' R' D' — the sequence step by step" loading="lazy">
+</div>
 
 !!! info "The A-perms rotate the cube"
     The `x` at the start is a whole-cube rotation: you tip the cube backwards
@@ -129,29 +123,26 @@ correctly placed.
 Four cases, and the best algorithms on the cube: short, fast, and built on the
 `M` slice.
 
-<div class="algs">
-<figure class="alg"><img src="/en/assets/cubes/pll-ua.svg" alt="U-perm a"><figcaption><b>U-perm a</b><br><code>M2 U M U2 M' U M2</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/pll-ub.svg" alt="U-perm b"><figcaption><b>U-perm b</b><br><code>M2 U' M U2 M' U' M2</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/pll-h.svg" alt="H-perm"><figcaption><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/pll-z.svg" alt="Z-perm"><figcaption><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></figcaption></figure>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-ua.svg" alt="U-perm a" loading="lazy">
+<div class="titre"><b>U-perm a</b><br><code>M2 U M U2 M' U M2</code></div>
+<img class="film" src="/en/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — the sequence step by step" loading="lazy">
 </div>
-
-<details class="film">
-<summary>U-perm a · <code>M2 U M U2 M' U M2</code></summary>
-<img src="/en/assets/cubes/film-uperm-a.svg" alt="M2 U M U2 M' U M2 — the sequence step by step">
-</details>
-<details class="film">
-<summary>U-perm b · <code>M2 U' M U2 M' U' M2</code></summary>
-<img src="/en/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — the sequence step by step">
-</details>
-<details class="film">
-<summary>H-perm · <code>M2 U M2 U2 M2 U M2</code></summary>
-<img src="/en/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — the sequence step by step">
-</details>
-<details class="film">
-<summary>Z-perm · <code>M' U M2 U M2 U M' U2 M2</code></summary>
-<img src="/en/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — the sequence step by step">
-</details>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-ub.svg" alt="U-perm b" loading="lazy">
+<div class="titre"><b>U-perm b</b><br><code>M2 U' M U2 M' U' M2</code></div>
+<img class="film" src="/en/assets/cubes/film-uperm-b.svg" alt="M2 U' M U2 M' U' M2 — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-h.svg" alt="H-perm" loading="lazy">
+<div class="titre"><b>H-perm</b><br><code>M2 U M2 U2 M2 U M2</code></div>
+<img class="film" src="/en/assets/cubes/film-hperm.svg" alt="M2 U M2 U2 M2 U M2 — the sequence step by step" loading="lazy">
+</div>
+<div class="cas">
+<img class="etat" src="/en/assets/cubes/pll-z.svg" alt="Z-perm" loading="lazy">
+<div class="titre"><b>Z-perm</b><br><code>M' U M2 U M2 U M' U2 M2</code></div>
+<img class="film" src="/en/assets/cubes/film-zperm.svg" alt="M' U M2 U M2 U M' U2 M2 — the sequence step by step" loading="lazy">
+</div>
 
 !!! tip "These four are the ones to learn first"
     They are short, they come up all the time, and they are part of the full 21

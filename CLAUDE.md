@@ -280,11 +280,18 @@ Les bandes sont posées dans les pages en HTML brut : `<figure class="film">`
 quand la page enseigne l'algorithme, `<details class="film">` replié quand elle
 ne fait que le citer (glossaire) ou qu'elle en liste beaucoup (4LLL).
 
+⚠️ **Pas de bande repliée sur une page de cas.** Le premier essai mettait les
+fiches en grille et les bandes en `<details>` plus bas : il fallait retenir le
+nom d'un cas, le retrouver dans une liste de 57, puis déplier. Chaque cas est
+maintenant **un bloc `.cas`** — schéma du cas, nom, algorithme, et la bande juste
+en dessous, tout visible. Le repli ne reste que pour les mentions en prose
+(glossaire, dépannage, notation, vitesse), où la séquence n'est pas le sujet.
+
 **Les 119 cas de référence ont aussi la leur** (`film-oll-01.svg`,
 `film-pll-aa.svg`, `film-f2l-01.svg`…), produites par `film_de()` au moment même
 où la fiche du cas est rendue — les deux ne peuvent donc pas diverger. Elles sont
-repliées sous la grille du groupe, avec `loading="lazy"` : un `<details>` fermé
-ne déclenche aucun téléchargement. La page OLL fait 60 ko de HTML, 9 ko sur le
+posées sous chaque cas, avec `loading="lazy"` : rien n'est téléchargé avant
+d'arriver à la hauteur du cas. La page OLL fait 60 ko de HTML, 9 ko sur le
 fil, et le site passe de 17 à 38 Mo sur disque.
 
 Le résumé d'une bande signale « le cube finit tourné » quand l'algorithme
