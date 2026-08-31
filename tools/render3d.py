@@ -317,7 +317,7 @@ def _paint(scene, sc, labels=()):
 def _text(x, y, txt, size, weight=700):
     return ('<text x="%.1f" y="%.1f" text-anchor="middle" '
             'dominant-baseline="central" font-family="system-ui,sans-serif" '
-            'font-size="%d" font-weight="%d" fill="%s" stroke="%s" '
+            'font-size="%.1f" font-weight="%d" fill="%s" stroke="%s" '
             'stroke-width="4" paint-order="stroke">%s</text>'
             % (x, y, size, weight, CHALK, INK, _esc(txt)))
 
@@ -366,7 +366,36 @@ def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(), cam=
 CELL = 132.0        # largeur d'une vignette a l'ecran, en pixels
 CELL_GAP = 7.0
 CAPTION = 30.0      # bandeau du nom du mouvement, sous la vignette
+CAPTION2 = 44.0     # ... sur deux lignes
 MAX_COLS = 6
+CAP_SIZE = 20.0     # corps du texte de legende
+CAP_RATIO = 0.62    # largeur moyenne d'un caractere, en fraction du corps
+
+
+def _fit(txt, largeur=CELL - 10):
+    """Decoupe et dimensionne une legende pour qu'elle tienne dans la vignette.
+
+    Les noms de mouvements sont courts, mais la derniere vignette porte une
+    phrase (« apres une repetition ») : sans mise a la taille elle debordait sur
+    la vignette voisine.
+    """
+    def large(t, corps):
+        return len(t) * corps * CAP_RATIO
+
+    if large(txt, CAP_SIZE) <= largeur:
+        return [txt], CAP_SIZE
+    mots = txt.split()
+    if len(mots) > 1:                       # deux lignes, coupees au milieu
+        best, ecart = 1, None
+        for i in range(1, len(mots)):
+            d = abs(len(' '.join(mots[:i])) - len(' '.join(mots[i:])))
+            if ecart is None or d < ecart:
+                best, ecart = i, d
+        lignes = [' '.join(mots[:best]), ' '.join(mots[best:])]
+    else:
+        lignes = [txt]
+    corps = min(CAP_SIZE, largeur / (max(len(l) for l in lignes) * CAP_RATIO))
+    return lignes, corps
 
 
 def filmstrip(alg, start, title='', last='', cam=CAM):
@@ -400,7 +429,9 @@ def _filmstrip(alg, start, title, last):
     cols = (n + rows - 1) // rows               # rangees equilibrees
     k = (CELL - 2 * PAD) / (maxx - minx)        # pixels par unite de cubie
     ch = (maxy - miny) * k + 2 * PAD            # hauteur de la partie cube
-    cellh = ch + CAPTION
+    mises = [_fit(c) for c in caps]
+    bandeau = CAPTION2 if any(len(l) > 1 for l, _c in mises) else CAPTION
+    cellh = ch + bandeau
     w = cols * CELL + (cols - 1) * CELL_GAP
     h = rows * cellh + (rows - 1) * CELL_GAP
 
@@ -409,7 +440,7 @@ def _filmstrip(alg, start, title, last):
                 (p[1] - miny) * SCALE + PAD * SCALE / k)
 
     parts = [_arrow_defs()]
-    for i, (scene, cap) in enumerate(zip(scenes, caps)):
+    for i, (scene, (lignes, corps)) in enumerate(zip(scenes, mises)):
         ox = (i % cols) * (CELL + CELL_GAP)
         oy = (i // cols) * (cellh + CELL_GAP)
         parts.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="8" '
@@ -419,5 +450,8 @@ def _filmstrip(alg, start, title, last):
         parts.append('<g transform="translate(%.2f,%.2f) scale(%.4f)">' % (ox, oy, k / SCALE))
         parts += _paint(scene, sc)
         parts.append('</g>')
-        parts.append(_text(ox + CELL / 2.0, oy + ch + CAPTION / 2.0 - 2, cap, 20))
+        y = oy + ch + bandeau / 2.0 - 2 - (corps * 0.55 * (len(lignes) - 1))
+        for ligne in lignes:
+            parts.append(_text(ox + CELL / 2.0, y, ligne, corps))
+            y += corps * 1.1
     return _svg(w, h, parts, title)

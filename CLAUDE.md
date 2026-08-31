@@ -300,6 +300,26 @@ terminent la première couronne et que `k±1` ne la terminent pas.
 (L'étape 7 dit aussi « 2 ou 4 fois » : là c'est **correct**, le coin est déjà à
 sa place et la séquence ne fait que le tourner.)
 
+### La bande qui promettait un cube résolu (2026-08-31)
+
+Défaut d'usage le plus grave trouvé jusqu'ici, remonté par des lecteurs. La
+bande « pas à pas » de `R' D' R D` part de `case_state(alg)` et sa dernière
+vignette s'appelait **« résultat »** en montrant un cube résolu. Or cette
+séquence se **répète** : la bande n'illustrait que le cas « blanc vers l'avant »,
+le seul où une répétition suffit. **Deux lecteurs sur trois** exécutaient les
+quatre mouvements à la lettre, constataient que leur cube ne ressemblait pas à
+l'image et en concluaient que la page mentait.
+
+Corrigé à la source : une entrée de `FILMS` peut porter la clé i18n de sa
+dernière vignette, et `coin-blanc` affiche « après une répétition ». La légende
+de l'étape 2 nomme le cas illustré et rappelle les 3 ou 5 répétitions.
+L'étape 7 a maintenant sa propre bande (`coin-tourne`, deux répétitions) : elle
+montrait la même image alors qu'il y faut 2 ou 4 fois.
+
+⚠️ Règle à retenir : **une bande d'une séquence répétable ne doit jamais finir
+sur « résultat »**. C'est une promesse que l'algorithme ne tient que dans un cas
+sur trois.
+
 ### Le piège de l'avant-dernier mouvement (2026-08-12)
 
 Autre erreur trouvée par le moteur, et qui explique le « à chaque fois ça casse

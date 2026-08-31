@@ -477,9 +477,15 @@ def gen_3d():
 # Toute sequence citee dans une page de tutoriel a sa bande. La liste est
 # verrouillee par tools/check_content.py : citer une sequence dans une page
 # sans l'ajouter ici fait echouer le build.
+# (slug, algorithme [, cle i18n de la derniere vignette])
+# Par defaut la derniere vignette s'appelle « resultat » — ce qui est FAUX pour
+# une sequence destinee a etre repetee : le lecteur croit alors que quatre
+# mouvements suffisent, voit que son cube ne correspond pas, et conclut que la
+# page ment. C'est exactement ce qui s'est produit.
 FILMS = [
     # methode debutant
-    ('coin-blanc',              "R' D' R D"),
+    ('coin-blanc',              "R' D' R D", 'film_one_round'),
+    ('coin-tourne',             "R' D' R D R' D' R D", 'film_one_round'),
     ('couronne2-droite',        "U R U' R' U' F' U F"),
     ('couronne2-gauche',        "U' L' U L U F U' F'"),
     ('croix-jaune',             "F R U R' U' F'"),
@@ -532,12 +538,13 @@ def gen_films():
     la derniere montre bien un cube resolu.
     """
     out = {}
-    for slug, alg in FILMS:
+    for entree in FILMS:
+        slug, alg = entree[0], entree[1]
+        fin = STR[entree[2] if len(entree) > 2 else 'film_result']
         start = case_state(alg)
         assert orient_std(start.copy().apply(alg)).is_solved(), \
             '%s : « %s » ne resout pas l\'etat de depart de sa bande' % (slug, alg)
-        svg = filmstrip(alg, start, title=STR['film_title'] % alg,
-                        last=STR['film_result'])
+        svg = filmstrip(alg, start, title=STR['film_title'] % alg, last=fin)
         out['film-' + slug] = write('film-' + slug, svg)
     return out
 

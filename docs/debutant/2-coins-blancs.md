@@ -85,7 +85,7 @@ l'état avant de tourner, et la flèche le mouvement à faire.
 
 <figure class="film">
 <img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
-<figcaption><code>R' D' R D</code> — la séquence pas à pas</figcaption>
+<figcaption><code>R' D' R D</code> — le cas le plus simple : le blanc pointe vers <b>l'avant</b>, une seule répétition suffit. Si ton blanc pointe ailleurs, c'est la même séquence à refaire 3 ou 5 fois, et ton cube ne ressemblera à la dernière vignette qu'à la toute fin.</figcaption>
 </figure>
 
 !!! warning "Ne t'arrête jamais en cours de route"

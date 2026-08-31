@@ -19,8 +19,8 @@ top.</p>
 </div>
 
 <figure class="film">
-<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
-<figcaption><code>R' D' R D</code> — the sequence step by step</figcaption>
+<img src="/en/assets/cubes/film-coin-tourne.svg" alt="R' D' R D">
+<figcaption><code>R' D' R D</code> — two repetitions, the common case. The corner turns fully and its yellow ends up on top.</figcaption>
 </figure>
 
 ## The absolute rule

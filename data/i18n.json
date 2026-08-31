@@ -84,7 +84,8 @@
     "film_title": "%s — la séquence pas à pas",
     "film_result": "résultat",
     "film_caption": "La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.",
-    "film_summary": "la séquence pas à pas"
+    "film_summary": "la séquence pas à pas",
+    "film_one_round": "après une répétition"
   },
   "en": {
     "figures": {
@@ -171,7 +172,8 @@
     "film_title": "%s — the sequence step by step",
     "film_result": "result",
     "film_caption": "The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.",
-    "film_summary": "the sequence step by step"
+    "film_summary": "the sequence step by step",
+    "film_one_round": "after one repetition"
   },
   "bis": {
     "figures": {
@@ -258,6 +260,7 @@
     "film_title": "%s — ang sequence, matag lihok",
     "film_result": "resulta",
     "film_caption": "Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.",
-    "film_summary": "ang sequence, matag lihok"
+    "film_summary": "ang sequence, matag lihok",
+    "film_one_round": "human sa usa ka balik"
   }
 }

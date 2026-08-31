@@ -19,8 +19,8 @@ nga sticker moabot sa ibabaw.</p>
 </div>
 
 <figure class="film">
-<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
-<figcaption><code>R' D' R D</code> — ang sequence, matag lihok</figcaption>
+<img src="/bis/assets/cubes/film-coin-tourne.svg" alt="R' D' R D">
+<figcaption><code>R' D' R D</code> — duha ka balik, ang kasagarang kaso. Molibot ang corner ug ang dalag niini moabot sa ibabaw.</figcaption>
 </figure>
 
 ## Ang lagda nga dili gyud lapason

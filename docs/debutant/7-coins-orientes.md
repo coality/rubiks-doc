@@ -18,8 +18,8 @@ arrive sur le dessus.</p>
 </div>
 
 <figure class="film">
-<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
-<figcaption><code>R' D' R D</code> — la séquence pas à pas</figcaption>
+<img src="/assets/cubes/film-coin-tourne.svg" alt="R' D' R D">
+<figcaption><code>R' D' R D</code> — deux répétitions, le cas le plus courant. Le coin fait un tour complet et son jaune arrive sur le dessus.</figcaption>
 </figure>
 
 ## La règle absolue

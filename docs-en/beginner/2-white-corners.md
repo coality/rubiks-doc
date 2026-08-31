@@ -86,7 +86,7 @@ the turn, and the arrow is the move to make.
 
 <figure class="film">
 <img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
-<figcaption><code>R' D' R D</code> — the sequence step by step</figcaption>
+<figcaption><code>R' D' R D</code> — the simplest case: white points to the <b>front</b>, one repetition is enough. If your white points elsewhere it is the same sequence, repeated 3 or 5 times, and your cube will only match the last frame at the very end.</figcaption>
 </figure>
 
 !!! warning "Never stop in the middle"

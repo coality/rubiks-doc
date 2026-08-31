@@ -88,7 +88,7 @@ sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 
 <figure class="film">
 <img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
-<figcaption><code>R' D' R D</code> — ang sequence, matag lihok</figcaption>
+<figcaption><code>R' D' R D</code> — ang pinakasayon nga kaso: ang puti nag-atubang sa <b>atubangan</b>, igo na ang usa ka balik. Kon lain ang atubangan sa imong puti, mao gihapon nga sequence apan 3 o 5 ka balik, ug ang imong cube mahisama sa kataposang hulagway sa kataposan lang.</figcaption>
 </figure>
 
 !!! warning "Ayaw gyud hunong sa tunga"

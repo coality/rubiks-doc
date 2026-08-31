@@ -545,7 +545,7 @@ def check_films():
     une bande de rester orpheline apres un remaniement de page.
     """
     from build import FILMS, CITEES_SANS_BANDE
-    known = {alg: slug for slug, alg in FILMS}
+    known = {e[1]: e[0] for e in FILMS}
     ok(len(known) == len(FILMS), 'films : deux entrees pour la meme sequence')
 
     per_lang = {}
