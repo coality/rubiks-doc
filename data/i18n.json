@@ -42,7 +42,11 @@
       "3d-paire-f2l": "Le coin et l'arête descendent ensemble dans la fente",
       "3d-move-d": "D — la face du bas : horaire vue de dessous, donc antihoraire vue de dessus",
       "3d-tenue-dessus": "Ce que tu vois : le centre jaune est en haut",
-      "3d-tenue-dessous": "Ce qu'il y a dessous : la croix blanche de l'étape 1"
+      "3d-tenue-dessous": "Ce qu'il y a dessous : la croix blanche de l'étape 1",
+      "3d-move-m": "M — la tranche du milieu, dans le sens de L",
+      "3d-move-m2": "M2 — un demi-tour de la tranche du milieu",
+      "3d-move-x": "x — tout le cube bascule dans le sens de R",
+      "3d-move-r-large": "r — la face droite ET la tranche derrière elle"
     },
     "f2l_case_title": "Cas F2L %d",
     "f2l_case_name": "Cas %d",
@@ -131,7 +135,11 @@
       "3d-paire-f2l": "The corner and the edge drop into the slot together",
       "3d-move-d": "D — the bottom face: clockwise seen from below, so anticlockwise from above",
       "3d-tenue-dessus": "What you see: the yellow centre is on top",
-      "3d-tenue-dessous": "What is underneath: the white cross from step 1"
+      "3d-tenue-dessous": "What is underneath: the white cross from step 1",
+      "3d-move-m": "M — the middle slice, following L",
+      "3d-move-m2": "M2 — a half turn of the middle slice",
+      "3d-move-x": "x — the whole cube tips in the direction of R",
+      "3d-move-r-large": "r — the right face AND the slice behind it"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",
@@ -220,7 +228,11 @@
       "3d-paire-f2l": "Ang corner ug ang edge manaog nga dungan sa slot",
       "3d-move-d": "D — ang ubos nga face: clockwise tan-awon gikan sa ilawom, mao nga baliktad kon gikan sa ibabaw",
       "3d-tenue-dessus": "Ang imong makita: ang dalag nga centre naa sa ibabaw",
-      "3d-tenue-dessous": "Ang naa sa ilawom: ang puti nga cross gikan sa step 1"
+      "3d-tenue-dessous": "Ang naa sa ilawom: ang puti nga cross gikan sa step 1",
+      "3d-move-m": "M — ang tunga nga slice, sunod sa L",
+      "3d-move-m2": "M2 — tunga nga liso sa tunga nga slice",
+      "3d-move-x": "x — ang tibuok cube motikyaop sunod sa R",
+      "3d-move-r-large": "r — ang tuo nga face UG ang slice sa likod niini"
     },
     "f2l_case_title": "F2L case %d",
     "f2l_case_name": "Case %d",

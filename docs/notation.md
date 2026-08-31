@@ -85,6 +85,11 @@ La tranche est la couche **du milieu**, celle qui ne contient aucun coin.
 | `E` | *E* | Tranche entre `U` et `D`, elle suit le sens de `D` |
 | `S` | *S* | Tranche entre `F` et `B`, elle suit le sens de `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/assets/cubes/3d-move-m.svg" alt="M"><figcaption><b>M</b><br><code>la tranche du milieu</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-move-m2.svg" alt="M2"><figcaption><b>M2</b><br><code>un demi-tour</code></figcaption></figure>
+</div>
+
 `M` est de loin le plus utilisé (il sert dans les meilleurs algorithmes d'arêtes).
 Retiens juste : **`M` va dans le même sens que `L`**, c'est-à-dire vers toi par le
 dessus.
@@ -97,6 +102,10 @@ dessus.
 | `y` | Tout le cube tourne dans le sens de `U` |
 | `z` | Tout le cube pivote dans le sens de `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/assets/cubes/3d-move-x.svg" alt="x"><figcaption><b>x</b><br><code>tout le cube bascule</code></figcaption></figure>
+</div>
+
 Une rotation ne résout rien : elle change juste la face que tu as devant toi. Tu
 n'en as **aucun besoin** pour la méthode débutant.
 
@@ -104,6 +113,10 @@ n'en as **aucun besoin** pour la méthode débutant.
 
 Une lettre **minuscule** = la face **et** la tranche derrière elle, deux couches
 d'un coup. `r` = `R` + `M'`. On ne s'en sert qu'à partir de l'OLL complet.
+
+<div class="algs">
+<figure class="alg"><img src="/assets/cubes/3d-move-r-large.svg" alt="r"><figcaption><b>r</b><br><code>deux couches d'un coup</code></figcaption></figure>
+</div>
 
 ## S'entraîner à lire
 

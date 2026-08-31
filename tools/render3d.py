@@ -261,7 +261,7 @@ def move_arcs(token):
 
 
 # --- rendu -----------------------------------------------------------------
-def _scene(cube, keep=None, arrows=(), turns=(), arcs=()):
+def _scene(cube, keep=None, arrows=(), turns=(), arcs=(), moves=()):
     """Geometrie d'une figure, en unites de cubie — rien n'est encore mis a
     l'echelle. Sert aussi bien a une figure isolee qu'a une vignette de bande,
     ce qui garantit que les deux se dessinent exactement pareil."""
@@ -278,8 +278,10 @@ def _scene(cube, keep=None, arrows=(), turns=(), arcs=()):
     corners = [(sx * 1.5, sy * 1.5, sz * 1.5)
                for sx in (-1, 1) for sy in (-1, 1) for sz in (-1, 1)]
     body = _hull([project(p) for p in corners])
-    return dict(quads=quads, body=body,
-                arcs=[turn_points(f, cw) for f, cw in turns] + [list(a) for a in arcs],
+    tous = [turn_points(f, cw) for f, cw in turns] + [list(a) for a in arcs]
+    for tok in moves:                       # arcs deduits de la notation
+        tous += move_arcs(tok)
+    return dict(quads=quads, body=body, arcs=tous,
                 curves=[_travel_2d(a, b) for a, b in arrows])
 
 
@@ -333,18 +335,21 @@ def _svg(w, h, parts, title):
             % (w, h, w, h, _esc(title), _esc(title), ''.join(parts)))
 
 
-def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(), cam=CAM):
+def render3d(cube, title='Cube', keep=None, arrows=(), turns=(), labels=(),
+             moves=(), cam=CAM):
     """Vue isometrique du cube.
 
     keep    : ensemble de (face, index) a garder en couleur (le reste grise)
     arrows  : liste de ((pos,nrm), (pos,nrm)) — trajets de pieces
     turns   : liste de (face, clockwise) — sens d'un mouvement
+    moves   : liste de mouvements ecrits en notation (« M », « M2 », « x »…),
+              dont les arcs sont deduits par move_arcs()
     labels  : liste de (face, texte) — lettre posee au centre de la face
     cam     : point de vue (CAM par defaut, CAM_BAS pour voir la couche du bas)
     """
     set_camera(cam)
     try:
-        scene = _scene(cube, keep, arrows, turns)
+        scene = _scene(cube, keep, arrows, turns, moves=moves)
         minx, maxx, miny, maxy = _extent([scene])
         w = (maxx - minx) * SCALE + 2 * PAD
         h = (maxy - miny) * SCALE + 2 * PAD

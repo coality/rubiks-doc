@@ -88,6 +88,11 @@ Ang slice mao ang layer sa **tunga**, kadtong walay corner.
 | `E` | *E* | Slice sa taliwala sa `U` ug `D`, mosunod sa direksyon sa `D` |
 | `S` | *S* | Slice sa taliwala sa `F` ug `B`, mosunod sa direksyon sa `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/bis/assets/cubes/3d-move-m.svg" alt="M"><figcaption><b>M</b><br><code>ang tunga nga slice</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-move-m2.svg" alt="M2"><figcaption><b>M2</b><br><code>tunga nga liso</code></figcaption></figure>
+</div>
+
 Ang `M` mao ang labing gamit (makita siya sa pinakamaayong algorithm sa edge).
 Hinumdomi lang: **ang `M` mosunod sa direksyon sa `L`**, buot pasabot paingon
 nimo agi sa ibabaw.
@@ -100,6 +105,10 @@ nimo agi sa ibabaw.
 | `y` | Ang tibuok cube motuyok sa direksyon sa `U` |
 | `z` | Ang tibuok cube moliso sa direksyon sa `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/bis/assets/cubes/3d-move-x.svg" alt="x"><figcaption><b>x</b><br><code>motikyaop ang tibuok cube</code></figcaption></figure>
+</div>
+
 Ang pagtuyok walay masulbad: giusab lang niini kung unsa nga face ang imong
 giatubang. **Wala gyud ka magkinahanglan** niini sa beginner nga pamaagi.
 
@@ -107,6 +116,10 @@ giatubang. **Wala gyud ka magkinahanglan** niini sa beginner nga pamaagi.
 
 Ang **gamay** nga letra = ang face **ug** ang slice sa likod niini, duha ka layer
 dungan. `r` = `R` + `M'`. Magamit ra ni gikan sa kompleto nga OLL.
+
+<div class="algs">
+<figure class="alg"><img src="/bis/assets/cubes/3d-move-r-large.svg" alt="r"><figcaption><b>r</b><br><code>duha ka layer dungan</code></figcaption></figure>
+</div>
 
 ## Pagpraktis sa pagbasa
 

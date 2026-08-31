@@ -387,6 +387,21 @@ def gen_3d():
                            ('3d-move-d', 'D', True)):
         emit(name, solved(), turns=[(face, cw)])
 
+    # --- notation : tranches, rotations, mouvements larges. Ils n'etaient
+    # decrits qu'en tableau, alors que M2 sert dans quatre des PLL que le site
+    # conseille d'apprendre en premier.
+    # On grise tout sauf la ou les couches qui bougent : sans ca, l'arc de M et
+    # celui de x se ressemblent et rien ne dit quelle couche tourne.
+    def couches(garde):
+        return set(face_index(pos, nrm) for pos, nrm in solved().st if garde(pos))
+
+    milieu = couches(lambda p: p[0] == 0)
+    for nom, mv, keep in (('3d-move-m', 'M', milieu),
+                          ('3d-move-m2', 'M2', milieu),
+                          ('3d-move-x', 'x', None),
+                          ('3d-move-r-large', 'r', couches(lambda p: p[0] >= 0))):
+        emit(nom, solved(), keep=keep, moves=[mv])
+
     # --- etape 2 : comment tenir le cube. La page enchainait deux vues « par en
     # dessous » sans avoir jamais montre l'orientation : impossible de les lire.
     # Le meme cube, des deux cotes, avec le meme masque.

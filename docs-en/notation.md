@@ -86,6 +86,11 @@ The slice is the **middle** layer, the one that contains no corner.
 | `E` | *E* | Slice between `U` and `D`, it follows the direction of `D` |
 | `S` | *S* | Slice between `F` and `B`, it follows the direction of `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/en/assets/cubes/3d-move-m.svg" alt="M"><figcaption><b>M</b><br><code>the middle slice</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-move-m2.svg" alt="M2"><figcaption><b>M2</b><br><code>a half turn</code></figcaption></figure>
+</div>
+
 `M` is by far the most used (it appears in the best edge algorithms). Just
 remember: **`M` goes the same way as `L`**, that is, towards you over the top.
 
@@ -97,6 +102,10 @@ remember: **`M` goes the same way as `L`**, that is, towards you over the top.
 | `y` | The whole cube turns in the direction of `U` |
 | `z` | The whole cube pivots in the direction of `F` |
 
+<div class="algs">
+<figure class="alg"><img src="/en/assets/cubes/3d-move-x.svg" alt="x"><figcaption><b>x</b><br><code>the whole cube tips</code></figcaption></figure>
+</div>
+
 A rotation solves nothing: it only changes which face is in front of you. You
 need **none of them** for the beginner method.
 
@@ -104,6 +113,10 @@ need **none of them** for the beginner method.
 
 A **lowercase** letter = the face **and** the slice behind it, two layers at
 once. `r` = `R` + `M'`. You only need them from full OLL onwards.
+
+<div class="algs">
+<figure class="alg"><img src="/en/assets/cubes/3d-move-r-large.svg" alt="r"><figcaption><b>r</b><br><code>two layers at once</code></figcaption></figure>
+</div>
 
 ## Practising your reading
 
