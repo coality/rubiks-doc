@@ -98,11 +98,16 @@ details.film > img { margin: .4rem 0 .8rem; }
 .cas {
   display: grid;
   grid-template-columns: 118px minmax(0, 1fr);
-  gap: .5rem 1rem;
+  gap: .6rem 1rem;
   align-items: center;
-  margin: 1.5rem 0;
-  padding-bottom: 1.3rem;
-  border-bottom: 1px solid rgba(128, 128, 128, .22);
+  /* chaque cas est un panneau : on voit d'un coup ou il commence et ou il
+     finit, ce qu'un simple trait de separation ne donnait pas */
+  margin: 1.6rem 0;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(128, 128, 128, .25));
+  border-left: 3px solid var(--md-accent-fg-color, #4051b5);
+  border-radius: 10px;
+  background: var(--md-code-bg-color, rgba(128, 128, 128, .05));
 }
 .cas .etat { width: 118px; height: auto; display: block; }
 .cas .titre { font-size: .9rem; line-height: 1.5; }
@@ -115,7 +120,7 @@ details.film > img { margin: .4rem 0 .8rem; }
   margin-inline: auto;
 }
 @media screen and (max-width: 44em) {
-  .cas { grid-template-columns: 92px minmax(0, 1fr); }
+  .cas { grid-template-columns: 92px minmax(0, 1fr); padding: .8rem .8rem 1rem; }
   .cas .etat { width: 92px; }
 }
 
