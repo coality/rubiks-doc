@@ -85,7 +85,8 @@
     "film_result": "résultat",
     "film_caption": "La séquence pas à pas : chaque vignette montre l'état <b>avant</b> de tourner, et la flèche le mouvement à faire.",
     "film_summary": "la séquence pas à pas",
-    "film_one_round": "après une répétition"
+    "film_one_round": "après une répétition",
+    "film_rotation": "le cube finit tourné"
   },
   "en": {
     "figures": {
@@ -173,7 +174,8 @@
     "film_result": "result",
     "film_caption": "The sequence step by step: each frame shows the cube <b>before</b> the turn, and the arrow shows the move to make.",
     "film_summary": "the sequence step by step",
-    "film_one_round": "after one repetition"
+    "film_one_round": "after one repetition",
+    "film_rotation": "the cube ends up turned"
   },
   "bis": {
     "figures": {
@@ -261,6 +263,7 @@
     "film_result": "resulta",
     "film_caption": "Ang sequence matag lihok: ang matag hulagway nagpakita sa cube <b>sa wala pa</b> moliso, ug ang arrow nagpakita sa move nga buhaton.",
     "film_summary": "ang sequence, matag lihok",
-    "film_one_round": "human sa usa ka balik"
+    "film_one_round": "human sa usa ka balik",
+    "film_rotation": "matuyok ang cube sa kataposan"
   }
 }

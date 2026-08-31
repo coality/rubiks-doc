@@ -280,6 +280,17 @@ Les bandes sont posées dans les pages en HTML brut : `<figure class="film">`
 quand la page enseigne l'algorithme, `<details class="film">` replié quand elle
 ne fait que le citer (glossaire) ou qu'elle en liste beaucoup (4LLL).
 
+**Les 119 cas de référence ont aussi la leur** (`film-oll-01.svg`,
+`film-pll-aa.svg`, `film-f2l-01.svg`…), produites par `film_de()` au moment même
+où la fiche du cas est rendue — les deux ne peuvent donc pas diverger. Elles sont
+repliées sous la grille du groupe, avec `loading="lazy"` : un `<details>` fermé
+ne déclenche aucun téléchargement. La page OLL fait 60 ko de HTML, 9 ko sur le
+fil, et le site passe de 17 à 38 Mo sur disque.
+
+Le résumé d'une bande signale « le cube finit tourné » quand l'algorithme
+contient `x`, `y` ou `z` : la dernière vignette montre alors un cube résolu mais
+tenu autrement (A-perms, E-perm), ce qui surprend si on ne le dit pas.
+
 ### Erreur de contenu trouvée par le moteur (2026-08-10)
 
 L'étape 2 disait « répéter `R' D' R D` **2 ou 4 fois** ». C'est **faux**, et le

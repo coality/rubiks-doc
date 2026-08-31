@@ -106,8 +106,9 @@ def gen_ll(kind):
         st = case_state(alg)
         arr = pll_arrows(alg) if kind == 'pll' else None
         svg = render_ll(st, mode=kind, arrows=arr, title='%s %s' % (kind.upper(), cid))
+        slug = '%s-%s' % (kind, cid.lower())
         out.append(dict(id=cid, name=name_of(kind, cid, name), alg=alg, grp=grp,
-                        img=write('%s-%s' % (kind, cid.lower()), svg)))
+                        img=write(slug, svg), film=film_de(slug, alg)))
     return out
 
 
@@ -141,8 +142,10 @@ def gen_f2l():
             grp = 'c-coin-case'
         else:
             grp = 'd-les-deux-cases'
+        slug = 'f2l-%02d' % n
         out.append(dict(id=str(n), name=STR['f2l_case_name'] % n, alg=alg, grp=grp,
-                        moves=len(alg.split()), img=write('f2l-%02d' % n, svg)))
+                        moves=len(alg.split()), img=write(slug, svg),
+                        film=film_de(slug, alg)))
     out.sort(key=lambda r: (r['grp'], r['moves'], r['alg']))
     for n, r in enumerate(out, 1):
         r['name'] = STR['f2l_case_name'] % n
@@ -559,6 +562,21 @@ CITEES_SANS_BANDE = {
 }
 
 
+def film_de(slug, alg):
+    """Bande « pas a pas » d'un cas de reference : un cube par mouvement.
+
+    Meme fabrique que pour les sequences de la methode debutant : l'etat de
+    depart est le cas que l'algorithme resout, les fleches viennent du moteur,
+    et une assertion verifie que la derniere vignette montre un cube resolu.
+    """
+    start = case_state(alg)
+    assert orient_std(start.copy().apply(alg)).is_solved(), \
+        '%s : « %s » ne resout pas son propre cas' % (slug, alg)
+    svg = filmstrip(alg, start, title=STR['film_title'] % alg,
+                    last=STR['film_result'])
+    return write('film-' + slug, svg)
+
+
 def gen_films():
     """Une bande de vignettes par sequence : l'etat avant chaque mouvement, la
     fleche de ce mouvement et son nom.
@@ -583,6 +601,11 @@ def gen_films():
 
 # ------------------------------------------------------------------- pages
 def cards(rows):
+    """Grille des cas, puis la bande « pas a pas » de chacun, repliee.
+
+    Les bandes sont sous la grille et non dans les fiches : une bande fait toute
+    la largeur du texte, elle ne tient pas dans une case de 148 px.
+    """
     out = ['<div class="algs">']
     for r in rows:
         out.append(
@@ -591,6 +614,18 @@ def cards(rows):
             '<figcaption><b>%s</b><br><code>%s</code></figcaption>'
             '</figure>' % (BASE, r['img'], r['name'], r['name'], r['alg']))
     out.append('</div>')
+    out.append('')
+    for r in rows:
+        # un algo qui contient x, y ou z laisse le cube tenu autrement : la
+        # derniere vignette montre alors un cube resolu mais retourne, ce qui
+        # surprend si on ne le dit pas
+        tourne = (' — %s' % STR['film_rotation']
+                  if any(m[0] in 'xyz' for m in r['alg'].split()) else '')
+        out.append(
+            '<details class="film">\n<summary>%s · <code>%s</code>%s</summary>\n'
+            '<img src="%s/%s" alt="%s" loading="lazy">\n</details>'
+            % (r['name'], r['alg'], tourne, BASE, r['film'],
+               STR['film_title'] % r['alg']))
     return '\n'.join(out)
 
 
