@@ -300,6 +300,48 @@ terminent la première couronne et que `k±1` ne la terminent pas.
 (L'étape 7 dit aussi « 2 ou 4 fois » : là c'est **correct**, le coin est déjà à
 sa place et la séquence ne fait que le tourner.)
 
+### ⚠️ L'étape 2 était fausse (corrigé le 2026-08-31)
+
+**La plus grosse erreur du projet, signalée par un lecteur et niée trois fois
+par moi.** L'étape 2 enseignait `R' D' R D` pour insérer les coins blancs. Cette
+séquence fait tourner **trois arêtes entre elles**, dont deux de la croix
+blanche, et ne les remet qu'aux multiples de 3. Répétée 1 ou 5 fois — ce que la
+page annonçait — elle pose le coin **en détruisant la croix**.
+
+La bonne séquence est `R U R' U'`, le *sexy move*. Elle préserve la croix et les
+autres coins du bas **à chaque répétition**, et la structure 1/3/5 de la page
+reste valable, avec deux cas échangés :
+
+| blanc vers | répétitions |
+|---|---|
+| la droite | 1 |
+| le haut | 3 |
+| l'avant | 5 |
+
+Conséquence : les étapes 2 et 7 n'utilisent plus la même séquence, la méthode
+compte donc **sept** algorithmes et non six.
+
+#### Pourquoi les contrôles ne l'ont pas vu
+
+Ils partaient de `solved().apply(invert(alg))` et vérifiaient qu'appliquer `alg`
+redonnait un cube résolu. **C'est vrai par construction pour n'importe quelle
+séquence.** Le contrôle avait l'air sérieux et ne prouvait rien — il a validé
+pendant des mois une méthode qui ne marche pas.
+
+Deux remplaçants, tous deux dans `build.sh` :
+
+- `_insertion_valide()` raisonne sur la **permutation** : chaque facette porte
+  son origine, on applique l'algorithme, on lit où tout a atterri. Le coin doit
+  arriver dans la fente, les huit facettes de la croix et les trois autres coins
+  du bas doivent être **inchangés**. Aucun état particulier n'intervient.
+- `tools/test_method.py` **résout 120 mélanges aléatoires** en suivant les
+  consignes des pages, étape par étape, et exige un cube résolu à la fin.
+  Contre-test fait : avec l'ancienne séquence, il bloque à l'étape 2 sur *tous*
+  les mélanges.
+
+Règle à retenir : **un contrôle qui construit son cas de test à partir de la
+chose qu'il teste ne teste rien.**
+
 ### La bande qui promettait un cube résolu (2026-08-31)
 
 Défaut d'usage le plus grave trouvé jusqu'ici, remonté par des lecteurs. La

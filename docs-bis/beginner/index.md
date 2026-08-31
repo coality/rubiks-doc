@@ -1,7 +1,7 @@
 # Beginner nga pamaagi — kinatibuk-ang panan-aw
 
 Kini nga pamaagi mosulbad sa cube **layer por layer**, gikan sa ubos paingon sa
-ibabaw. Nagkinahanglan kini og **unom ka algorithm** tanan, ug ang duha niini
+ibabaw. Nagkinahanglan kini og **pito ka algorithm** tanan, ug ang duha niini
 mirror ra sa usag usa.
 
 ## Ang plano

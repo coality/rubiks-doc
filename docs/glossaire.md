@@ -26,7 +26,7 @@
 
 <details class="film">
 <summary><code>R' D' R D</code> — la séquence pas à pas</summary>
-<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
+<img src="/assets/cubes/film-commutateur.svg" alt="R' D' R D — la séquence pas à pas">
 </details>
 
 **Fente** (*slot*)

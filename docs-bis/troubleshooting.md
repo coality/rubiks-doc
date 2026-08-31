@@ -62,7 +62,7 @@ balik sa `R' D' R D`. Ang cube kinahanglan dili gyud molihok sa imong kamot.
 
 <details class="film">
 <summary><code>R' D' R D</code> — ang sequence, matag lihok</summary>
-<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
+<img src="/bis/assets/cubes/film-commutateur.svg" alt="R' D' R D — ang sequence, matag lihok">
 </details>
 
 Kung naguba na: sugdi pag-usab ang cube gikan sa

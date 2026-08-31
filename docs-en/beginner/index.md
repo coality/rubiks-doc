@@ -1,7 +1,7 @@
 # Beginner method — overview
 
 This method solves the cube **layer by layer**, from the bottom up. It needs
-**six algorithms** in total, two of which are mirror images of each other.
+**seven algorithms** in total, two of which are mirror images of each other.
 
 ## The plan
 

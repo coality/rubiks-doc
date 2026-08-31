@@ -366,7 +366,12 @@ def check_invariants():
 
 
 def check_beginner_method():
-    """La page annonce « six algorithmes en tout, dont deux en miroir »."""
+    """La page annonce « sept algorithmes, dont deux en miroir ».
+
+    C'etait six tant que les etapes 2 et 7 partageaient `R' D' R D`. L'etape 2
+    utilise desormais `R U R' U'` — la seule qui insere un coin sans detruire la
+    croix blanche — donc les deux etapes ont des sequences distinctes.
+    """
     algs = set()
     for f in ('debutant/1-croix-blanche.md', 'debutant/2-coins-blancs.md',
               'debutant/3-deuxieme-couronne.md', 'debutant/4-croix-jaune.md',
@@ -375,8 +380,8 @@ def check_beginner_method():
         txt = open(os.path.join(ROOT, 'docs', f), encoding='utf-8').read()
         for m in re.finditer(r'<span class="move">([^<]+)</span>', txt):
             algs.add(' '.join(m.group(1).split()))
-    ok(len(algs) == 6,
-       'methode debutant : %d algorithmes distincts au lieu de 6 (%s)'
+    ok(len(algs) == 7,
+       'methode debutant : %d algorithmes distincts au lieu de 7 (%s)'
        % (len(algs), sorted(algs)))
     for a in algs:
         ok(len(parse(a)) > 0, 'methode debutant : « %s » illisible' % a)

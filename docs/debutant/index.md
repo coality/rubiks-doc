@@ -1,7 +1,7 @@
 # Méthode débutant — vue d'ensemble
 
 Cette méthode résout le cube **couche par couche**, de bas en haut. Elle demande
-**six algorithmes** en tout, dont deux qui sont l'image miroir l'un de l'autre.
+**sept algorithmes** en tout, dont deux qui sont l'image miroir l'un de l'autre.
 
 ## Le plan
 

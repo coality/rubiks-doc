@@ -11,7 +11,7 @@ learn the same thing twice, and every step reuses the previous one.
 - :material-numeric-1-circle: **I have never solved a cube**
 
     Go straight to the [beginner method](beginner/index.md). Seven steps,
-    **six algorithms** to remember in total. Expect two hours for your first
+    **seven algorithms** to remember in total. Expect two hours for your first
     solved cube, and a few days before you can do it without looking.
 
 - :material-numeric-2-circle: **I can solve it, I want to go faster**

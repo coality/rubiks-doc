@@ -23,13 +23,6 @@ Busa ang mga hulagway niini nga panid nga nagpakita sa cube **gikan sa ilawom**
 basahon sama sa hulagway sa tuo: gitan-aw nimo ang imong cube gikan sa ubos,
 nga wala kini gibali.
 
-!!! info "Nakakat-on ka sa laing dapit nga ang puti naa sa ibabaw?"
-    Laing convention kana, husto usab, ug **pareho ra nga lihok tan-awon gikan
-    sa pikas**: kon ang puti naa sa ibabaw, `R' U' R U` ang sulat; kon ang puti
-    naa sa ubos, `R' D' R D`. Ang pagbali sa cube mao ang mag-ilis niini — ug
-    ang `R' D' R D` walay pulos kon ang puti nimo naa sa ibabaw. Dinhi sa site,
-    ang puti magpabilin sa ubos gikan sa sinugdan hangtod sa kataposan.
-
 ## Ang prinsipyo
 
 Ang corner mosulod **sa taliwala sa tulo ka center**. Busa ang
@@ -65,9 +58,9 @@ siya.</figcaption>
    magtakda sa gidaghanon sa balik — kanunay **kulang** (odd):
 
 <div class="algs">
-<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-avant.svg" alt="Puti sa atubangan"><figcaption><b>Puti sa atubangan</b><br><code>1 ka beses</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-droite.svg" alt="Puti sa tuo"><figcaption><b>Puti sa tuo</b><br><code>1 ka beses</code></figcaption></figure>
 <figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-haut.svg" alt="Puti sa ibabaw"><figcaption><b>Puti sa ibabaw</b><br><code>3 ka beses</code></figcaption></figure>
-<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-droite.svg" alt="Puti sa tuo"><figcaption><b>Puti sa tuo</b><br><code>5 ka beses</code></figcaption></figure>
+<figure class="alg"><img src="/bis/assets/cubes/3d-coin-blanc-avant.svg" alt="Puti sa atubangan"><figcaption><b>Puti sa atubangan</b><br><code>5 ka beses</code></figcaption></figure>
 </div>
 
 Ang arrow nagpakita sa tinuod nga agianan sa puti: mobiya siya sa ibabaw nga
@@ -77,9 +70,8 @@ layer ug moabot sa ilawom sa cube, sa iyang lugar.
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
-<span class="move">R' D' R D</span>
-<p>Manaog ang corner sa slot, moliso, mosaka pag-usab, ug sa kadugayan mahiluna
-sa husto nga direksyon. <b>Ayaw gyud hunong sa tunga.</b></p>
+<span class="move">R U R' U'</span>
+<p>Mogawas ang corner sa slot, molibot, ug sa kadugayan mahiluna sa husto nga direksyon. Ang puti nga cross <b>dili maguba human sa matag balik</b>: mahimo kang mopahulay tunga-tunga.</p>
 </div>
 </div>
 
@@ -87,17 +79,16 @@ Gipakita sa ubos ang sequence **matag lihok**: ang matag hulagway mao ang cube
 sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 
 <figure class="film">
-<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
-<figcaption><code>R' D' R D</code> — ang pinakasayon nga kaso: ang puti nag-atubang sa <b>atubangan</b>, igo na ang usa ka balik. Kon lain ang atubangan sa imong puti, mao gihapon nga sequence apan 3 o 5 ka balik, ug ang imong cube mahisama sa kataposang hulagway sa kataposan lang.</figcaption>
+<img src="/bis/assets/cubes/film-sexy.svg" alt="R U R' U'">
+<figcaption><code>R U R' U'</code> — ang pinakasayon nga kaso: ang puti nag-atubang sa <b>tuo</b>, igo na ang usa ka balik. Kon lain ang atubangan sa imong puti, mao gihapon nga sequence apan 3 o 5 ka balik.</figcaption>
 </figure>
 
-!!! warning "Ayaw gyud hunong sa tunga"
-    Samtang gibuhat nimo, morag guba ang ubos sa cube: normal ra kana, ang
-    sequence mokuha og piraso ug ibalik dayon.
+!!! warning "Ayaw hunong sa tunga sa usa ka balik"
+    Ang usa ka kompleto nga balik dili gyud makaguba sa cross: mokuha kini og
+    piraso ug ibalik dayon. Apan ang paghunong tunga sa mga lihok, oo — humana
+    kanunay ang upat.
 
-    Sa usa ka lihok una matapos, baliktad: morag human na ang tanan, kompleto na
-    ang puti nga face. Apan sayop kini og usa ka quarter turn, ug ang katapusang
-    lihok ang magbalik niini. Humana gyud kanunay.
+    Taliwala sa mga balik, mahimo kang mohunong bisan unsa ka dugay.
 
 !!! tip "Dili nimo kinahanglan mag-ihap"
     Balika lang hangtod nga mahiluna ang corner, ang puti naa sa ubos. Ang mga
@@ -112,7 +103,7 @@ sa wala pa moliso, ug ang arrow mao ang move nga buhaton.
 Kanunay ni mahitabo: naa na ang puti nga corner sa ubos nga layer, apan sayop ang
 lugar o sayop ang atubangan.
 
-Ibutang siya sa ubos-tuo atubangan nimo, ug buhata ang `R' D' R D` og **kausa**.
+Ibutang siya sa ubos-tuo atubangan nimo, ug buhata ang `R U R' U'` og **kausa**.
 Mosaka ang corner ngadto sa ibabaw nga layer. Mahimo na nimo kining atubangon sa
 normal nga paagi.
 
@@ -122,8 +113,7 @@ normal nga paagi.
 
 ## Nganong molihok kini nga sunod-sunod
 
-Ang `R' D' R D` usa ka **commutator**: magbuhat siya og usa ka butang, magbuhat
-og lain, dayon iyang bawion ang una. Ang resulta: usa ra ka corner ang iyang
-matandog, ug ibalik niya kini nga lahi ang pagkaliso. Makita nimo pag-usab kini
-gyud nga sunod-sunod sa [lakang 7](7-corners-oriented.md) — mao ra kini ang
-algorithm nga gigamit makaduha.
+Ang `R U R' U'` usa ka **commutator**: mobuhat kini og usa ka butang, mobuhat og
+lain, dayon i-undo ang una. Busa usa ra ka corner ang iyang hilabtan, ug ibalik
+niya ang tanan sa matag balik. Kini ang pinakagamit nga sequence sa cube — imong
+makita bisan asa, ginganlan og **sexy move**.

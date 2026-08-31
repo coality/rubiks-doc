@@ -22,13 +22,6 @@ bas**. Tu ne retournes pas le cube de toute l'étape.
 Les schémas de cette page qui montrent le cube **par en dessous** se lisent donc
 comme la figure de droite : tu regardes ton cube d'en bas, sans le retourner.
 
-!!! info "Tu as appris ailleurs avec le blanc en haut ?"
-    C'est une autre convention, tout aussi valable, et c'est **le même geste vu
-    de l'autre côté** : avec le blanc en haut il s'écrit `R' U' R U`, avec le
-    blanc en bas `R' D' R D`. Retourner le cube échange les deux — et `R' D' R D`
-    ne donne rien de bon si tu as le blanc en haut. Sur ce site, le blanc reste
-    en bas du début à la fin.
-
 ## Le principe
 
 Un coin va **entre trois centres**. Le coin blanc-vert-orange va donc à
@@ -62,9 +55,9 @@ ce trou pour l'instant n'a aucune importance — il en sera éjecté.</figcaptio
    décide du nombre de répétitions — toujours **impair** :
 
 <div class="algs">
-<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-avant.svg" alt="Blanc devant"><figcaption><b>Blanc devant</b><br><code>1 fois</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-droite.svg" alt="Blanc à droite"><figcaption><b>Blanc à droite</b><br><code>1 fois</code></figcaption></figure>
 <figure class="alg"><img src="/assets/cubes/3d-coin-blanc-haut.svg" alt="Blanc dessus"><figcaption><b>Blanc dessus</b><br><code>3 fois</code></figcaption></figure>
-<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-droite.svg" alt="Blanc à droite"><figcaption><b>Blanc à droite</b><br><code>5 fois</code></figcaption></figure>
+<figure class="alg"><img src="/assets/cubes/3d-coin-blanc-avant.svg" alt="Blanc devant"><figcaption><b>Blanc devant</b><br><code>5 fois</code></figcaption></figure>
 </div>
 
 La flèche montre le trajet réel du blanc : il part de la couche du haut et
@@ -74,9 +67,8 @@ finit sous le cube, à sa place.
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
-<span class="move">R' D' R D</span>
-<p>Le coin descend dans la fente, se retourne, remonte, et finit par se poser
-dans le bon sens. <b>Ne t'arrête jamais en cours de route.</b></p>
+<span class="move">R U R' U'</span>
+<p>Le coin sort de la fente, fait un tour, et finit par s'y poser dans le bon sens. La croix blanche est <b>intacte après chaque répétition</b> : tu peux souffler entre deux.</p>
 </div>
 </div>
 
@@ -84,17 +76,16 @@ La séquence est reprise **pas à pas** ci-dessous : chaque vignette montre
 l'état avant de tourner, et la flèche le mouvement à faire.
 
 <figure class="film">
-<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
-<figcaption><code>R' D' R D</code> — le cas le plus simple : le blanc pointe vers <b>l'avant</b>, une seule répétition suffit. Si ton blanc pointe ailleurs, c'est la même séquence à refaire 3 ou 5 fois, et ton cube ne ressemblera à la dernière vignette qu'à la toute fin.</figcaption>
+<img src="/assets/cubes/film-sexy.svg" alt="R U R' U'">
+<figcaption><code>R U R' U'</code> — le cas le plus simple : le blanc pointe vers <b>la droite</b>, une seule répétition suffit. Si ton blanc pointe ailleurs, c'est la même séquence à refaire 3 ou 5 fois.</figcaption>
 </figure>
 
-!!! warning "Ne t'arrête jamais en cours de route"
-    Pendant la manœuvre, le bas du cube a l'air cassé : c'est normal, la séquence
-    sort une pièce et la remet.
+!!! warning "Ne t'arrête pas au milieu d'une répétition"
+    Une répétition complète ne casse jamais la croix : elle sort une pièce et la
+    remet. Mais s'arrêter entre deux mouvements, si — va toujours au bout des
+    quatre.
 
-    À l'**avant-dernier mouvement**, c'est l'inverse : tout a l'air fini, la face
-    blanche est complète. Elle est pourtant décalée d'un quart de tour, et c'est
-    le dernier mouvement qui la remet en place. Va toujours jusqu'au bout.
+    Entre deux répétitions, en revanche, tu peux t'arrêter autant que tu veux.
 
 !!! tip "Tu n'as pas besoin de compter"
     Répète simplement jusqu'à ce que le coin soit posé, blanc en bas. Les
@@ -109,7 +100,7 @@ l'état avant de tourner, et la flèche le mouvement à faire.
 Ça arrive souvent : un coin blanc est déjà dans la couche du bas, mais au mauvais
 endroit ou dans le mauvais sens.
 
-Mets-le en bas à droite devant toi, et fais `R' D' R D` **une fois**. Le coin part
+Mets-le en bas à droite devant toi, et fais `R U R' U'` **une fois**. Le coin part
 dans la couche du haut. Tu peux maintenant le traiter normalement.
 
 !!! success "Vérification"
@@ -118,7 +109,7 @@ dans la couche du haut. Tu peux maintenant le traiter normalement.
 
 ## Pourquoi cette séquence
 
-`R' D' R D` est un **commutateur** : elle fait quelque chose, fait autre chose,
-puis défait le premier geste. Résultat : elle ne dérange qu'un coin et le remet
-en place tourné différemment. Tu retrouveras exactement la même séquence à
-l'[étape 7](7-coins-orientes.md) — c'est le seul algorithme utilisé deux fois.
+`R U R' U'` est un **commutateur** : elle fait quelque chose, fait autre chose,
+puis défait le premier geste. Résultat : elle ne dérange qu'un coin, et remet tout
+le reste en place à chaque répétition. C'est la séquence la plus utilisée du cube —
+tu la retrouveras partout, sous le nom de **sexy move**.

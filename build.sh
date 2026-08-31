@@ -13,27 +13,33 @@ if [ -n "$(find site ! -writable -print -quit 2>/dev/null)" ]; then
     exit 1
 fi
 
-echo "== 1/6  auto-tests du moteur de cube et du rendu 3D =="
+echo "== 1/7  auto-tests du moteur de cube et du rendu 3D =="
 python3 tools/test_cube.py | tail -2
 python3 tools/test_render3d.py
 
-echo "== 2/6  verification des algorithmes =="
+echo "== 2/7  resolution complete de cubes melanges =="
+# Le controle qui manquait : on resout des melanges aleatoires en suivant les
+# consignes des pages. Les anciennes assertions partaient de l'algorithme
+# lui-meme et ne pouvaient donc rien prouver.
+python3 tools/test_method.py 120
+
+echo "== 3/7  verification des algorithmes =="
 python3 tools/check_algs.py | tail -4
 
-echo "== 3/6  generation des schemas et des pages (fr, en, bis) =="
+echo "== 4/7  generation des schemas et des pages (fr, en, bis) =="
 python3 tools/build.py
 
-echo "== 4/6  verification du contenu des pages (3 langues) =="
+echo "== 5/7  verification du contenu des pages (3 langues) =="
 python3 tools/check_content.py
 
-echo "== 5/6  construction des trois sites =="
+echo "== 6/7  construction des trois sites =="
 # le francais est a la racine : il DOIT etre construit en premier, car MkDocs
 # nettoie son site_dir et effacerait sinon site/en et site/bis.
 $MK build --strict -f mkdocs.yml
 $MK build --strict -f mkdocs.en.yml
 $MK build --strict -f mkdocs.bis.yml
 
-echo "== 6/6  referencement (hreflang, meta, robots.txt, sitemap index) =="
+echo "== 7/7  referencement (hreflang, meta, robots.txt, sitemap index) =="
 python3 tools/seo.py
 
 echo

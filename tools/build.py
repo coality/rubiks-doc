@@ -299,14 +299,53 @@ def gen_teaching():
     return out
 
 # ------------------------------------------------- schemas 3D (isometriques)
-SEQ_COIN = "R' D' R D"
+# L'insertion des coins blancs. PAS « R' D' R D » : cette sequence-la fait
+# tourner trois aretes entre elles, dont DEUX de la croix blanche, et ne les
+# remet qu'aux multiples de 3. Suivie 1 ou 5 fois — ce que la page annoncait —
+# elle pose le coin en detruisant la croix. Corrige le 2026-08-31 apres qu'un
+# lecteur a insiste ; l'ancienne assertion ne pouvait pas le voir (voir
+# `_insertion_valide`).
+SEQ_COIN = "R U R' U'"
 
-# Ou est le blanc quand le coin attend en haut, et combien de repetitions il
-# faut alors. Ce ne sont PAS 2 ou 4 : ces deux-la ramenent le coin d'ou il
-# vient. Les valeurs sont reverifiees ci-dessous a chaque build.
-COIN_CASES = [('3d-coin-blanc-avant', 1, (0, 0, 1)),
+# Ou pointe le blanc du coin qui attend en haut, et combien de repetitions il
+# faut alors. Verifie ci-dessous sur la PERMUTATION, pas sur un etat construit
+# a partir de l'algorithme lui-meme.
+COIN_CASES = [('3d-coin-blanc-droite', 1, (1, 0, 0)),
               ('3d-coin-blanc-haut', 3, (0, 1, 0)),
-              ('3d-coin-blanc-droite', 5, (1, 0, 0))]
+              ('3d-coin-blanc-avant', 5, (0, 0, 1))]
+
+# Les huit facettes de la croix blanche, et les trois autres coins du bas.
+CROIX_BAS = [((0, -1, 1), (0, -1, 0)), ((0, -1, 1), (0, 0, 1)),
+             ((1, -1, 0), (0, -1, 0)), ((1, -1, 0), (1, 0, 0)),
+             ((0, -1, -1), (0, -1, 0)), ((0, -1, -1), (0, 0, -1)),
+             ((-1, -1, 0), (0, -1, 0)), ((-1, -1, 0), (-1, 0, 0))]
+AUTRES_COINS = ((1, -1, -1), (-1, -1, -1), (-1, -1, 1))
+
+
+def _insertion_valide(alg, white_normal):
+    """L'algorithme insere-t-il vraiment le coin sans rien casser d'autre ?
+
+    On raisonne sur la PERMUTATION : chaque facette porte son origine, on
+    applique l'algorithme, on lit ou tout a atterri. Le resultat ne depend donc
+    d'aucun etat particulier — contrairement a l'ancien controle, qui partait de
+    `solved().apply(invert(alg))` et verifiait qu'appliquer `alg` redonnait un
+    cube resolu. C'etait vrai PAR CONSTRUCTION pour n'importe quelle sequence :
+    le controle avait l'air serieux et ne prouvait rien. C'est ce trou qui a
+    laisse passer « R' D' R D », qui detruit la croix.
+    """
+    c = Cube()
+    for k in list(c.st):
+        c.st[k] = k
+    c.apply(alg)
+    if c.st[((1, -1, 1), (0, -1, 0))] != ((1, 1, 1), white_normal):
+        return 'le coin n\'arrive pas dans la fente, blanc vers le bas'
+    if any(c.st[k] != k for k in CROIX_BAS):
+        return 'la croix blanche est cassee'
+    for pos in AUTRES_COINS:
+        for nrm in ((0, -1, 0), (1, 0, 0), (-1, 0, 0), (0, 0, 1), (0, 0, -1)):
+            if (pos, nrm) in c.st and c.st[(pos, nrm)] != (pos, nrm):
+                return 'un autre coin du bas a bouge'
+    return None
 
 
 def _first_layer_done(cube):
@@ -398,14 +437,16 @@ def gen_3d():
          keep=fx((DRF, N_D), (DRF, N_F), (DRF, N_R)) | centres)
 
     # ou le coin doit arriver : la fente, vue par en dessous
+    # une seule repetition traite le cas « blanc vers la droite » : c'est donc
+    # cette facette-la qu'on suit, sinon la fleche raconterait un autre cas
     alg1 = SEQ_COIN
     st1 = solved().apply(invert(alg1))
-    arr1 = travel(alg1, [(URF, N_F)])
+    arr1 = travel(alg1, [(URF, N_R)])
     assert arr1[0][1] == (DRF, N_D), 'fente : le blanc devrait arriver sous le cube'
     # la piece qui squatte la fente est grisee : le lecteur n'a pas a s'en
     # soucier, la fleche pointe alors vers "le trou" et non vers une couleur.
     emit('3d-coin-fente', st1, cam=CAM_BAS, arrows=arr1,
-         keep=fx((URF, N_F), (URF, N_R)) | centres)
+         keep=fx((URF, N_R), (URF, N_F)) | centres)
 
     # --- etape 2 : les trois positions du blanc, et le nombre de repetitions
     for name, k, white_normal in COIN_CASES:
@@ -414,21 +455,12 @@ def gen_3d():
         # le coin blanc attend bien en haut, blanc sur la face annoncee
         assert st.st[((1, 1, 1), white_normal)] == 'W', \
             '%s : le blanc n\'est pas sur la face attendue' % name
-        assert _first_layer_done(st.copy().apply(alg)), \
-            '%s : %d repetitions ne terminent pas la premiere couronne' % (name, k)
-        for bad in (k - 1, k + 1):       # les comptes pairs encadrants echouent
-            if bad > 0:
-                assert not _first_layer_done(
-                    st.copy().apply(' '.join([SEQ_COIN] * bad))), \
-                    '%s : %d repetitions ne devraient pas suffire' % (name, bad)
-        # « ne t'arrete jamais en cours de route » : aucun arret intermediaire
-        # ne finit la couronne. Le piege est a l'avant-dernier mouvement, ou
-        # tout a l'air fini alors que le bas est decale d'un quart de tour.
-        partiel = st.copy()
-        for i, coup in enumerate(alg.split()[:-1], 1):
-            partiel.apply(coup)
-            assert not _first_layer_done(partiel), \
-                '%s : s\'arreter au mouvement %d finirait la couronne' % (name, i)
+        faute = _insertion_valide(alg, white_normal)
+        assert faute is None, '%s : %d repetitions -> %s' % (name, k, faute)
+        for bad in range(1, 6):          # aucun AUTRE compte ne convient
+            if bad != k:
+                assert _insertion_valide(' '.join([SEQ_COIN] * bad), white_normal), \
+                    '%s : %d repetitions conviendraient aussi' % (name, bad)
         arr = travel(alg, [((1, 1, 1), white_normal)])
         assert arr[0][1][1] == (0, -1, 0), '%s : le blanc devrait finir en bas' % name
         emit(name, st, arrows=arr)
@@ -484,7 +516,7 @@ def gen_3d():
 # page ment. C'est exactement ce qui s'est produit.
 FILMS = [
     # methode debutant
-    ('coin-blanc',              "R' D' R D", 'film_one_round'),
+    ('commutateur',             "R' D' R D", 'film_one_round'),
     ('coin-tourne',             "R' D' R D R' D' R D", 'film_one_round'),
     ('couronne2-droite',        "U R U' R' U' F' U F"),
     ('couronne2-gauche',        "U' L' U L U F U' F'"),
@@ -512,7 +544,7 @@ FILMS = [
     ('trigger-droit-inverse',   "R U' R'"),
     ('trigger-gauche',          "F' U' F"),
     ('trigger-gauche-inverse',  "F' U F"),
-    ('sexy',                    "R U R' U'"),
+    ('sexy',                    "R U R' U'", 'film_one_round'),
     ('tperm',                   "R U R' U' R' F R2 U' R' U' R U R' F'"),
 ]
 

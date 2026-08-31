@@ -20,7 +20,7 @@
 
 <details class="film">
 <summary><code>R' D' R D</code> — the sequence step by step</summary>
-<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+<img src="/en/assets/cubes/film-commutateur.svg" alt="R' D' R D — the sequence step by step">
 </details>
 
 **Corner**

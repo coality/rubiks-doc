@@ -11,7 +11,7 @@ réapprends jamais deux fois la même chose, chaque étape réutilise la précé
 - :material-numeric-1-circle: **Je n'ai jamais résolu un cube**
 
     Va directement à la [méthode débutant](debutant/index.md). Sept étapes,
-    **six algorithmes** à retenir en tout. Compte deux heures pour ton premier
+    **sept algorithmes** à retenir en tout. Compte deux heures pour ton premier
     cube résolu, et quelques jours pour le refaire sans regarder.
 
 - :material-numeric-2-circle: **Je sais le résoudre, je veux aller plus vite**

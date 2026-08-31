@@ -61,7 +61,7 @@ mains.
 
 <details class="film">
 <summary><code>R' D' R D</code> — la séquence pas à pas</summary>
-<img src="/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — la séquence pas à pas">
+<img src="/assets/cubes/film-commutateur.svg" alt="R' D' R D — la séquence pas à pas">
 </details>
 
 Si c'est déjà cassé : reprends le cube depuis l'[étape 1](debutant/1-croix-blanche.md).

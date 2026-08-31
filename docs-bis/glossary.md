@@ -21,7 +21,7 @@
 
 <details class="film">
 <summary><code>R' D' R D</code> — ang sequence, matag lihok</summary>
-<img src="/bis/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — ang sequence, matag lihok">
+<img src="/bis/assets/cubes/film-commutateur.svg" alt="R' D' R D — ang sequence, matag lihok">
 </details>
 
 **Corner**

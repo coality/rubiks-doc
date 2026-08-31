@@ -12,7 +12,7 @@ naggamit sa nauna.
 - :material-numeric-1-circle: **Wala pa gyud ko kasulbad og cube**
 
     Adto diretso sa [beginner nga pamaagi](beginner/index.md). Pito ka lakang,
-    ug **unom ka algorithm** ra ang sag-ulohon. Pangandam og duha ka oras para sa
+    ug **pito ka algorithm** ra ang sag-ulohon. Pangandam og duha ka oras para sa
     imong unang nasulbad nga cube, ug pipila ka adlaw aron mabuhat kini nga dili
     na motan-aw sa gabay.
 

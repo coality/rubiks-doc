@@ -60,7 +60,7 @@ While orienting the corners you must only do `U` moves between the repetitions o
 
 <details class="film">
 <summary><code>R' D' R D</code> — the sequence step by step</summary>
-<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
+<img src="/en/assets/cubes/film-commutateur.svg" alt="R' D' R D — the sequence step by step">
 </details>
 
 If it is already broken: start the cube again from

@@ -23,13 +23,6 @@ So the diagrams on this page that show the cube **from underneath** read like
 the picture on the right: you are looking at your cube from below, without
 turning it over.
 
-!!! info "Learned it elsewhere with white on top?"
-    That is another convention, just as valid, and it is **the same gesture seen
-    from the other side**: with white on top it is written `R' U' R U`, with
-    white on the bottom `R' D' R D`. Turning the cube over swaps the two — and
-    `R' D' R D` does nothing useful if your white face is up. On this site white
-    stays on the bottom from start to finish.
-
 ## The principle
 
 A corner goes **between three centres**. The white-green-orange corner therefore
@@ -63,9 +56,9 @@ sitting in that hole right now does not matter — it will be pushed out.</figca
    many repetitions you need — always an **odd** number:
 
 <div class="algs">
-<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-avant.svg" alt="White in front"><figcaption><b>White in front</b><br><code>once</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-droite.svg" alt="White on the right"><figcaption><b>White on the right</b><br><code>1 time</code></figcaption></figure>
 <figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-haut.svg" alt="White on top"><figcaption><b>White on top</b><br><code>3 times</code></figcaption></figure>
-<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-droite.svg" alt="White on the right"><figcaption><b>White on the right</b><br><code>5 times</code></figcaption></figure>
+<figure class="alg"><img src="/en/assets/cubes/3d-coin-blanc-avant.svg" alt="White at the front"><figcaption><b>White at the front</b><br><code>5 times</code></figcaption></figure>
 </div>
 
 The arrow shows the real path of the white sticker: it leaves the top layer
@@ -75,9 +68,8 @@ and ends up underneath the cube, in its place.
 
 <div class="fiche" markdown>
 <div class="corps" markdown>
-<span class="move">R' D' R D</span>
-<p>The corner drops into the slot, turns, comes back up, and eventually settles
-the right way round. <b>Never stop part way through.</b></p>
+<span class="move">R U R' U'</span>
+<p>The corner leaves the slot, turns around, and finally settles in the right way up. The white cross is <b>intact after every repetition</b>: you may pause between two.</p>
 </div>
 </div>
 
@@ -85,17 +77,15 @@ The sequence is shown **step by step** below: every frame is the cube before
 the turn, and the arrow is the move to make.
 
 <figure class="film">
-<img src="/en/assets/cubes/film-coin-blanc.svg" alt="R' D' R D — the sequence step by step">
-<figcaption><code>R' D' R D</code> — the simplest case: white points to the <b>front</b>, one repetition is enough. If your white points elsewhere it is the same sequence, repeated 3 or 5 times, and your cube will only match the last frame at the very end.</figcaption>
+<img src="/en/assets/cubes/film-sexy.svg" alt="R U R' U'">
+<figcaption><code>R U R' U'</code> — the simplest case: white points to <b>the right</b>, one repetition is enough. If your white points elsewhere it is the same sequence, repeated 3 or 5 times.</figcaption>
 </figure>
 
-!!! warning "Never stop in the middle"
-    During the manoeuvre the bottom of the cube looks wrecked: that is normal, the
-    sequence takes a piece out and puts it back.
+!!! warning "Do not stop in the middle of a repetition"
+    A complete repetition never breaks the cross: it takes a piece out and puts
+    it back. Stopping between two moves does — always finish the four.
 
-    One move from the end it is the opposite: everything looks finished, the
-    white face is complete. It is in fact a quarter turn out of place, and the
-    last move puts it right. Always go to the end.
+    Between repetitions, however, you may stop as long as you like.
 
 !!! tip "You don't have to count"
     Just repeat until the corner is seated, white underneath. The diagrams above
@@ -110,7 +100,7 @@ the turn, and the arrow is the move to make.
 This happens often: a white corner is already in the bottom layer, but in the
 wrong place or facing the wrong way.
 
-Put it bottom right in front of you and do `R' D' R D` **once**. The corner goes
+Put it bottom right in front of you and do `R U R' U'` **once**. The corner goes
 up into the top layer. You can now treat it normally.
 
 !!! success "Check"
@@ -119,7 +109,7 @@ up into the top layer. You can now treat it normally.
 
 ## Why this sequence works
 
-`R' D' R D` is a **commutator**: it does one thing, does another, then undoes
-the first move. The result is that it disturbs only one corner and puts it back
-turned differently. You will meet exactly the same sequence again at
-[step 7](7-corners-oriented.md) — it is the only algorithm used twice.
+`R U R' U'` is a **commutator**: it does something, does something else, then
+undoes the first. As a result it only disturbs one corner and puts everything else
+back at each repetition. It is the most used sequence on the cube — you will meet
+it everywhere under the name **sexy move**.
