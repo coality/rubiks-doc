@@ -14,3 +14,11 @@ docs-en/assets/
 docs-bis/assets/
 data/generated.json
 data/figures.json
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+node_modules/
+.file_hashes.json
+*.log
